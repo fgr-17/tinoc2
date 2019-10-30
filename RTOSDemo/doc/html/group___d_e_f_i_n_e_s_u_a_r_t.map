@@ -1,0 +1,7 @@
+<map id="Definiciones asociadas al manejo de la UART" name="Definiciones asociadas al manejo de la UART">
+<area shape="rect" id="node2" href="$group___r_s485_m_o_d_e.html" title="The U0RS485CTRL register controls the configuration of the UART in RS&#45;485/EIA&#45;485 mode..." alt="" coords="225,5,383,32"/>
+<area shape="rect" id="node3" href="$group___l_c_r_b_i_t_s.html" title="The U0LCR determines the format of the data character that is to be transmitted or received..." alt="" coords="211,57,397,98"/>
+<area shape="rect" id="node4" href="$group___r_e_g_i_s_t_r_o___i_e_r.html" title="Definiciones asociadas al registro Interrupt Enable Register (U0IER) &#160;Descripciones copiada directame..." alt="" coords="255,123,353,149"/>
+<area shape="rect" id="node5" href="$group___r_e_g_i_s_t_r_o___i_i_r.html" title="Definiciones asociadas al registro Interrupt Enable Register (U0IER) &#160;Descripciones copiada directame..." alt="" coords="257,173,351,200"/>
+<area shape="rect" id="node6" href="$group___r_e_g_i_s_t_r_o___l_s_r.html" title="Definiciones asociadas al registro Line Status Register (U0LSR) &#160;Descripciones copiada directamente d..." alt="" coords="253,224,355,251"/>
+</map>

@@ -1,0 +1,63 @@
+\hypertarget{group___i_a_p}{}\section{Definiciones correspondientes al manejo del I\+AP}
+\label{group___i_a_p}\index{Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}}
+
+
+Funciones, variables y ctes. de manejo de la memoria flash.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___i_a_p_ga381a9caf5bf2ed4a883cddaf17eef87d}{I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON}~0x1\+F\+F\+F1\+F\+F1
+\begin{DoxyCompactList}\small\item\em Dirección de memoria de punto de entrada de la función I\+AP. El código de esta región está en modo Thumb, así que al entrar a esta función, el programa entrará en modo Thumb U\+M10429 pag. 173. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_a_p_ga13eaec047c94fd8622da485175eee25f}{I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP}~57
+\begin{DoxyCompactList}\small\item\em Numero de comando para invocar I\+SP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{group___i_a_p_ga2874bcf0af02828d8bf944fd740ac986}{I\+AP}) (uint32\+\_\+t\mbox{[}$\,$\mbox{]}, uint32\+\_\+t\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em definicion de tipo de dato\+: puntero a función para ingresar comandos I\+AP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Funciones, variables y ctes. de manejo de la memoria flash. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}!I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP@{I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP}}
+\index{I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP@{I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP}!Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}}
+\subsubsection[{\texorpdfstring{I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP}{IAP_COM_REINVOKE_ISP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+A\+P\+\_\+\+C\+O\+M\+\_\+\+R\+E\+I\+N\+V\+O\+K\+E\+\_\+\+I\+SP~57}\hypertarget{group___i_a_p_ga13eaec047c94fd8622da485175eee25f}{}\label{group___i_a_p_ga13eaec047c94fd8622da485175eee25f}
+
+
+Numero de comando para invocar I\+SP. 
+
+
+
+Definition at line 27 of file flash.\+h.
+
+\index{Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}!I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON@{I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}
+\index{I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON@{I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON}!Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}}
+\subsubsection[{\texorpdfstring{I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON}{IAP_LOCATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+A\+P\+\_\+\+L\+O\+C\+A\+T\+I\+ON~0x1\+F\+F\+F1\+F\+F1}\hypertarget{group___i_a_p_ga381a9caf5bf2ed4a883cddaf17eef87d}{}\label{group___i_a_p_ga381a9caf5bf2ed4a883cddaf17eef87d}
+
+
+Dirección de memoria de punto de entrada de la función I\+AP. El código de esta región está en modo Thumb, así que al entrar a esta función, el programa entrará en modo Thumb U\+M10429 pag. 173. 
+
+
+
+Definition at line 25 of file flash.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\index{Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}!I\+AP@{I\+AP}}
+\index{I\+AP@{I\+AP}!Definiciones correspondientes al manejo del I\+AP@{Definiciones correspondientes al manejo del I\+AP}}
+\subsubsection[{\texorpdfstring{I\+AP}{IAP}}]{\setlength{\rightskip}{0pt plus 5cm}I\+AP}\hypertarget{group___i_a_p_ga2874bcf0af02828d8bf944fd740ac986}{}\label{group___i_a_p_ga2874bcf0af02828d8bf944fd740ac986}
+
+
+definicion de tipo de dato\+: puntero a función para ingresar comandos I\+AP. 
+
+
+
+Definition at line 39 of file flash.\+h.
+

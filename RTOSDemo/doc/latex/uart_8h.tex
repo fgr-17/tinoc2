@@ -1,0 +1,373 @@
+\hypertarget{uart_8h}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.h File Reference}
+\label{uart_8h}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.\+h@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.\+h}}
+
+
+Header del archivo \hyperlink{uart_8c}{uart.\+c}.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uart_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga8557658113e8a497db405dac37ca0c71}{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}~1
+\begin{DoxyCompactList}\small\item\em 0 if TX uses polling, 1 interrupt driven. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_ga6f8e43123ccd9f9be70e2e4e761fd8bf}{I\+E\+R\+\_\+\+R\+BR}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em R\+BR Interrupt Enable. Enables the Receive Data Available interrupt for U\+A\+RT. It also controls the Character Receive Time-\/out inturrupt. Reset Value \+: 0~\newline
+ 0 \+: Disable the R\+DA interrupt~\newline
+ 1 \+: Enable the R\+DA interrupt~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_ga22682c3d4571d7a79ed0ca2bc88a15a6}{I\+E\+R\+\_\+\+T\+H\+RE}~(0x01 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em T\+H\+RE Interrupt Enable. Enables the T\+H\+RE interrupt for U\+A\+RT. The status of this interrupt can be read from U0\+L\+SR\mbox{[}5\mbox{]}.~\newline
+ 0 Disable the T\+H\+RE interrupt.~\newline
+ 1 Enable the T\+H\+RE interrupt.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_gaec947c63128590c8f615862ee9c2c953}{I\+E\+R\+\_\+\+R\+LS}~(0x01 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em RX Line Interrupt Enable. Enables the U\+A\+RT RX line status interrupts. The status of this interrupt can be read from U0\+L\+SR\mbox{[}4\+:1\mbox{]}.~\newline
+ 0 Disable the RX line status interrupts.~\newline
+ 1 Enable the RX line status interrupts.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_i_r_gaceec69c2af58ca0d5bc80828b2a58964}{I\+I\+R\+\_\+\+P\+E\+ND}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Interrupt status. Note that U0\+I\+IR\mbox{[}0\mbox{]} is active low. The pending interrupt can be determined by evaluating U0\+I\+IR\mbox{[}3\+:1\mbox{]}.~\newline
+ 0 At least one interrupt is pending. ~\newline
+ 1 No interrupt is pending. ~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_ga03db7def835d2e60f1cc7470bdf35b08}{I\+I\+R\+\_\+\+R\+LS}~0x03
+\begin{DoxyCompactList}\small\item\em 1 -\/ Receive Line Status (R\+LS). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_ga80925dd3aa4708e148a9d63088b4758d}{I\+I\+R\+\_\+\+R\+DA}~0x02
+\begin{DoxyCompactList}\small\item\em 2a -\/ Receive Data Available (R\+DA). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_ga4842d23857b5599cf59365f23a46722f}{I\+I\+R\+\_\+\+C\+TI}~0x06
+\begin{DoxyCompactList}\small\item\em 2b -\/ Character Time-\/out Indicator (C\+TI). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_gafbff8bd626a8fce1f6082d355000c2b2}{I\+I\+R\+\_\+\+T\+H\+RE}~0x01
+\begin{DoxyCompactList}\small\item\em 3 -\/ T\+H\+RE Interrupt. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga9e3adac29ef2f5d2cf60c4cebe971de9}{L\+S\+R\+\_\+\+R\+DR}~0x01
+\begin{DoxyCompactList}\small\item\em Receiver Data Ready. U0\+L\+SR\mbox{[}0\mbox{]} is set when the U0\+R\+BR holds 0 an unread character and is cleared when the U\+A\+RT R\+BR F\+I\+FO is empty.~\newline
+ 0 U0\+R\+BR is empty.~\newline
+ 1 U0\+R\+BR contains valid data.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gae844dd49bb0e0770bcf46ad5bfe20973}{L\+S\+R\+\_\+\+OE}~0x02
+\begin{DoxyCompactList}\small\item\em Overrun Error. The overrun error condition is set as soon as it 0 occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}1\mbox{]}. U0\+L\+SR\mbox{[}1\mbox{]} is set when U\+A\+RT R\+SR has a new character assembled and the U\+A\+RT R\+BR F\+I\+FO is full. In this case, the U\+A\+RT R\+BR F\+I\+FO will not be overwritten and the character in the U\+A\+RT R\+SR will be lost.~\newline
+ 0 Overrun error status is inactive.~\newline
+ 1 Overrun error status is active.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga0ee28cdbc0917173f06cc39527452a8f}{L\+S\+R\+\_\+\+PE}~0x04
+\begin{DoxyCompactList}\small\item\em Parity Error. When the parity bit of a received character is in the wrong state, a parity error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}2\mbox{]}. Time of parity error detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Parity error status is inactive.~\newline
+ 1 Parity error status is active.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gae3f9ccc88c615d1257ad400cf27af7eb}{L\+S\+R\+\_\+\+FE}~0x08
+\begin{DoxyCompactList}\small\item\em Framing Error. When the stop bit of a received character is a 0 logic 0, a framing error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}3\mbox{]}. The time of the framing error detection is dependent on U0\+F\+C\+R0. Upon detection of a framing error, the RX will attempt to re-\/synchronize to the data and assume that the bad stop bit is actually an early start bit. However, it cannot be assumed that the next received byte will be correct even if there is no Framing Error. Note\+: A framing error is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga0fa2f414cac085b768774f2881321b60}{L\+S\+R\+\_\+\+BI}~0x10
+\begin{DoxyCompactList}\small\item\em Break Interrupt. When R\+X\+D1 is held in the spacing state (all zeros) for one full character transmission (start, data, parity, stop), a break interrupt occurs. Once the break condition has been detected, the receiver goes idle until R\+X\+D1 goes to marking state (all ones). A U0\+L\+SR read clears this status bit. The time of break detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Note\+: The break interrupt is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga8c1a828f5fe296a9c1668cf3e72c00c1}{L\+S\+R\+\_\+\+T\+H\+RE}~0x20
+\begin{DoxyCompactList}\small\item\em Transmitter Holding Register Empty. T\+H\+RE is set immediately 1 upon detection of an empty U\+A\+RT T\+HR and is cleared on a U0\+T\+HR write.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga7dfceb10f5c20011b9410e2efb39163d}{L\+S\+R\+\_\+\+T\+E\+MT}~0x40
+\begin{DoxyCompactList}\small\item\em Transmitter Empty. T\+E\+MT is set when both U0\+T\+HR and U0\+T\+SR are empty; T\+E\+MT is cleared when either the U0\+T\+SR or the U0\+T\+HR contain valid data. This bit is updated as soon as 50 \% of the first stop bit has been transmitted or a byte has been written into the T\+HR.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gad481ff8993ac05c71d4ca3b611833df0}{L\+S\+R\+\_\+\+R\+X\+FE}~0x80
+\begin{DoxyCompactList}\small\item\em Error in RX F\+I\+FO. U0\+L\+SR\mbox{[}7\mbox{]} is set when a character with a RX 0 error such as framing error, parity error or break interrupt, is loaded into the U0\+R\+BR. This bit is cleared when the U0\+L\+SR register is read and there are no subsequent errors in the U\+A\+RT F\+I\+FO.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}~0x40
+\begin{DoxyCompactList}\small\item\em Tamaño del buffer de almacenamiento intermedio. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga124bdfe48f8f5794d2ce15f7de7120ff}{R\+S485\+\_\+\+N\+M\+M\+EN}~(0x1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Habilita el modo multipunto. Se envían las direcciones al bus con error de paridad para generar una I\+RQ de la U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga6dd71ac874eee782a027c667162d2401}{R\+S485\+\_\+\+R\+X\+D\+IS}~(0x1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Habilita la recepción de datos. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga1b63fc40ac9dea74f6a3822c7e45a0b1}{R\+S485\+\_\+\+A\+A\+D\+EN}~(0x1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Deteccion automática de dirección (A\+AD) habilitada. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_gaab560420636565a39ce5ddc3539438b3}{R\+S485\+\_\+\+S\+EL}~(0x1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Determina el pin de direccion -\/$>$ 0 \+: R\+TS negado P1.\+5 (J21) // 1 \+: D\+TR negado P3.\+0 (J25) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_gad273c8e4d740c13bd42b605f01c7602a}{R\+S485\+\_\+\+D\+C\+T\+RL}~(0x1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Habilita el control automático de dirección. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga4067a15fda5fce2f25e4e722067d41d7}{R\+S485\+\_\+\+O\+I\+NV}~(0x1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em 0 \+: El pin de control se pone en 0 cuando se esta por transmitir. Se pone en 1 al terminar la transmision 1 \+: El pin de control se pone en 1 cuando se esta por transmitir. Se pone en 0 al terminar la transmision \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga81ce767ec824bfc681ba09c07f5fa7f8}{U0\+L\+C\+R\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+5\+B\+IT}~(0x00 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Largo de la palabra transmitida \+: 5 bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga22fa185de67e4fe6f1ee0f6c33d350f6}{U0\+L\+C\+R\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+6\+B\+IT}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Largo de la palabra transmitida \+: 6 bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga2f83575d55d06ad71aa8e0acaa8c7c05}{U0\+L\+C\+R\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+7\+B\+IT}~(0x02 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Largo de la palabra transmitida \+: 7 bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_gaec263e29a2f840e2a99c3aab0b244cf1}{U0\+L\+C\+R\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+8\+B\+IT}~(0x03 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Largo de la palabra transmitida \+: 8 bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_gadb93dcea13ecddc341bf08bcbcfd5710}{U0\+L\+C\+R\+\_\+\+S\+T\+O\+P\+\_\+\+B\+I\+T\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+1\+B\+IT}~(0x00 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Selecciono 1 bits de stop. Es un cero por default. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga2759f7645aa800c7685a05c10d0117aa}{U0\+L\+C\+R\+\_\+\+S\+T\+O\+P\+\_\+\+B\+I\+T\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+2\+B\+IT}~(0x01 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Selecciono 2 bits de stop. Sino queda un bit. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga7e31bc47be1ba3671357efd929e2b733}{U0\+L\+C\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+N\+A\+B\+LE}~(0x01 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Habilita la generacion y chequeo paridad. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga216d11e84d54db2b62eba03dbd40a740}{U0\+L\+C\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+O\+DD}~(0x00 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Paridad par. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga01cafa504c142a81109a3a5105ba8ed5}{U0\+L\+C\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+E\+V\+EN}~(0x01 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Paridad impar. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga11f193765cc61579da49734fb03f45ae}{U0\+L\+C\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+1\+S\+T\+I\+CK}~(0x02 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Paridad 1 forzado. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_gac59a010ca333a7dab781e89bc467b3c8}{U0\+L\+C\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+0\+S\+T\+I\+CK}~(0x03 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Paridad 0 forzado. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga4f480d22c82a1322076a77e69c79924a}{U0\+L\+C\+R\+\_\+\+B\+R\+E\+A\+K\+\_\+\+C\+O\+N\+T\+R\+OL}~(0x01 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Habilita Break Transmission \+: T\+XD se fuerza a cero cuando este bit se encuentra en uno. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga7b13c20c8707623317b4b8d452291193}{U0\+L\+C\+R\+\_\+\+D\+L\+AB}~(0x01 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em Habilita el acceso a Divisor Latches. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga63421105f318c07c617f31b8690d235d}{U0\+F\+C\+R\+\_\+\+F\+I\+F\+O\+\_\+\+E\+N\+A\+B\+LE}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Habilita las F\+I\+FO de Tx y Rx. Al modificar este bit se limpian las F\+I\+FO. Habilita el acceso de los bits U0\+F\+CR\mbox{[}7\+:1\mbox{]}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga240a3e574e516161ecce09cfdf83c5c8}{U0\+F\+C\+R\+\_\+\+R\+X\+\_\+\+F\+I\+F\+O\+\_\+\+R\+E\+S\+ET}~(0x01 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Limpia todos los bits de la fifo Rx. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga6d547993f119687d90a053c8266b4e93}{U0\+F\+C\+R\+\_\+\+T\+X\+\_\+\+F\+I\+F\+O\+\_\+\+R\+E\+S\+ET}~(0x01 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Limpia todos los bits de la fifo Tx. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga464b2e23a47585bf3710a5d71cf03e39}{U0\+F\+C\+R\+\_\+\+R\+X\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+1}~(0x00 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Trigger Level 0 \+: 1 caracter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga3678812db1dc70d302edaa1ed75fc6de}{U0\+F\+C\+R\+\_\+\+R\+X\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+2}~(0x01 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Trigger Level 1 \+: 4 caracter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga662bff8ef52bde6238fc6a2d90dc387f}{U0\+F\+C\+R\+\_\+\+R\+X\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+3}~(0x02 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Trigger Level 2 \+: 8 caracter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___l_c_r_b_i_t_s_ga83db7cf080f263b776a48e29f46504d0}{U0\+F\+C\+R\+\_\+\+R\+X\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+4}~(0x03 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Trigger Level 3 \+: 16 caracter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}~9600
+\begin{DoxyCompactList}\small\item\em D\+E\+F\+I\+N\+I\+C\+I\+O\+N\+ES P\+OR D\+E\+F\+A\+U\+LT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad4455691936f92fdd6c37566fc58ba1f}{B\+A\+U\+D\+\_\+\+R\+A\+TE}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}
+\begin{DoxyCompactList}\small\item\em Velocidad de transmisión U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga15fcd73e7add5fb7be07914dcf174eda}{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}
+\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}{R\+T\+S\+\_\+\+P\+O\+RT}~1
+\begin{DoxyCompactList}\small\item\em P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}{R\+T\+S\+\_\+\+P\+IN}~5
+\begin{DoxyCompactList}\small\item\em P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}{R\+T\+S\+\_\+\+P\+O\+RT}
+\begin{DoxyCompactList}\small\item\em puerto utilizado para manejo de dirección del puerto R\+S485 \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}{R\+T\+S\+\_\+\+P\+IN}
+\begin{DoxyCompactList}\small\item\em pin utilizado para manejo de dirección del puerto R\+S485 \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga6a815f4456be0ae15fd74ff2172d2d4e}{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN}()~\hyperlink{gpio_8h_a376642dd36001cc5eb409f9c83152e60}{G\+P\+I\+O\+Set\+Dir}( \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1 )
+\begin{DoxyCompactList}\small\item\em Inicializo pin de salida para direccionar R\+S485. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad21e8ee2f3bf01827e41e73325765c8a}{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX}()~\hyperlink{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{G\+P\+I\+O\+Set\+Value}(\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1)
+\begin{DoxyCompactList}\small\item\em Seteo el pin en bajo para habilitar la recepción. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga32978f6a50d8f84d883b95c39df21da2}{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX}()~\hyperlink{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{G\+P\+I\+O\+Set\+Value}(\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 0)
+\begin{DoxyCompactList}\small\item\em Seteo el pin en bajo para habilitar la recepción. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad3c62ebbc4b69ec10a8e68be7f85fb1e}{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}~( 10 )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8h_a0114082a550d6f5055c7bdd6bcbd3e94}{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt handler. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8h_a546e55edcf5b2cd46e6712d88b4c6baf}{Modem\+Init} (void)
+\item 
+void \hyperlink{uart_8h_a2c5666cefb57f0a48b6f8bb25c069230}{U\+A\+R\+T\+Init} (uint32\+\_\+t baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize U\+A\+R\+T0 port, setup pin select, clock, parity, stop bits, F\+I\+FO, etc. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8h_a7686b0c57ef5143e73bbd2c5ab7337ba}{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485} (void)
+\begin{DoxyCompactList}\small\item\em Inicializo la U\+A\+RT para funcionar en R\+S485. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8h_a828208cc190700acef481db1322708d2}{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion} (void)
+\begin{DoxyCompactList}\small\item\em Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8h_a0775667e8ffc02f9941f4ce203aeadc7}{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion} (void)
+\begin{DoxyCompactList}\small\item\em Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8h_ae8554b16d7597ea89092ecf98071508e}{U\+A\+R\+T\+Send} (uint8\+\_\+t $\ast$Buffer\+Ptr, uint32\+\_\+t Length)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \hyperlink{uart_8h_a2e8c65870049e6177dee39a15a1fa4ae}{U\+A\+R\+T\+Status}
+\begin{DoxyCompactList}\small\item\em variable temporal para sacar algunos datos de la fifo \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \hyperlink{uart_8h_aed8b6b138039a3639bbc9a0dda8d7b98}{U\+A\+R\+T\+Buffer} \mbox{[}\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer de software la U\+A\+RT \end{DoxyCompactList}\item 
+volatile uint32\+\_\+t \hyperlink{uart_8h_ad123655eceb71e037c3a4d270ce8414a}{U\+A\+R\+T\+Count}
+\begin{DoxyCompactList}\small\item\em indice del contador del buffer \end{DoxyCompactList}\item 
+volatile \hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{uart_8h_a81227bb53755e91999231c436f28a5d2}{x\+Queue\+Received}
+\begin{DoxyCompactList}\small\item\em Handler de la queue utilizada para la recepcion de mensajes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header del archivo \hyperlink{uart_8c}{uart.\+c}. 
+
+\begin{DoxyDate}{Date}
+Feb 22, 2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Roux, Federico G. (\href{mailto:froux@citedef.gob.ar}{\tt froux@citedef.\+gob.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{uart.\+h@{uart.\+h}!Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485@{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485}}
+\index{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485@{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485(void)}{Inic_UART_RS485(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a7686b0c57ef5143e73bbd2c5ab7337ba}{}\label{uart_8h_a7686b0c57ef5143e73bbd2c5ab7337ba}
+
+
+Inicializo la U\+A\+RT para funcionar en R\+S485. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 337 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!Modem\+Init@{Modem\+Init}}
+\index{Modem\+Init@{Modem\+Init}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{Modem\+Init(void)}{ModemInit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Modem\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a546e55edcf5b2cd46e6712d88b4c6baf}{}\label{uart_8h_a546e55edcf5b2cd46e6712d88b4c6baf}
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler(void)}{UART_IRQHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a0114082a550d6f5055c7bdd6bcbd3e94}{}\label{uart_8h_a0114082a550d6f5055c7bdd6bcbd3e94}
+
+
+U\+A\+RT interrupt handler. 
+
+===============================================================================
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion}}
+\index{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion(void)}{UART_RS485_Deshabilitar_Recepcion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a0775667e8ffc02f9941f4ce203aeadc7}{}\label{uart_8h_a0775667e8ffc02f9941f4ce203aeadc7}
+
+
+Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 388 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion}}
+\index{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion(void)}{UART_RS485_Habilitar_Recepcion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a828208cc190700acef481db1322708d2}{}\label{uart_8h_a828208cc190700acef481db1322708d2}
+
+
+Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None $\ast$ }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 371 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+Init@{U\+A\+R\+T\+Init}}
+\index{U\+A\+R\+T\+Init@{U\+A\+R\+T\+Init}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Init(uint32\+\_\+t baudrate)}{UARTInit(uint32_t baudrate)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+Init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{baudrate}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_a2c5666cefb57f0a48b6f8bb25c069230}{}\label{uart_8h_a2c5666cefb57f0a48b6f8bb25c069230}
+
+
+Initialize U\+A\+R\+T0 port, setup pin select, clock, parity, stop bits, F\+I\+FO, etc. 
+
+===============================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uint32\+\_\+t} & baudrate \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 258 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+Send@{U\+A\+R\+T\+Send}}
+\index{U\+A\+R\+T\+Send@{U\+A\+R\+T\+Send}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Send(uint8\+\_\+t $\ast$\+Buffer\+Ptr, uint32\+\_\+t Length)}{UARTSend(uint8_t *BufferPtr, uint32_t Length)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+Send (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{Buffer\+Ptr, }
+\item[{uint32\+\_\+t}]{Length}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8h_ae8554b16d7597ea89092ecf98071508e}{}\label{uart_8h_ae8554b16d7597ea89092ecf98071508e}
+
+
+Definition at line 408 of file uart.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+Buffer@{U\+A\+R\+T\+Buffer}}
+\index{U\+A\+R\+T\+Buffer@{U\+A\+R\+T\+Buffer}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Buffer}{UARTBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t U\+A\+R\+T\+Buffer\mbox{[}{\bf B\+U\+F\+S\+I\+ZE}\mbox{]}}\hypertarget{uart_8h_aed8b6b138039a3639bbc9a0dda8d7b98}{}\label{uart_8h_aed8b6b138039a3639bbc9a0dda8d7b98}
+
+
+buffer de software la U\+A\+RT 
+
+
+
+Definition at line 56 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+Count@{U\+A\+R\+T\+Count}}
+\index{U\+A\+R\+T\+Count@{U\+A\+R\+T\+Count}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Count}{UARTCount}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t U\+A\+R\+T\+Count}\hypertarget{uart_8h_ad123655eceb71e037c3a4d270ce8414a}{}\label{uart_8h_ad123655eceb71e037c3a4d270ce8414a}
+
+
+indice del contador del buffer 
+
+
+
+Definition at line 58 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!U\+A\+R\+T\+Status@{U\+A\+R\+T\+Status}}
+\index{U\+A\+R\+T\+Status@{U\+A\+R\+T\+Status}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Status}{UARTStatus}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t U\+A\+R\+T\+Status}\hypertarget{uart_8h_a2e8c65870049e6177dee39a15a1fa4ae}{}\label{uart_8h_a2e8c65870049e6177dee39a15a1fa4ae}
+
+
+variable temporal para sacar algunos datos de la fifo 
+
+
+
+Definition at line 52 of file uart.\+c.
+
+\index{uart.\+h@{uart.\+h}!x\+Queue\+Received@{x\+Queue\+Received}}
+\index{x\+Queue\+Received@{x\+Queue\+Received}!uart.\+h@{uart.\+h}}
+\subsubsection[{\texorpdfstring{x\+Queue\+Received}{xQueueReceived}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Queue\+Handle\+\_\+t} x\+Queue\+Received}\hypertarget{uart_8h_a81227bb53755e91999231c436f28a5d2}{}\label{uart_8h_a81227bb53755e91999231c436f28a5d2}
+
+
+Handler de la queue utilizada para la recepcion de mensajes. 
+
+
+
+Definition at line 72 of file uart.\+c.
+

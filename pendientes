@@ -1,0 +1,9 @@
+Tareas pendientes TINOC2:
+
+- ver caso de timeout en Handler de uart. corregir el reseteo
+- tiempo de espera para ultimo byte tx hacerlo por delay rtos y semaforo.
+- separar manejo de THR en PAQ_Enviar_Cola_Salida()
+- ver caso IIR_RDA. Escribir todo en un buffer y al completar pasar todo a xQueue para destrabar tarea. El queue sera de un tipo struct que tiene un solo campo de buffer (ver si hace falta algo más?)
+- poner como reglamento básico del protocolo que siempre el master empieza la comuinicación, y que a cada mensaje del master hay por lo menos un ACK del esclavo.
+- ante los errores de ID o chksum el esclavo no hace nada. Ante errores de comando o de contexto (recibí un comando ok pero la máquina de estados está en cualquiera) ahi respondo error.
+

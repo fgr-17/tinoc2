@@ -1,0 +1,103 @@
+\hypertarget{group___r_s485_m_o_d_e}{}\section{R\+S485 mode definition.}
+\label{group___r_s485_m_o_d_e}\index{R\+S485 mode definition.@{R\+S485 mode definition.}}
+
+
+The U0\+R\+S485\+C\+T\+RL register controls the configuration of the U\+A\+RT in R\+S-\/485/\+E\+I\+A-\/485 mode.  
+
+
+Collaboration diagram for R\+S485 mode definition.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___r_s485_m_o_d_e}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga124bdfe48f8f5794d2ce15f7de7120ff}{R\+S485\+\_\+\+N\+M\+M\+EN}~(0x1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Habilita el modo multipunto. Se envían las direcciones al bus con error de paridad para generar una I\+RQ de la U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga6dd71ac874eee782a027c667162d2401}{R\+S485\+\_\+\+R\+X\+D\+IS}~(0x1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Habilita la recepción de datos. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga1b63fc40ac9dea74f6a3822c7e45a0b1}{R\+S485\+\_\+\+A\+A\+D\+EN}~(0x1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Deteccion automática de dirección (A\+AD) habilitada. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_gaab560420636565a39ce5ddc3539438b3}{R\+S485\+\_\+\+S\+EL}~(0x1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Determina el pin de direccion -\/$>$ 0 \+: R\+TS negado P1.\+5 (J21) // 1 \+: D\+TR negado P3.\+0 (J25) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_gad273c8e4d740c13bd42b605f01c7602a}{R\+S485\+\_\+\+D\+C\+T\+RL}~(0x1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Habilita el control automático de dirección. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_s485_m_o_d_e_ga4067a15fda5fce2f25e4e722067d41d7}{R\+S485\+\_\+\+O\+I\+NV}~(0x1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em 0 \+: El pin de control se pone en 0 cuando se esta por transmitir. Se pone en 1 al terminar la transmision 1 \+: El pin de control se pone en 1 cuando se esta por transmitir. Se pone en 0 al terminar la transmision \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The U0\+R\+S485\+C\+T\+RL register controls the configuration of the U\+A\+RT in R\+S-\/485/\+E\+I\+A-\/485 mode. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+A\+A\+D\+EN@{R\+S485\+\_\+\+A\+A\+D\+EN}}
+\index{R\+S485\+\_\+\+A\+A\+D\+EN@{R\+S485\+\_\+\+A\+A\+D\+EN}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+A\+A\+D\+EN}{RS485_AADEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+A\+A\+D\+EN~(0x1 $<$$<$ 2)}\hypertarget{group___r_s485_m_o_d_e_ga1b63fc40ac9dea74f6a3822c7e45a0b1}{}\label{group___r_s485_m_o_d_e_ga1b63fc40ac9dea74f6a3822c7e45a0b1}
+
+
+Deteccion automática de dirección (A\+AD) habilitada. 
+
+
+
+Definition at line 260 of file uart.\+h.
+
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+D\+C\+T\+RL@{R\+S485\+\_\+\+D\+C\+T\+RL}}
+\index{R\+S485\+\_\+\+D\+C\+T\+RL@{R\+S485\+\_\+\+D\+C\+T\+RL}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+D\+C\+T\+RL}{RS485_DCTRL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+D\+C\+T\+RL~(0x1 $<$$<$ 4)}\hypertarget{group___r_s485_m_o_d_e_gad273c8e4d740c13bd42b605f01c7602a}{}\label{group___r_s485_m_o_d_e_gad273c8e4d740c13bd42b605f01c7602a}
+
+
+Habilita el control automático de dirección. 
+
+
+
+Definition at line 264 of file uart.\+h.
+
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+N\+M\+M\+EN@{R\+S485\+\_\+\+N\+M\+M\+EN}}
+\index{R\+S485\+\_\+\+N\+M\+M\+EN@{R\+S485\+\_\+\+N\+M\+M\+EN}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+N\+M\+M\+EN}{RS485_NMMEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+N\+M\+M\+EN~(0x1 $<$$<$ 0)}\hypertarget{group___r_s485_m_o_d_e_ga124bdfe48f8f5794d2ce15f7de7120ff}{}\label{group___r_s485_m_o_d_e_ga124bdfe48f8f5794d2ce15f7de7120ff}
+
+
+Habilita el modo multipunto. Se envían las direcciones al bus con error de paridad para generar una I\+RQ de la U\+A\+RT. 
+
+
+
+Definition at line 256 of file uart.\+h.
+
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+O\+I\+NV@{R\+S485\+\_\+\+O\+I\+NV}}
+\index{R\+S485\+\_\+\+O\+I\+NV@{R\+S485\+\_\+\+O\+I\+NV}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+O\+I\+NV}{RS485_OINV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+O\+I\+NV~(0x1 $<$$<$ 5)}\hypertarget{group___r_s485_m_o_d_e_ga4067a15fda5fce2f25e4e722067d41d7}{}\label{group___r_s485_m_o_d_e_ga4067a15fda5fce2f25e4e722067d41d7}
+
+
+0 \+: El pin de control se pone en 0 cuando se esta por transmitir. Se pone en 1 al terminar la transmision 1 \+: El pin de control se pone en 1 cuando se esta por transmitir. Se pone en 0 al terminar la transmision 
+
+
+
+Definition at line 268 of file uart.\+h.
+
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+R\+X\+D\+IS@{R\+S485\+\_\+\+R\+X\+D\+IS}}
+\index{R\+S485\+\_\+\+R\+X\+D\+IS@{R\+S485\+\_\+\+R\+X\+D\+IS}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+R\+X\+D\+IS}{RS485_RXDIS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+R\+X\+D\+IS~(0x1 $<$$<$ 1)}\hypertarget{group___r_s485_m_o_d_e_ga6dd71ac874eee782a027c667162d2401}{}\label{group___r_s485_m_o_d_e_ga6dd71ac874eee782a027c667162d2401}
+
+
+Habilita la recepción de datos. 
+
+
+
+Definition at line 258 of file uart.\+h.
+
+\index{R\+S485 mode definition.@{R\+S485 mode definition.}!R\+S485\+\_\+\+S\+EL@{R\+S485\+\_\+\+S\+EL}}
+\index{R\+S485\+\_\+\+S\+EL@{R\+S485\+\_\+\+S\+EL}!R\+S485 mode definition.@{R\+S485 mode definition.}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+S\+EL}{RS485_SEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+S\+EL~(0x1 $<$$<$ 3)}\hypertarget{group___r_s485_m_o_d_e_gaab560420636565a39ce5ddc3539438b3}{}\label{group___r_s485_m_o_d_e_gaab560420636565a39ce5ddc3539438b3}
+
+
+Determina el pin de direccion -\/$>$ 0 \+: R\+TS negado P1.\+5 (J21) // 1 \+: D\+TR negado P3.\+0 (J25) 
+
+
+
+Definition at line 262 of file uart.\+h.
+

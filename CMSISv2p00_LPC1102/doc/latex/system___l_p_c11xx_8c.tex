@@ -1,0 +1,391 @@
+\hypertarget{system___l_p_c11xx_8c}{}\section{/home/piro8/\+Documentos/\+T\+I\+N\+O\+C2/\+T\+I\+N\+O\+C2\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S/\+C\+M\+S\+I\+Sv2p00\+\_\+\+L\+P\+C1102/src/system\+\_\+\+L\+P\+C11xx.c File Reference}
+\label{system___l_p_c11xx_8c}\index{/home/piro8/\+Documentos/\+T\+I\+N\+O\+C2/\+T\+I\+N\+O\+C2\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S/\+C\+M\+S\+I\+Sv2p00\+\_\+\+L\+P\+C1102/src/system\+\_\+\+L\+P\+C11xx.\+c@{/home/piro8/\+Documentos/\+T\+I\+N\+O\+C2/\+T\+I\+N\+O\+C2\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S/\+C\+M\+S\+I\+Sv2p00\+\_\+\+L\+P\+C1102/src/system\+\_\+\+L\+P\+C11xx.\+c}}
+
+
+C\+M\+S\+IS Cortex-\/\+M0 Device Peripheral Access Layer Source File for the N\+XP L\+P\+C11xx Device Series.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}L\+P\+C11xx.\+h\char`\"{}}\\*
+Include dependency graph for system\+\_\+\+L\+P\+C11xx.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{system___l_p_c11xx_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_aee2245fb4caf68f0fc571d8b24ff5626}{C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP}~1
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a778179c3b51f6c717d3f4720e9863b9a}{S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP}~1
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_ae468fce354573a1c79b5d95feb9faf4f}{S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP}~1
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a76890281b6f6a4b25f1b0e7e37baf53e}{S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}~0x00000000
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a84abebab829b8bfac13a2fa9b84f141e}{W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP}~0
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a1135febcbc334b18f5a85820db085abd}{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}~0x000000\+A0
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a91d26ac1bf14f9b612f13c6ae89e4a40}{S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val}~0x00000000
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a7ae9a76d3d25029032d53e92baaf183a}{S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP}~1
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_aa3cef1360b564acd1c3f947debaae5b8}{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val}~0x00000023
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a797720f5a22b83184675441f771e42df}{M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val}~0x00000000
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a7c86ce9b0526f914ed4a13ac94c37fa1}{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val}~0x00000001
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_ae2e3b021e3356e1f5638ac896a360533}{A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val}~0x0001005F
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a3d498490bb1e408b61c1bc4363e2764b}{S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val}~0x00000001
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_aab78254bf0012c8d711d174eb1f472b2}{U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val}~0x00000001
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a7f0e9dff667e1dcc98dbc63cf495b653}{S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val}~0x00000001
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a208d2aa3957a550ac9a7c2579cdf70f4}{M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP}~0
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a6548d18fbd7a29750139ced6b0b68dfa}{S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val}~0x00000001
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a773c8761088ae68a786a4c72bb42deec}{C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE}(val,  min,  max)~((val $<$ min) $\vert$$\vert$ (val $>$ max))
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a098e4b07ffb372fafb9aefd1a2393136}{C\+H\+E\+C\+K\+\_\+\+R\+S\+VD}(val,  mask)~(val \& mask)
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a8687edecd98881631a879bd10528c7da}{\+\_\+\+\_\+\+X\+T\+AL}~(12000000\+U\+L)    /$\ast$ Oscillator frequency             $\ast$/
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_ab759225f52a45a9f898ec8c4a5dfecc8}{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK}~(    \hyperlink{system___l_p_c11xx_8c_a8687edecd98881631a879bd10528c7da}{\+\_\+\+\_\+\+X\+T\+AL})    /$\ast$ Main oscillator frequency        $\ast$/
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a6834fd34cd023b03d5ec210b029a4a0a}{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK}~(12000000\+U\+L)    /$\ast$ Internal R\+C oscillator frequency $\ast$/
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a4bcab3c5ea93b388cc0a337e7eec893a}{\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL}~((\hyperlink{system___l_p_c11xx_8c_a1135febcbc334b18f5a85820db085abd}{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val} $>$$>$ 5) \& 0x0\+F)
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_ab915f35929843ff914d818ba64fb2c6b}{\+\_\+\+\_\+\+D\+I\+V\+S\+EL}~(((\hyperlink{system___l_p_c11xx_8c_a1135febcbc334b18f5a85820db085abd}{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val} \& 0x1\+F) $<$$<$ 1) + 2)
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a63e69efa838dca1a81a549bd3786ec32}{\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK}~(1600000 / 2)
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a02586b58cc1d3dcf06ad87c645ccce21}{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN}~(\hyperlink{system___l_p_c11xx_8c_a6834fd34cd023b03d5ec210b029a4a0a}{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK})
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a17e860407d0495e261ccfd4c1d662151}{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT}~(\hyperlink{system___l_p_c11xx_8c_a02586b58cc1d3dcf06ad87c645ccce21}{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN} $\ast$ ((\hyperlink{system___l_p_c11xx_8c_aa3cef1360b564acd1c3f947debaae5b8}{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val} \& 0x01\+F) + 1))
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a358f14b51ccee88ceeb868c94a398886}{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}~(\hyperlink{system___l_p_c11xx_8c_a6834fd34cd023b03d5ec210b029a4a0a}{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK})
+\item 
+\#define \hyperlink{system___l_p_c11xx_8c_a16323f44d2b5b11ef3972f71339cbd39}{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}~(\hyperlink{system___l_p_c11xx_8c_a358f14b51ccee88ceeb868c94a398886}{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK} / \hyperlink{system___l_p_c11xx_8c_a7c86ce9b0526f914ed4a13ac94c37fa1}{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{system___l_p_c11xx_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update} (void)
+\begin{DoxyCompactList}\small\item\em Updates the System\+Core\+Clock with current core Clock retrieved from cpu registers. \end{DoxyCompactList}\item 
+void \hyperlink{system___l_p_c11xx_8c_a93f514700ccf00d08dbdcff7f1224eb2}{System\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system. Initialize the System. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{system___l_p_c11xx_8c_aa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock} = \hyperlink{system___l_p_c11xx_8c_a16323f44d2b5b11ef3972f71339cbd39}{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+M\+S\+IS Cortex-\/\+M0 Device Peripheral Access Layer Source File for the N\+XP L\+P\+C11xx Device Series. 
+
+\begin{DoxyVersion}{Version}
+V1.\+00 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17. November 2009
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+Copyright (C) 2009 A\+RM Limited. All rights reserved.
+\end{DoxyNote}
+\begin{DoxyParagraph}{}
+A\+RM Limited (A\+RM) is supplying this software for use with Cortex-\/M processor based microcontrollers. This file can be freely distributed within development tools that are supporting such A\+RM based processors.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}. NO W\+A\+R\+R\+A\+N\+T\+I\+ES, W\+H\+E\+T\+H\+ER E\+X\+P\+R\+E\+SS, I\+M\+P\+L\+I\+ED OR S\+T\+A\+T\+U\+T\+O\+RY, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+P\+P\+LY TO T\+H\+IS S\+O\+F\+T\+W\+A\+RE. A\+RM S\+H\+A\+LL N\+OT, IN A\+NY C\+I\+R\+C\+U\+M\+S\+T\+A\+N\+C\+ES, BE L\+I\+A\+B\+LE F\+OR S\+P\+E\+C\+I\+AL, I\+N\+C\+I\+D\+E\+N\+T\+AL, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES, F\+OR A\+NY R\+E\+A\+S\+ON W\+H\+A\+T\+S\+O\+E\+V\+ER. 
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+D\+I\+V\+S\+EL@{\+\_\+\+\_\+\+D\+I\+V\+S\+EL}}
+\index{\+\_\+\+\_\+\+D\+I\+V\+S\+EL@{\+\_\+\+\_\+\+D\+I\+V\+S\+EL}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+D\+I\+V\+S\+EL}{__DIVSEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+D\+I\+V\+S\+EL~((({\bf W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val} \& 0x1\+F) $<$$<$ 1) + 2)}\hypertarget{system___l_p_c11xx_8c_ab915f35929843ff914d818ba64fb2c6b}{}\label{system___l_p_c11xx_8c_ab915f35929843ff914d818ba64fb2c6b}
+
+
+Definition at line 227 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL@{\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL}}
+\index{\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL@{\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL}{__FREQSEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+F\+R\+E\+Q\+S\+EL~(({\bf W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val} $>$$>$ 5) \& 0x0\+F)}\hypertarget{system___l_p_c11xx_8c_a4bcab3c5ea93b388cc0a337e7eec893a}{}\label{system___l_p_c11xx_8c_a4bcab3c5ea93b388cc0a337e7eec893a}
+
+
+Definition at line 226 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK}}
+\index{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK}{__IRC_OSC_CLK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK~(12000000\+U\+L)    /$\ast$ Internal R\+C oscillator frequency $\ast$/}\hypertarget{system___l_p_c11xx_8c_a6834fd34cd023b03d5ec210b029a4a0a}{}\label{system___l_p_c11xx_8c_a6834fd34cd023b03d5ec210b029a4a0a}
+
+
+Definition at line 223 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK@{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}}
+\index{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK@{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}{__MAIN_CLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK~({\bf \+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK})}\hypertarget{system___l_p_c11xx_8c_a358f14b51ccee88ceeb868c94a398886}{}\label{system___l_p_c11xx_8c_a358f14b51ccee88ceeb868c94a398886}
+
+
+Definition at line 288 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK}}
+\index{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK}{__SYS_OSC_CLK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+S\+Y\+S\+\_\+\+O\+S\+C\+\_\+\+C\+LK~(    {\bf \+\_\+\+\_\+\+X\+T\+AL})    /$\ast$ Main oscillator frequency        $\ast$/}\hypertarget{system___l_p_c11xx_8c_ab759225f52a45a9f898ec8c4a5dfecc8}{}\label{system___l_p_c11xx_8c_ab759225f52a45a9f898ec8c4a5dfecc8}
+
+
+Definition at line 222 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN}}
+\index{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN}{__SYS_PLLCLKIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN~({\bf \+\_\+\+\_\+\+I\+R\+C\+\_\+\+O\+S\+C\+\_\+\+C\+LK})}\hypertarget{system___l_p_c11xx_8c_a02586b58cc1d3dcf06ad87c645ccce21}{}\label{system___l_p_c11xx_8c_a02586b58cc1d3dcf06ad87c645ccce21}
+
+
+Definition at line 271 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT}}
+\index{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT@{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT}{__SYS_PLLCLKOUT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+O\+UT~({\bf \+\_\+\+\_\+\+S\+Y\+S\+\_\+\+P\+L\+L\+C\+L\+K\+IN} $\ast$ (({\bf S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val} \& 0x01\+F) + 1))}\hypertarget{system___l_p_c11xx_8c_a17e860407d0495e261ccfd4c1d662151}{}\label{system___l_p_c11xx_8c_a17e860407d0495e261ccfd4c1d662151}
+
+
+Definition at line 281 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK@{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}
+\index{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK@{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}{__SYSTEM_CLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK~({\bf \+\_\+\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK} / {\bf S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val})}\hypertarget{system___l_p_c11xx_8c_a16323f44d2b5b11ef3972f71339cbd39}{}\label{system___l_p_c11xx_8c_a16323f44d2b5b11ef3972f71339cbd39}
+
+
+Definition at line 299 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK}}
+\index{\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK@{\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK}{__WDT_OSC_CLK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+W\+D\+T\+\_\+\+O\+S\+C\+\_\+\+C\+LK~(1600000 / 2)}\hypertarget{system___l_p_c11xx_8c_a63e69efa838dca1a81a549bd3786ec32}{}\label{system___l_p_c11xx_8c_a63e69efa838dca1a81a549bd3786ec32}
+
+
+Definition at line 266 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!\+\_\+\+\_\+\+X\+T\+AL@{\+\_\+\+\_\+\+X\+T\+AL}}
+\index{\+\_\+\+\_\+\+X\+T\+AL@{\+\_\+\+\_\+\+X\+T\+AL}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+\+X\+T\+AL}{__XTAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+X\+T\+AL~(12000000\+U\+L)    /$\ast$ Oscillator frequency             $\ast$/}\hypertarget{system___l_p_c11xx_8c_a8687edecd98881631a879bd10528c7da}{}\label{system___l_p_c11xx_8c_a8687edecd98881631a879bd10528c7da}
+
+
+Definition at line 221 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val@{A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val}}
+\index{A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val@{A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val}{AHBCLKCTRL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+H\+B\+C\+L\+K\+C\+T\+R\+L\+\_\+\+Val~0x0001005F}\hypertarget{system___l_p_c11xx_8c_ae2e3b021e3356e1f5638ac896a360533}{}\label{system___l_p_c11xx_8c_ae2e3b021e3356e1f5638ac896a360533}
+
+
+Definition at line 140 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE@{C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE}}
+\index{C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE@{C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE}{CHECK_RANGE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+R\+A\+N\+GE(
+\begin{DoxyParamCaption}
+\item[{}]{val, }
+\item[{}]{min, }
+\item[{}]{max}
+\end{DoxyParamCaption}
+)~((val $<$ min) $\vert$$\vert$ (val $>$ max))}\hypertarget{system___l_p_c11xx_8c_a773c8761088ae68a786a4c72bb42deec}{}\label{system___l_p_c11xx_8c_a773c8761088ae68a786a4c72bb42deec}
+
+
+Definition at line 165 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!C\+H\+E\+C\+K\+\_\+\+R\+S\+VD@{C\+H\+E\+C\+K\+\_\+\+R\+S\+VD}}
+\index{C\+H\+E\+C\+K\+\_\+\+R\+S\+VD@{C\+H\+E\+C\+K\+\_\+\+R\+S\+VD}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{C\+H\+E\+C\+K\+\_\+\+R\+S\+VD}{CHECK_RSVD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+R\+S\+VD(
+\begin{DoxyParamCaption}
+\item[{}]{val, }
+\item[{}]{mask}
+\end{DoxyParamCaption}
+)~(val \& mask)}\hypertarget{system___l_p_c11xx_8c_a098e4b07ffb372fafb9aefd1a2393136}{}\label{system___l_p_c11xx_8c_a098e4b07ffb372fafb9aefd1a2393136}
+
+
+Definition at line 166 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP@{C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP}}
+\index{C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP@{C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP}{CLOCK_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+UP~1}\hypertarget{system___l_p_c11xx_8c_aee2245fb4caf68f0fc571d8b24ff5626}{}\label{system___l_p_c11xx_8c_aee2245fb4caf68f0fc571d8b24ff5626}
+
+
+Definition at line 129 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val@{M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val}}
+\index{M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val@{M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val}{MAINCLKSEL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+I\+N\+C\+L\+K\+S\+E\+L\+\_\+\+Val~0x00000000}\hypertarget{system___l_p_c11xx_8c_a797720f5a22b83184675441f771e42df}{}\label{system___l_p_c11xx_8c_a797720f5a22b83184675441f771e42df}
+
+
+Definition at line 138 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP@{M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP}}
+\index{M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP@{M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP}{MEMMAP_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+M\+A\+P\+\_\+\+S\+E\+T\+UP~0}\hypertarget{system___l_p_c11xx_8c_a208d2aa3957a550ac9a7c2579cdf70f4}{}\label{system___l_p_c11xx_8c_a208d2aa3957a550ac9a7c2579cdf70f4}
+
+
+Definition at line 155 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val}}
+\index{S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val}{SSP0CLKDIV_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+P0\+C\+L\+K\+D\+I\+V\+\_\+\+Val~0x00000001}\hypertarget{system___l_p_c11xx_8c_a3d498490bb1e408b61c1bc4363e2764b}{}\label{system___l_p_c11xx_8c_a3d498490bb1e408b61c1bc4363e2764b}
+
+
+Definition at line 141 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val}}
+\index{S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val}{SSP1CLKDIV_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+P1\+C\+L\+K\+D\+I\+V\+\_\+\+Val~0x00000001}\hypertarget{system___l_p_c11xx_8c_a7f0e9dff667e1dcc98dbc63cf495b653}{}\label{system___l_p_c11xx_8c_a7f0e9dff667e1dcc98dbc63cf495b653}
+
+
+Definition at line 143 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val}}
+\index{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val}{SYSAHBCLKDIV_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+A\+H\+B\+C\+L\+K\+D\+I\+V\+\_\+\+Val~0x00000001}\hypertarget{system___l_p_c11xx_8c_a7c86ce9b0526f914ed4a13ac94c37fa1}{}\label{system___l_p_c11xx_8c_a7c86ce9b0526f914ed4a13ac94c37fa1}
+
+
+Definition at line 139 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP}}
+\index{S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP}{SYSCLK_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+C\+L\+K\+\_\+\+S\+E\+T\+UP~1}\hypertarget{system___l_p_c11xx_8c_a778179c3b51f6c717d3f4720e9863b9a}{}\label{system___l_p_c11xx_8c_a778179c3b51f6c717d3f4720e9863b9a}
+
+
+Definition at line 130 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val@{S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val}}
+\index{S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val@{S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val}{SYSMEMREMAP_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+M\+E\+M\+R\+E\+M\+A\+P\+\_\+\+Val~0x00000001}\hypertarget{system___l_p_c11xx_8c_a6548d18fbd7a29750139ced6b0b68dfa}{}\label{system___l_p_c11xx_8c_a6548d18fbd7a29750139ced6b0b68dfa}
+
+
+Definition at line 156 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP}}
+\index{S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP}{SYSOSC_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+O\+S\+C\+\_\+\+S\+E\+T\+UP~1}\hypertarget{system___l_p_c11xx_8c_ae468fce354573a1c79b5d95feb9faf4f}{}\label{system___l_p_c11xx_8c_ae468fce354573a1c79b5d95feb9faf4f}
+
+
+Definition at line 131 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val@{S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}}
+\index{S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val@{S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}{SYSOSCCTRL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val~0x00000000}\hypertarget{system___l_p_c11xx_8c_a76890281b6f6a4b25f1b0e7e37baf53e}{}\label{system___l_p_c11xx_8c_a76890281b6f6a4b25f1b0e7e37baf53e}
+
+
+Definition at line 132 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP}}
+\index{S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP@{S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP}{SYSPLL_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+P\+L\+L\+\_\+\+S\+E\+T\+UP~1}\hypertarget{system___l_p_c11xx_8c_a7ae9a76d3d25029032d53e92baaf183a}{}\label{system___l_p_c11xx_8c_a7ae9a76d3d25029032d53e92baaf183a}
+
+
+Definition at line 136 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val@{S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val}}
+\index{S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val@{S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val}{SYSPLLCLKSEL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+P\+L\+L\+C\+L\+K\+S\+E\+L\+\_\+\+Val~0x00000000}\hypertarget{system___l_p_c11xx_8c_a91d26ac1bf14f9b612f13c6ae89e4a40}{}\label{system___l_p_c11xx_8c_a91d26ac1bf14f9b612f13c6ae89e4a40}
+
+
+Definition at line 135 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val@{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val}}
+\index{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val@{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val}{SYSPLLCTRL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+P\+L\+L\+C\+T\+R\+L\+\_\+\+Val~0x00000023}\hypertarget{system___l_p_c11xx_8c_aa3cef1360b564acd1c3f947debaae5b8}{}\label{system___l_p_c11xx_8c_aa3cef1360b564acd1c3f947debaae5b8}
+
+
+Definition at line 137 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val}}
+\index{U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val@{U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val}{UARTCLKDIV_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+A\+R\+T\+C\+L\+K\+D\+I\+V\+\_\+\+Val~0x00000001}\hypertarget{system___l_p_c11xx_8c_aab78254bf0012c8d711d174eb1f472b2}{}\label{system___l_p_c11xx_8c_aab78254bf0012c8d711d174eb1f472b2}
+
+
+Definition at line 142 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP@{W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP}}
+\index{W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP@{W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP}{WDTOSC_SETUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+D\+T\+O\+S\+C\+\_\+\+S\+E\+T\+UP~0}\hypertarget{system___l_p_c11xx_8c_a84abebab829b8bfac13a2fa9b84f141e}{}\label{system___l_p_c11xx_8c_a84abebab829b8bfac13a2fa9b84f141e}
+
+
+Definition at line 133 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val@{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}}
+\index{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val@{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val}{WDTOSCCTRL_Val}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+D\+T\+O\+S\+C\+C\+T\+R\+L\+\_\+\+Val~0x000000\+A0}\hypertarget{system___l_p_c11xx_8c_a1135febcbc334b18f5a85820db085abd}{}\label{system___l_p_c11xx_8c_a1135febcbc334b18f5a85820db085abd}
+
+
+Definition at line 134 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!System\+Core\+Clock\+Update@{System\+Core\+Clock\+Update}}
+\index{System\+Core\+Clock\+Update@{System\+Core\+Clock\+Update}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{System\+Core\+Clock\+Update(void)}{SystemCoreClockUpdate(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Core\+Clock\+Update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{system___l_p_c11xx_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}{}\label{system___l_p_c11xx_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}
+
+
+Updates the System\+Core\+Clock with current core Clock retrieved from cpu registers. 
+
+Update System\+Core\+Clock variable
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 323 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!System\+Init@{System\+Init}}
+\index{System\+Init@{System\+Init}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{System\+Init(void)}{SystemInit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{system___l_p_c11xx_8c_a93f514700ccf00d08dbdcff7f1224eb2}{}\label{system___l_p_c11xx_8c_a93f514700ccf00d08dbdcff7f1224eb2}
+
+
+Setup the microcontroller system. Initialize the System. 
+
+Setup the microcontroller system. Initialize the System and update the System\+Core\+Clock variable.
+
+Initialize the system
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 414 of file system\+\_\+\+L\+P\+C11xx.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}!System\+Core\+Clock@{System\+Core\+Clock}}
+\index{System\+Core\+Clock@{System\+Core\+Clock}!system\+\_\+\+L\+P\+C11xx.\+c@{system\+\_\+\+L\+P\+C11xx.\+c}}
+\subsubsection[{\texorpdfstring{System\+Core\+Clock}{SystemCoreClock}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t System\+Core\+Clock = {\bf \+\_\+\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}\hypertarget{system___l_p_c11xx_8c_aa3cd3e43291e81e795d642b79b6088e6}{}\label{system___l_p_c11xx_8c_aa3cd3e43291e81e795d642b79b6088e6}
+System Clock Frequency (Core Clock) 
+
+Definition at line 317 of file system\+\_\+\+L\+P\+C11xx.\+c.
+

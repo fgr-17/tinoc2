@@ -1,0 +1,603 @@
+\hypertarget{_int_queue_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/\+Int\+Queue.c File Reference}
+\label{_int_queue_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/\+Int\+Queue.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/\+Int\+Queue.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Int\+Queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Int\+Queue\+Timer.\+h\char`\"{}}\\*
+Include dependency graph for Int\+Queue.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_int_queue_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_int_queue_8c_a6af3839a7da1a8d849039210b37f349e}{intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{_free_r_t_o_s_config_8h_a9a78f5ac61e6cb172dadf2a51f11db38}{config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 2 )
+\item 
+\#define \hyperlink{_int_queue_8c_a2627ea252ffa05b30990e49b981d3fb5}{intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} )
+\item 
+\#define \hyperlink{_int_queue_8c_a9cc2d5d0cf4267d51442cd29da466d8c}{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}~( 200 )
+\item 
+\#define \hyperlink{_int_queue_8c_afc04f25936cd7b39686938dc9e0706ff}{intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}~( 140 )
+\item 
+\#define \hyperlink{_int_queue_8c_a3c7ded133ee4f077b113e8f4e1911358}{intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN}~( 50 )
+\item 
+\#define \hyperlink{_int_queue_8c_aa51a8f76a81854a21871ddc7923ceb3f}{intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY}~( 1 )
+\item 
+\#define \hyperlink{_int_queue_8c_a7693bb7173910577d01e3f980dbf9ab1}{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 1 )
+\item 
+\#define \hyperlink{_int_queue_8c_a74ffd4110bd446a1cdb13cd9eee40e42}{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 2 )
+\item 
+\#define \hyperlink{_int_queue_8c_aaaf120a7be3f80b7609552a925d7804a}{intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 3 )
+\item 
+\#define \hyperlink{_int_queue_8c_a20af9370beda829d38f4407cad1f6ce9}{intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 4 )
+\item 
+\#define \hyperlink{_int_queue_8c_a77a0c87e8a0937310c6e9e529b151593}{intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 5 )
+\item 
+\#define \hyperlink{_int_queue_8c_adbbd09274a2525eba435ee2b03995f30}{intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 10 )
+\item 
+\#define \hyperlink{_int_queue_8c_aae7b8a8d1fcc6415a731279f47a82ed7}{intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT}~( 5 )
+\item 
+\#define \hyperlink{_int_queue_8c_a85236af1f0d44ac98728308a005fddcd}{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX}()
+\item 
+\#define \hyperlink{_int_queue_8c_aa1f41e1ce37e0a282ac8e75a34863aac}{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX}()
+\item 
+\#define \hyperlink{_int_queue_8c_aca16f9804292a4df41fac1008f5b3a8f}{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX}()
+\item 
+\#define \hyperlink{_int_queue_8c_a5bde778eadfa406ac6c457019e3ab040}{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX}()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{_int_queue_8c_a58d3ad6c5c87ddb30ed7d5ef8c32ee1e}{prv\+Lower\+Priority\+Normally\+Empty\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{_int_queue_8c_aa6aa65a19aa692855fd49a75722059bb}{prv\+Lower\+Priority\+Normally\+Full\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{_int_queue_8c_a1bbae63a5e2f8182b782a1f4f6a0c3d7}{prv\+Higher\+Priority\+Normally\+Empty\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{_int_queue_8c_a2a76b9ba119f55edcec9ed8208487572}{prv1st\+Higher\+Priority\+Normally\+Full\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{_int_queue_8c_aaad57f74ca166c10dfd26c45c2389d84}{prv2nd\+Higher\+Priority\+Normally\+Full\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{_int_queue_8c_a83ab696dde926ff0a5a701ed6a56005b}{prv\+Record\+Value\+\_\+\+Normally\+Empty} (\hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ux\+Value, \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ux\+Source)
+\item 
+static void \hyperlink{_int_queue_8c_ae0708efd04b9f02c15a2bbb94264adab}{prv\+Record\+Value\+\_\+\+Normally\+Full} (\hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ux\+Value, \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ux\+Source)
+\item 
+static void \hyperlink{_int_queue_8c_a05f375e6ea737ab45eee158ccb1a9c1d}{prv\+Queue\+Access\+Log\+Error} (\hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ux\+Line)
+\item 
+void \hyperlink{_int_queue_8c_a84be47a1ad79670ba1df976f3359c2f9}{v\+Start\+Interrupt\+Queue\+Tasks} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a8d36998e4845da81d1a43d6c42c00527}{x\+First\+Timer\+Handler} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a3b5271af0625fcc70fa0ab05b3aa4ab7}{x\+Second\+Timer\+Handler} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_af5e2032677b21989bedf79921e3379d1}{x\+Are\+Int\+Queue\+Tasks\+Still\+Running} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}{x\+Normally\+Empty\+Queue}
+\item 
+static \hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}{x\+Normally\+Full\+Queue}
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a3d5464d4ff74cb163bebd3ca5ce58d1a}{ux\+High\+Priority\+Loops1} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_aaa5d0777a5cb300bc417a185172c726f}{ux\+High\+Priority\+Loops2} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_af07501eaa5f89f05698aee315c476d31}{ux\+Low\+Priority\+Loops1} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_aac89477c692b8b0aef1fab32a27df315}{ux\+Low\+Priority\+Loops2} = 0
+\item 
+static \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a98f15414dddf7bd58ba8362549c93ff7}{x\+Error\+Status} = \hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pd\+P\+A\+SS}
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a91d0ad6354654bc34a9a284f993c0809}{x\+Error\+Line} = ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 0
+\item 
+static \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_a1cce25cbf1aa2dc337322e5d328306e0}{x\+Was\+Suspended} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{ux\+Value\+For\+Normally\+Empty\+Queue} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{ux\+Value\+For\+Normally\+Full\+Queue} = 0
+\item 
+\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{_int_queue_8c_abd4744cd64354335703d4b88fe475cce}{x\+High\+Priority\+Normally\+Empty\+Task1}
+\item 
+\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{_int_queue_8c_a96b7e0f1160b5ba6e9ea2b6c58cc501d}{x\+High\+Priority\+Normally\+Empty\+Task2}
+\item 
+\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{_int_queue_8c_a35639674bbc284faa76dd772811451e0}{x\+High\+Priority\+Normally\+Full\+Task1}
+\item 
+\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{_int_queue_8c_aa93f6fd7f6b23cee3afca18aa5811876}{x\+High\+Priority\+Normally\+Full\+Task2}
+\item 
+static uint8\+\_\+t \hyperlink{_int_queue_8c_a77e41883280e04c0c2af8c3724abc8a9}{uc\+Normally\+Empty\+Received\+Values} \mbox{[}\hyperlink{_int_queue_8c_a9cc2d5d0cf4267d51442cd29da466d8c}{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}\mbox{]} = \{ 0 \}
+\item 
+static uint8\+\_\+t \hyperlink{_int_queue_8c_ae3074e58bb7818a07790c6f665236f09}{uc\+Normally\+Full\+Received\+Values} \mbox{[}\hyperlink{_int_queue_8c_a9cc2d5d0cf4267d51442cd29da466d8c}{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}\mbox{]} = \{ 0 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}
+\index{intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}{intqFIRST_INTERRUPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+F\+I\+R\+S\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT~( ( {\bf U\+Base\+Type\+\_\+t} ) 4 )}\hypertarget{_int_queue_8c_a20af9370beda829d38f4407cad1f6ce9}{}\label{_int_queue_8c_a20af9370beda829d38f4407cad1f6ce9}
+
+
+Definition at line 129 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1@{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1}}
+\index{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1@{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1}{intqHIGH_PRIORITY_TASK1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K1~( ( {\bf U\+Base\+Type\+\_\+t} ) 1 )}\hypertarget{_int_queue_8c_a7693bb7173910577d01e3f980dbf9ab1}{}\label{_int_queue_8c_a7693bb7173910577d01e3f980dbf9ab1}
+
+
+Definition at line 126 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2@{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2}}
+\index{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2@{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2}{intqHIGH_PRIORITY_TASK2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+S\+K2~( ( {\bf U\+Base\+Type\+\_\+t} ) 2 )}\hypertarget{_int_queue_8c_a74ffd4110bd446a1cdb13cd9eee40e42}{}\label{_int_queue_8c_a74ffd4110bd446a1cdb13cd9eee40e42}
+
+
+Definition at line 127 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{intqHIGHER_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+H\+I\+G\+H\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 2 )}\hypertarget{_int_queue_8c_a6af3839a7da1a8d849039210b37f349e}{}\label{_int_queue_8c_a6af3839a7da1a8d849039210b37f349e}
+
+
+Definition at line 103 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK@{intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK}}
+\index{intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK@{intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK}{intqLOW_PRIORITY_TASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+T\+A\+SK~( ( {\bf U\+Base\+Type\+\_\+t} ) 3 )}\hypertarget{_int_queue_8c_aaaf120a7be3f80b7609552a925d7804a}{}\label{_int_queue_8c_aaaf120a7be3f80b7609552a925d7804a}
+
+
+Definition at line 128 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{intqLOWER_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+L\+O\+W\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} )}\hypertarget{_int_queue_8c_a2627ea252ffa05b30990e49b981d3fb5}{}\label{_int_queue_8c_a2627ea252ffa05b30990e49b981d3fb5}
+
+
+Definition at line 105 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT@{intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT}}
+\index{intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT@{intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT}{intqMIN_ACCEPTABLE_TASK_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+M\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+C\+O\+U\+NT~( 5 )}\hypertarget{_int_queue_8c_aae7b8a8d1fcc6415a731279f47a82ed7}{}\label{_int_queue_8c_aae7b8a8d1fcc6415a731279f47a82ed7}
+
+
+Definition at line 135 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG@{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}}
+\index{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG@{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}{intqNUM_VALUES_TO_LOG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG~( 200 )}\hypertarget{_int_queue_8c_a9cc2d5d0cf4267d51442cd29da466d8c}{}\label{_int_queue_8c_a9cc2d5d0cf4267d51442cd29da466d8c}
+
+
+Definition at line 109 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY@{intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY}}
+\index{intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY@{intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY}{intqONE_TICK_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+O\+N\+E\+\_\+\+T\+I\+C\+K\+\_\+\+D\+E\+L\+AY~( 1 )}\hypertarget{_int_queue_8c_aa51a8f76a81854a21871ddc7923ceb3f}{}\label{_int_queue_8c_aa51a8f76a81854a21871ddc7923ceb3f}
+
+
+Definition at line 121 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}}
+\index{intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}{intqQUEUE_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH~( ( {\bf U\+Base\+Type\+\_\+t} ) 10 )}\hypertarget{_int_queue_8c_adbbd09274a2525eba435ee2b03995f30}{}\label{_int_queue_8c_adbbd09274a2525eba435ee2b03995f30}
+
+
+Definition at line 131 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}
+\index{intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}{intqSECOND_INTERRUPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+S\+E\+C\+O\+N\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT~( ( {\bf U\+Base\+Type\+\_\+t} ) 5 )}\hypertarget{_int_queue_8c_a77a0c87e8a0937310c6e9e529b151593}{}\label{_int_queue_8c_a77a0c87e8a0937310c6e9e529b151593}
+
+
+Definition at line 130 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY@{intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}}
+\index{intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY@{intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}{intqSHORT_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY~( 140 )}\hypertarget{_int_queue_8c_afc04f25936cd7b39686938dc9e0706ff}{}\label{_int_queue_8c_afc04f25936cd7b39686938dc9e0706ff}
+
+
+Definition at line 110 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN@{intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN}}
+\index{intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN@{intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN}{intqVALUE_OVERRUN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define intq\+V\+A\+L\+U\+E\+\_\+\+O\+V\+E\+R\+R\+UN~( 50 )}\hypertarget{_int_queue_8c_a3c7ded133ee4f077b113e8f4e1911358}{}\label{_int_queue_8c_a3c7ded133ee4f077b113e8f4e1911358}
+
+
+Definition at line 117 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX}}
+\index{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX}{timerNORMALLY_EMPTY_RX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+RX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_aca16f9804292a4df41fac1008f5b3a8f}{}\label{_int_queue_8c_aca16f9804292a4df41fac1008f5b3a8f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( \hyperlink{queue_8h_acdf528f5c91131ae2f31c669cfd65758}{xQueueReceiveFromISR}( \hyperlink{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}{xNormallyEmptyQueue}, &uxRxedValue, &
+      xHigherPriorityTaskWoken ) != \hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pdPASS} )   \(\backslash\)
+    \{                                                                                                       
+      \hyperlink{_int_queue_8c_a05f375e6ea737ab45eee158ccb1a9c1d}{\(\backslash\)}
+\hyperlink{_int_queue_8c_a05f375e6ea737ab45eee158ccb1a9c1d}{        prvQueueAccessLogError}( \_\_LINE\_\_ );                                                                 
+      \(\backslash\)
+    \}                                                                                                       
+      \(\backslash\)
+    else                                                                                                    
+      \(\backslash\)
+    \{                                                                                                       
+      \hyperlink{_int_queue_8c_a83ab696dde926ff0a5a701ed6a56005b}{\(\backslash\)}
+\hyperlink{_int_queue_8c_a83ab696dde926ff0a5a701ed6a56005b}{        prvRecordValue\_NormallyEmpty}( uxRxedValue, 
+      \hyperlink{_int_queue_8c_a77a0c87e8a0937310c6e9e529b151593}{intqSECOND\_INTERRUPT} );                                 \(\backslash\)
+    \}
+\end{DoxyCode}
+
+
+Definition at line 173 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX}}
+\index{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX}{timerNORMALLY_EMPTY_TX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+TX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_a85236af1f0d44ac98728308a005fddcd}{}\label{_int_queue_8c_a85236af1f0d44ac98728308a005fddcd}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( \hyperlink{queue_8h_a81319b3aa562733957c5a12a088516d3}{xQueueIsQueueFullFromISR}( \hyperlink{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}{xNormallyEmptyQueue} ) != 
+      \hyperlink{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}{pdTRUE} )                                                          \(\backslash\)
+    \{                                                                                                                       
+      \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{\(\backslash\)}
+\hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{    UBaseType\_t} uxSavedInterruptStatus;                                                                                     
+      \(\backslash\)
+        uxSavedInterruptStatus = \hyperlink{_free_r_t_o_s_8h_a31b4260dbc1823ba80b578f86eb15a98}{portSET\_INTERRUPT\_MASK\_FROM\_ISR}();                                                          
+      \(\backslash\)
+        \{                                                                                                                   
+      \hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{\(\backslash\)}
+\hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{            uxValueForNormallyEmptyQueue}++;                                                                                  
+      \(\backslash\)
+            if( \hyperlink{queue_8h_a21d5919ed26c21d121df4a4debeb643c}{xQueueSendFromISR}( \hyperlink{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}{xNormallyEmptyQueue}, ( \textcolor{keywordtype}{void} * ) &
+      \hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{uxValueForNormallyEmptyQueue}, &xHigherPriorityTaskWoken ) != 
+      \hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pdPASS} ) \(\backslash\)
+            \{                                                                                                               
+      \hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{\(\backslash\)}
+\hyperlink{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{                uxValueForNormallyEmptyQueue}--;                                                                             
+      \(\backslash\)
+            \}                                                                                                               
+      \(\backslash\)
+        \}                                                                                                                   
+      \hyperlink{_free_r_t_o_s_8h_a2661e2c5a4e4afe5bef2ebe9872e28b3}{\(\backslash\)}
+\hyperlink{_free_r_t_o_s_8h_a2661e2c5a4e4afe5bef2ebe9872e28b3}{        portCLEAR\_INTERRUPT\_MASK\_FROM\_ISR}( uxSavedInterruptStatus );                                                     
+      \(\backslash\)
+    \}                                                                                                                       
+      \(\backslash\)
+\end{DoxyCode}
+
+
+Definition at line 139 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX}}
+\index{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX}{timerNORMALLY_FULL_RX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+RX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_a5bde778eadfa406ac6c457019e3ab040}{}\label{_int_queue_8c_a5bde778eadfa406ac6c457019e3ab040}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( \hyperlink{queue_8h_acdf528f5c91131ae2f31c669cfd65758}{xQueueReceiveFromISR}( \hyperlink{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}{xNormallyFullQueue}, &uxRxedValue, &
+      xHigherPriorityTaskWoken ) == \hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pdPASS} )     \(\backslash\)
+    \{                                                                                                       
+      \hyperlink{_int_queue_8c_ae0708efd04b9f02c15a2bbb94264adab}{\(\backslash\)}
+\hyperlink{_int_queue_8c_ae0708efd04b9f02c15a2bbb94264adab}{        prvRecordValue\_NormallyFull}( uxRxedValue, 
+      \hyperlink{_int_queue_8c_a77a0c87e8a0937310c6e9e529b151593}{intqSECOND\_INTERRUPT} );                                 \(\backslash\)
+    \}                                                                                                       
+      \(\backslash\)
+\end{DoxyCode}
+
+
+Definition at line 185 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX}}
+\index{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX@{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX}{timerNORMALLY_FULL_TX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define timer\+N\+O\+R\+M\+A\+L\+L\+Y\+\_\+\+F\+U\+L\+L\+\_\+\+TX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_aa1f41e1ce37e0a282ac8e75a34863aac}{}\label{_int_queue_8c_aa1f41e1ce37e0a282ac8e75a34863aac}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( \hyperlink{queue_8h_a81319b3aa562733957c5a12a088516d3}{xQueueIsQueueFullFromISR}( \hyperlink{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}{xNormallyFullQueue} ) != 
+      \hyperlink{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}{pdTRUE} )                                                          \(\backslash\)
+    \{                                                                                                                       
+      \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{\(\backslash\)}
+\hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{    UBaseType\_t} uxSavedInterruptStatus;                                                                                     
+      \(\backslash\)
+        uxSavedInterruptStatus = \hyperlink{_free_r_t_o_s_8h_a31b4260dbc1823ba80b578f86eb15a98}{portSET\_INTERRUPT\_MASK\_FROM\_ISR}();                                                          
+      \(\backslash\)
+        \{                                                                                                                   
+      \hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{\(\backslash\)}
+\hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{            uxValueForNormallyFullQueue}++;                                                                                    
+      \(\backslash\)
+            if( \hyperlink{queue_8h_a21d5919ed26c21d121df4a4debeb643c}{xQueueSendFromISR}( \hyperlink{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}{xNormallyFullQueue}, ( \textcolor{keywordtype}{void} * ) &
+      \hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{uxValueForNormallyFullQueue}, &xHigherPriorityTaskWoken ) != 
+      \hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pdPASS} ) \(\backslash\)
+            \{                                                                                                               
+      \hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{\(\backslash\)}
+\hyperlink{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{                uxValueForNormallyFullQueue}--;                                                                               
+      \(\backslash\)
+            \}                                                                                                               
+      \(\backslash\)
+        \}                                                                                                                   
+      \hyperlink{_free_r_t_o_s_8h_a2661e2c5a4e4afe5bef2ebe9872e28b3}{\(\backslash\)}
+\hyperlink{_free_r_t_o_s_8h_a2661e2c5a4e4afe5bef2ebe9872e28b3}{        portCLEAR\_INTERRUPT\_MASK\_FROM\_ISR}( uxSavedInterruptStatus );                                                     
+      \(\backslash\)
+    \}                                                                                                                       
+      \(\backslash\)
+\end{DoxyCode}
+
+
+Definition at line 156 of file Int\+Queue.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv1st\+Higher\+Priority\+Normally\+Full\+Task@{prv1st\+Higher\+Priority\+Normally\+Full\+Task}}
+\index{prv1st\+Higher\+Priority\+Normally\+Full\+Task@{prv1st\+Higher\+Priority\+Normally\+Full\+Task}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv1st\+Higher\+Priority\+Normally\+Full\+Task(void $\ast$pv\+Parameters)}{prv1stHigherPriorityNormallyFullTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv1st\+Higher\+Priority\+Normally\+Full\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a2a76b9ba119f55edcec9ed8208487572}{}\label{_int_queue_8c_a2a76b9ba119f55edcec9ed8208487572}
+
+
+Definition at line 478 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv2nd\+Higher\+Priority\+Normally\+Full\+Task@{prv2nd\+Higher\+Priority\+Normally\+Full\+Task}}
+\index{prv2nd\+Higher\+Priority\+Normally\+Full\+Task@{prv2nd\+Higher\+Priority\+Normally\+Full\+Task}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv2nd\+Higher\+Priority\+Normally\+Full\+Task(void $\ast$pv\+Parameters)}{prv2ndHigherPriorityNormallyFullTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv2nd\+Higher\+Priority\+Normally\+Full\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_aaad57f74ca166c10dfd26c45c2389d84}{}\label{_int_queue_8c_aaad57f74ca166c10dfd26c45c2389d84}
+
+
+Definition at line 581 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Higher\+Priority\+Normally\+Empty\+Task@{prv\+Higher\+Priority\+Normally\+Empty\+Task}}
+\index{prv\+Higher\+Priority\+Normally\+Empty\+Task@{prv\+Higher\+Priority\+Normally\+Empty\+Task}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Higher\+Priority\+Normally\+Empty\+Task(void $\ast$pv\+Parameters)}{prvHigherPriorityNormallyEmptyTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Higher\+Priority\+Normally\+Empty\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a1bbae63a5e2f8182b782a1f4f6a0c3d7}{}\label{_int_queue_8c_a1bbae63a5e2f8182b782a1f4f6a0c3d7}
+
+
+Definition at line 307 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Lower\+Priority\+Normally\+Empty\+Task@{prv\+Lower\+Priority\+Normally\+Empty\+Task}}
+\index{prv\+Lower\+Priority\+Normally\+Empty\+Task@{prv\+Lower\+Priority\+Normally\+Empty\+Task}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Lower\+Priority\+Normally\+Empty\+Task(void $\ast$pv\+Parameters)}{prvLowerPriorityNormallyEmptyTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Lower\+Priority\+Normally\+Empty\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a58d3ad6c5c87ddb30ed7d5ef8c32ee1e}{}\label{_int_queue_8c_a58d3ad6c5c87ddb30ed7d5ef8c32ee1e}
+
+
+Definition at line 430 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Lower\+Priority\+Normally\+Full\+Task@{prv\+Lower\+Priority\+Normally\+Full\+Task}}
+\index{prv\+Lower\+Priority\+Normally\+Full\+Task@{prv\+Lower\+Priority\+Normally\+Full\+Task}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Lower\+Priority\+Normally\+Full\+Task(void $\ast$pv\+Parameters)}{prvLowerPriorityNormallyFullTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Lower\+Priority\+Normally\+Full\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_aa6aa65a19aa692855fd49a75722059bb}{}\label{_int_queue_8c_aa6aa65a19aa692855fd49a75722059bb}
+
+
+Definition at line 627 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Queue\+Access\+Log\+Error@{prv\+Queue\+Access\+Log\+Error}}
+\index{prv\+Queue\+Access\+Log\+Error@{prv\+Queue\+Access\+Log\+Error}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Queue\+Access\+Log\+Error(\+U\+Base\+Type\+\_\+t ux\+Line)}{prvQueueAccessLogError(UBaseType_t uxLine)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Queue\+Access\+Log\+Error (
+\begin{DoxyParamCaption}
+\item[{{\bf U\+Base\+Type\+\_\+t}}]{ux\+Line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a05f375e6ea737ab45eee158ccb1a9c1d}{}\label{_int_queue_8c_a05f375e6ea737ab45eee158ccb1a9c1d}
+
+
+Definition at line 299 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Record\+Value\+\_\+\+Normally\+Empty@{prv\+Record\+Value\+\_\+\+Normally\+Empty}}
+\index{prv\+Record\+Value\+\_\+\+Normally\+Empty@{prv\+Record\+Value\+\_\+\+Normally\+Empty}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Record\+Value\+\_\+\+Normally\+Empty(\+U\+Base\+Type\+\_\+t ux\+Value, U\+Base\+Type\+\_\+t ux\+Source)}{prvRecordValue_NormallyEmpty(UBaseType_t uxValue, UBaseType_t uxSource)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Record\+Value\+\_\+\+Normally\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf U\+Base\+Type\+\_\+t}}]{ux\+Value, }
+\item[{{\bf U\+Base\+Type\+\_\+t}}]{ux\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a83ab696dde926ff0a5a701ed6a56005b}{}\label{_int_queue_8c_a83ab696dde926ff0a5a701ed6a56005b}
+
+
+Definition at line 282 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!prv\+Record\+Value\+\_\+\+Normally\+Full@{prv\+Record\+Value\+\_\+\+Normally\+Full}}
+\index{prv\+Record\+Value\+\_\+\+Normally\+Full@{prv\+Record\+Value\+\_\+\+Normally\+Full}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Record\+Value\+\_\+\+Normally\+Full(\+U\+Base\+Type\+\_\+t ux\+Value, U\+Base\+Type\+\_\+t ux\+Source)}{prvRecordValue_NormallyFull(UBaseType_t uxValue, UBaseType_t uxSource)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Record\+Value\+\_\+\+Normally\+Full (
+\begin{DoxyParamCaption}
+\item[{{\bf U\+Base\+Type\+\_\+t}}]{ux\+Value, }
+\item[{{\bf U\+Base\+Type\+\_\+t}}]{ux\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_ae0708efd04b9f02c15a2bbb94264adab}{}\label{_int_queue_8c_ae0708efd04b9f02c15a2bbb94264adab}
+
+
+Definition at line 265 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!v\+Start\+Interrupt\+Queue\+Tasks@{v\+Start\+Interrupt\+Queue\+Tasks}}
+\index{v\+Start\+Interrupt\+Queue\+Tasks@{v\+Start\+Interrupt\+Queue\+Tasks}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{v\+Start\+Interrupt\+Queue\+Tasks(void)}{vStartInterruptQueueTasks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Start\+Interrupt\+Queue\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_a84be47a1ad79670ba1df976f3359c2f9}{}\label{_int_queue_8c_a84be47a1ad79670ba1df976f3359c2f9}
+
+
+Definition at line 239 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Are\+Int\+Queue\+Tasks\+Still\+Running@{x\+Are\+Int\+Queue\+Tasks\+Still\+Running}}
+\index{x\+Are\+Int\+Queue\+Tasks\+Still\+Running@{x\+Are\+Int\+Queue\+Tasks\+Still\+Running}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Are\+Int\+Queue\+Tasks\+Still\+Running(void)}{xAreIntQueueTasksStillRunning(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Are\+Int\+Queue\+Tasks\+Still\+Running (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_af5e2032677b21989bedf79921e3379d1}{}\label{_int_queue_8c_af5e2032677b21989bedf79921e3379d1}
+
+
+Definition at line 728 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+First\+Timer\+Handler@{x\+First\+Timer\+Handler}}
+\index{x\+First\+Timer\+Handler@{x\+First\+Timer\+Handler}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+First\+Timer\+Handler(void)}{xFirstTimerHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+First\+Timer\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_a8d36998e4845da81d1a43d6c42c00527}{}\label{_int_queue_8c_a8d36998e4845da81d1a43d6c42c00527}
+
+
+Definition at line 668 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Second\+Timer\+Handler@{x\+Second\+Timer\+Handler}}
+\index{x\+Second\+Timer\+Handler@{x\+Second\+Timer\+Handler}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Second\+Timer\+Handler(void)}{xSecondTimerHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Second\+Timer\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_8c_a3b5271af0625fcc70fa0ab05b3aa4ab7}{}\label{_int_queue_8c_a3b5271af0625fcc70fa0ab05b3aa4ab7}
+
+
+Definition at line 696 of file Int\+Queue.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!uc\+Normally\+Empty\+Received\+Values@{uc\+Normally\+Empty\+Received\+Values}}
+\index{uc\+Normally\+Empty\+Received\+Values@{uc\+Normally\+Empty\+Received\+Values}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{uc\+Normally\+Empty\+Received\+Values}{ucNormallyEmptyReceivedValues}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t uc\+Normally\+Empty\+Received\+Values\mbox{[}{\bf intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}\mbox{]} = \{ 0 \}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a77e41883280e04c0c2af8c3724abc8a9}{}\label{_int_queue_8c_a77e41883280e04c0c2af8c3724abc8a9}
+
+
+Definition at line 219 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!uc\+Normally\+Full\+Received\+Values@{uc\+Normally\+Full\+Received\+Values}}
+\index{uc\+Normally\+Full\+Received\+Values@{uc\+Normally\+Full\+Received\+Values}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{uc\+Normally\+Full\+Received\+Values}{ucNormallyFullReceivedValues}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t uc\+Normally\+Full\+Received\+Values\mbox{[}{\bf intq\+N\+U\+M\+\_\+\+V\+A\+L\+U\+E\+S\+\_\+\+T\+O\+\_\+\+L\+OG}\mbox{]} = \{ 0 \}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_ae3074e58bb7818a07790c6f665236f09}{}\label{_int_queue_8c_ae3074e58bb7818a07790c6f665236f09}
+
+
+Definition at line 220 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+High\+Priority\+Loops1@{ux\+High\+Priority\+Loops1}}
+\index{ux\+High\+Priority\+Loops1@{ux\+High\+Priority\+Loops1}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+High\+Priority\+Loops1}{uxHighPriorityLoops1}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+High\+Priority\+Loops1 = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a3d5464d4ff74cb163bebd3ca5ce58d1a}{}\label{_int_queue_8c_a3d5464d4ff74cb163bebd3ca5ce58d1a}
+
+
+Definition at line 198 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+High\+Priority\+Loops2@{ux\+High\+Priority\+Loops2}}
+\index{ux\+High\+Priority\+Loops2@{ux\+High\+Priority\+Loops2}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+High\+Priority\+Loops2}{uxHighPriorityLoops2}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+High\+Priority\+Loops2 = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_aaa5d0777a5cb300bc417a185172c726f}{}\label{_int_queue_8c_aaa5d0777a5cb300bc417a185172c726f}
+
+
+Definition at line 198 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+Low\+Priority\+Loops1@{ux\+Low\+Priority\+Loops1}}
+\index{ux\+Low\+Priority\+Loops1@{ux\+Low\+Priority\+Loops1}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Low\+Priority\+Loops1}{uxLowPriorityLoops1}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Low\+Priority\+Loops1 = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_af07501eaa5f89f05698aee315c476d31}{}\label{_int_queue_8c_af07501eaa5f89f05698aee315c476d31}
+
+
+Definition at line 198 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+Low\+Priority\+Loops2@{ux\+Low\+Priority\+Loops2}}
+\index{ux\+Low\+Priority\+Loops2@{ux\+Low\+Priority\+Loops2}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Low\+Priority\+Loops2}{uxLowPriorityLoops2}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Low\+Priority\+Loops2 = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_aac89477c692b8b0aef1fab32a27df315}{}\label{_int_queue_8c_aac89477c692b8b0aef1fab32a27df315}
+
+
+Definition at line 198 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+Value\+For\+Normally\+Empty\+Queue@{ux\+Value\+For\+Normally\+Empty\+Queue}}
+\index{ux\+Value\+For\+Normally\+Empty\+Queue@{ux\+Value\+For\+Normally\+Empty\+Queue}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Value\+For\+Normally\+Empty\+Queue}{uxValueForNormallyEmptyQueue}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Value\+For\+Normally\+Empty\+Queue = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}{}\label{_int_queue_8c_ab7c89b53015fe60897e0e2837542ea0a}
+
+
+Definition at line 210 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!ux\+Value\+For\+Normally\+Full\+Queue@{ux\+Value\+For\+Normally\+Full\+Queue}}
+\index{ux\+Value\+For\+Normally\+Full\+Queue@{ux\+Value\+For\+Normally\+Full\+Queue}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Value\+For\+Normally\+Full\+Queue}{uxValueForNormallyFullQueue}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Value\+For\+Normally\+Full\+Queue = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}{}\label{_int_queue_8c_ac0156b72a9329c33113e2cab0938292e}
+
+
+Definition at line 210 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Error\+Line@{x\+Error\+Line}}
+\index{x\+Error\+Line@{x\+Error\+Line}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Error\+Line}{xErrorLine}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} x\+Error\+Line = ( {\bf U\+Base\+Type\+\_\+t} ) 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a91d0ad6354654bc34a9a284f993c0809}{}\label{_int_queue_8c_a91d0ad6354654bc34a9a284f993c0809}
+
+
+Definition at line 203 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Error\+Status@{x\+Error\+Status}}
+\index{x\+Error\+Status@{x\+Error\+Status}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Error\+Status}{xErrorStatus}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Error\+Status = {\bf pd\+P\+A\+SS}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a98f15414dddf7bd58ba8362549c93ff7}{}\label{_int_queue_8c_a98f15414dddf7bd58ba8362549c93ff7}
+
+
+Definition at line 202 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+High\+Priority\+Normally\+Empty\+Task1@{x\+High\+Priority\+Normally\+Empty\+Task1}}
+\index{x\+High\+Priority\+Normally\+Empty\+Task1@{x\+High\+Priority\+Normally\+Empty\+Task1}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+High\+Priority\+Normally\+Empty\+Task1}{xHighPriorityNormallyEmptyTask1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+High\+Priority\+Normally\+Empty\+Task1}\hypertarget{_int_queue_8c_abd4744cd64354335703d4b88fe475cce}{}\label{_int_queue_8c_abd4744cd64354335703d4b88fe475cce}
+
+
+Definition at line 213 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+High\+Priority\+Normally\+Empty\+Task2@{x\+High\+Priority\+Normally\+Empty\+Task2}}
+\index{x\+High\+Priority\+Normally\+Empty\+Task2@{x\+High\+Priority\+Normally\+Empty\+Task2}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+High\+Priority\+Normally\+Empty\+Task2}{xHighPriorityNormallyEmptyTask2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+High\+Priority\+Normally\+Empty\+Task2}\hypertarget{_int_queue_8c_a96b7e0f1160b5ba6e9ea2b6c58cc501d}{}\label{_int_queue_8c_a96b7e0f1160b5ba6e9ea2b6c58cc501d}
+
+
+Definition at line 213 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+High\+Priority\+Normally\+Full\+Task1@{x\+High\+Priority\+Normally\+Full\+Task1}}
+\index{x\+High\+Priority\+Normally\+Full\+Task1@{x\+High\+Priority\+Normally\+Full\+Task1}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+High\+Priority\+Normally\+Full\+Task1}{xHighPriorityNormallyFullTask1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+High\+Priority\+Normally\+Full\+Task1}\hypertarget{_int_queue_8c_a35639674bbc284faa76dd772811451e0}{}\label{_int_queue_8c_a35639674bbc284faa76dd772811451e0}
+
+
+Definition at line 213 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+High\+Priority\+Normally\+Full\+Task2@{x\+High\+Priority\+Normally\+Full\+Task2}}
+\index{x\+High\+Priority\+Normally\+Full\+Task2@{x\+High\+Priority\+Normally\+Full\+Task2}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+High\+Priority\+Normally\+Full\+Task2}{xHighPriorityNormallyFullTask2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+High\+Priority\+Normally\+Full\+Task2}\hypertarget{_int_queue_8c_aa93f6fd7f6b23cee3afca18aa5811876}{}\label{_int_queue_8c_aa93f6fd7f6b23cee3afca18aa5811876}
+
+
+Definition at line 213 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Normally\+Empty\+Queue@{x\+Normally\+Empty\+Queue}}
+\index{x\+Normally\+Empty\+Queue@{x\+Normally\+Empty\+Queue}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Normally\+Empty\+Queue}{xNormallyEmptyQueue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Queue\+Handle\+\_\+t} x\+Normally\+Empty\+Queue\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}{}\label{_int_queue_8c_a15676b5ef44b3cdd08f44d6a8dd1f1dc}
+
+
+Definition at line 195 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Normally\+Full\+Queue@{x\+Normally\+Full\+Queue}}
+\index{x\+Normally\+Full\+Queue@{x\+Normally\+Full\+Queue}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Normally\+Full\+Queue}{xNormallyFullQueue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Queue\+Handle\+\_\+t} x\+Normally\+Full\+Queue\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}{}\label{_int_queue_8c_a0ebfd9346cfa0cf65759ec5026c97003}
+
+
+Definition at line 195 of file Int\+Queue.\+c.
+
+\index{Int\+Queue.\+c@{Int\+Queue.\+c}!x\+Was\+Suspended@{x\+Was\+Suspended}}
+\index{x\+Was\+Suspended@{x\+Was\+Suspended}!Int\+Queue.\+c@{Int\+Queue.\+c}}
+\subsubsection[{\texorpdfstring{x\+Was\+Suspended}{xWasSuspended}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Was\+Suspended = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{_int_queue_8c_a1cce25cbf1aa2dc337322e5d328306e0}{}\label{_int_queue_8c_a1cce25cbf1aa2dc337322e5d328306e0}
+
+
+Definition at line 206 of file Int\+Queue.\+c.
+

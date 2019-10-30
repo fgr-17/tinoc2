@@ -1,0 +1,277 @@
+\hypertarget{gpio_8h}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/gpio/gpio.h File Reference}
+\label{gpio_8h}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/gpio/gpio.\+h@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/gpio/gpio.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpio_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gpio_8h_af41b34488a518db05b413d3a370f871f}{P\+O\+R\+T0}~0
+\item 
+\#define \hyperlink{gpio_8h_a83b698b796fa8d1625536439f28ea575}{P\+O\+R\+T1}~1
+\item 
+\#define \hyperlink{gpio_8h_acb270e4aec8a0ab123e6c24a5810150b}{P\+O\+R\+T2}~2
+\item 
+\#define \hyperlink{gpio_8h_ad906b7f6a811f1f02b5eb04cbe1bc89b}{P\+O\+R\+T3}~3
+\item 
+\#define \hyperlink{gpio_8h_a718485b7da5da3428aeaa13999868328}{G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA}~0
+\item 
+\#define \hyperlink{gpio_8h_af0b02248c9da7e0d37a5f215125d2c40}{G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA}~1
+\item 
+\#define \hyperlink{gpio_8h_a80dde28b73c4b23792432750d7315cf6}{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE}~0
+\item 
+\#define \hyperlink{gpio_8h_a77cfb813d4266e7e76399b56a4f04af5}{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL}~1
+\item 
+\#define \hyperlink{gpio_8h_a514332d080e218dcb68c0158eaff3c9a}{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO}~0
+\item 
+\#define \hyperlink{gpio_8h_a2c9b1519dbbb588b80b9aaaa844e2068}{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA}~0
+\item 
+\#define \hyperlink{gpio_8h_ac9746ce49e0e7b9e1bd50d2190e7f80d}{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO}~1
+\item 
+\#define \hyperlink{gpio_8h_a66390c69175e06b4b099f6670a18ba86}{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA}~1
+\item 
+\#define \hyperlink{gpio_8h_a25827f27403b49901b49759bdf85e9bc}{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV}~0
+\item 
+\#define \hyperlink{gpio_8h_a2b8eb0b9e55f183eb1afaa80a5bf237e}{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{gpio_8h_abba8cf772801f0270a6fc168849161b8}{G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{gpio_8h_a82d16a95aba432b8eb2464734a1c79a6}{G\+P\+I\+O\+Init} (void)
+\item 
+void \hyperlink{gpio_8h_a376642dd36001cc5eb409f9c83152e60}{G\+P\+I\+O\+Set\+Dir} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t dir)
+\item 
+void \hyperlink{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{G\+P\+I\+O\+Set\+Value} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t bit\+Val)
+\item 
+void \hyperlink{gpio_8h_a3a32c210c15bc18c66b21d1dc954cc0f}{G\+P\+I\+O\+Set\+Interrupt} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t sense, uint32\+\_\+t single, uint32\+\_\+t event)
+\item 
+void \hyperlink{gpio_8h_ac500e8eefbe2b7216d438c08b7f9db0f}{G\+P\+I\+O\+Int\+Enable} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)
+\item 
+void \hyperlink{gpio_8h_a4f7f9fbe0f93649e73771327cfcb17e9}{G\+P\+I\+O\+Int\+Disable} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)
+\item 
+uint32\+\_\+t \hyperlink{gpio_8h_a384e59b5b114d369e639206cc1e87e2f}{G\+P\+I\+O\+Int\+Status} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)
+\item 
+void \hyperlink{gpio_8h_a2e99ceb76757e9ecb2c9a4562839d90e}{G\+P\+I\+O\+Int\+Clear} (uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA@{G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA}}
+\index{G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA@{G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA}{GPIO_ENTRADA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+E\+N\+T\+R\+A\+DA~0}\hypertarget{gpio_8h_a718485b7da5da3428aeaa13999868328}{}\label{gpio_8h_a718485b7da5da3428aeaa13999868328}
+
+
+Definition at line 24 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH@{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH}}
+\index{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH@{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH}{GPIO_IBE_CONTROL_BOTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+O\+TH~1}\hypertarget{gpio_8h_a2b8eb0b9e55f183eb1afaa80a5bf237e}{}\label{gpio_8h_a2b8eb0b9e55f183eb1afaa80a5bf237e}
+
+
+Definition at line 36 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV@{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV}}
+\index{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV@{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV}{GPIO_IBE_CONTROL_IEV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+B\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+I\+EV~0}\hypertarget{gpio_8h_a25827f27403b49901b49759bdf85e9bc}{}\label{gpio_8h_a25827f27403b49901b49759bdf85e9bc}
+
+
+Definition at line 35 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA}}
+\index{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA}{GPIO_IEV_FLANCO_BAJADA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+B\+A\+J\+A\+DA~0}\hypertarget{gpio_8h_a2c9b1519dbbb588b80b9aaaa844e2068}{}\label{gpio_8h_a2c9b1519dbbb588b80b9aaaa844e2068}
+
+
+Definition at line 31 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA}}
+\index{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA}{GPIO_IEV_FLANCO_SUBIDA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+F\+L\+A\+N\+C\+O\+\_\+\+S\+U\+B\+I\+DA~1}\hypertarget{gpio_8h_a66390c69175e06b4b099f6670a18ba86}{}\label{gpio_8h_a66390c69175e06b4b099f6670a18ba86}
+
+
+Definition at line 33 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO}}
+\index{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO}{GPIO_IEV_NIVEL_ALTO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+A\+L\+TO~1}\hypertarget{gpio_8h_ac9746ce49e0e7b9e1bd50d2190e7f80d}{}\label{gpio_8h_ac9746ce49e0e7b9e1bd50d2190e7f80d}
+
+
+Definition at line 32 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO}}
+\index{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO@{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO}{GPIO_IEV_NIVEL_BAJO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+E\+V\+\_\+\+N\+I\+V\+E\+L\+\_\+\+B\+A\+JO~0}\hypertarget{gpio_8h_a514332d080e218dcb68c0158eaff3c9a}{}\label{gpio_8h_a514332d080e218dcb68c0158eaff3c9a}
+
+
+Definition at line 30 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE@{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE}}
+\index{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE@{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE}{GPIO_IS_EDGE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+E\+D\+GE~0}\hypertarget{gpio_8h_a80dde28b73c4b23792432750d7315cf6}{}\label{gpio_8h_a80dde28b73c4b23792432750d7315cf6}
+
+
+Definition at line 27 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL@{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL}}
+\index{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL@{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL}{GPIO_IS_LEVEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+I\+S\+\_\+\+L\+E\+V\+EL~1}\hypertarget{gpio_8h_a77cfb813d4266e7e76399b56a4f04af5}{}\label{gpio_8h_a77cfb813d4266e7e76399b56a4f04af5}
+
+
+Definition at line 28 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA@{G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA}}
+\index{G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA@{G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA}{GPIO_SALIDA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+S\+A\+L\+I\+DA~1}\hypertarget{gpio_8h_af0b02248c9da7e0d37a5f215125d2c40}{}\label{gpio_8h_af0b02248c9da7e0d37a5f215125d2c40}
+
+
+Definition at line 25 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!P\+O\+R\+T0@{P\+O\+R\+T0}}
+\index{P\+O\+R\+T0@{P\+O\+R\+T0}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{P\+O\+R\+T0}{PORT0}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T0~0}\hypertarget{gpio_8h_af41b34488a518db05b413d3a370f871f}{}\label{gpio_8h_af41b34488a518db05b413d3a370f871f}
+
+
+Definition at line 19 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!P\+O\+R\+T1@{P\+O\+R\+T1}}
+\index{P\+O\+R\+T1@{P\+O\+R\+T1}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{P\+O\+R\+T1}{PORT1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T1~1}\hypertarget{gpio_8h_a83b698b796fa8d1625536439f28ea575}{}\label{gpio_8h_a83b698b796fa8d1625536439f28ea575}
+
+
+Definition at line 20 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!P\+O\+R\+T2@{P\+O\+R\+T2}}
+\index{P\+O\+R\+T2@{P\+O\+R\+T2}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{P\+O\+R\+T2}{PORT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T2~2}\hypertarget{gpio_8h_acb270e4aec8a0ab123e6c24a5810150b}{}\label{gpio_8h_acb270e4aec8a0ab123e6c24a5810150b}
+
+
+Definition at line 21 of file gpio.\+h.
+
+\index{gpio.\+h@{gpio.\+h}!P\+O\+R\+T3@{P\+O\+R\+T3}}
+\index{P\+O\+R\+T3@{P\+O\+R\+T3}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{P\+O\+R\+T3}{PORT3}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T3~3}\hypertarget{gpio_8h_ad906b7f6a811f1f02b5eb04cbe1bc89b}{}\label{gpio_8h_ad906b7f6a811f1f02b5eb04cbe1bc89b}
+
+
+Definition at line 22 of file gpio.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler@{G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler}}
+\index{G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler@{G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler(void)}{GPIO_IRQHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_abba8cf772801f0270a6fc168849161b8}{}\label{gpio_8h_abba8cf772801f0270a6fc168849161b8}
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Init@{G\+P\+I\+O\+Init}}
+\index{G\+P\+I\+O\+Init@{G\+P\+I\+O\+Init}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Init(void)}{GPIOInit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a82d16a95aba432b8eb2464734a1c79a6}{}\label{gpio_8h_a82d16a95aba432b8eb2464734a1c79a6}
+Function name\+: G\+P\+I\+O\+Init
+
+Descriptions\+: Initialize G\+P\+IO, install the G\+P\+IO interrupt handler
+
+parameters\+: None Returned value\+: true or false, return false if the V\+IC table is full and G\+P\+IO interrupt handler can be installed. 
+
+Definition at line 142 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Int\+Clear@{G\+P\+I\+O\+Int\+Clear}}
+\index{G\+P\+I\+O\+Int\+Clear@{G\+P\+I\+O\+Int\+Clear}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Int\+Clear(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)}{GPIOIntClear(uint32_t portNum, uint32_t bitPosi)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Int\+Clear (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a2e99ceb76757e9ecb2c9a4562839d90e}{}\label{gpio_8h_a2e99ceb76757e9ecb2c9a4562839d90e}
+
+
+Definition at line 454 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Int\+Disable@{G\+P\+I\+O\+Int\+Disable}}
+\index{G\+P\+I\+O\+Int\+Disable@{G\+P\+I\+O\+Int\+Disable}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Int\+Disable(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)}{GPIOIntDisable(uint32_t portNum, uint32_t bitPosi)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Int\+Disable (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a4f7f9fbe0f93649e73771327cfcb17e9}{}\label{gpio_8h_a4f7f9fbe0f93649e73771327cfcb17e9}
+
+
+Definition at line 386 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Int\+Enable@{G\+P\+I\+O\+Int\+Enable}}
+\index{G\+P\+I\+O\+Int\+Enable@{G\+P\+I\+O\+Int\+Enable}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Int\+Enable(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)}{GPIOIntEnable(uint32_t portNum, uint32_t bitPosi)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Int\+Enable (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_ac500e8eefbe2b7216d438c08b7f9db0f}{}\label{gpio_8h_ac500e8eefbe2b7216d438c08b7f9db0f}
+
+
+Definition at line 355 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Int\+Status@{G\+P\+I\+O\+Int\+Status}}
+\index{G\+P\+I\+O\+Int\+Status@{G\+P\+I\+O\+Int\+Status}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Int\+Status(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi)}{GPIOIntStatus(uint32_t portNum, uint32_t bitPosi)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t G\+P\+I\+O\+Int\+Status (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a384e59b5b114d369e639206cc1e87e2f}{}\label{gpio_8h_a384e59b5b114d369e639206cc1e87e2f}
+
+
+Definition at line 417 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Set\+Dir@{G\+P\+I\+O\+Set\+Dir}}
+\index{G\+P\+I\+O\+Set\+Dir@{G\+P\+I\+O\+Set\+Dir}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Set\+Dir(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t dir)}{GPIOSetDir(uint32_t portNum, uint32_t bitPosi, uint32_t dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Set\+Dir (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi, }
+\item[{uint32\+\_\+t}]{dir}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a376642dd36001cc5eb409f9c83152e60}{}\label{gpio_8h_a376642dd36001cc5eb409f9c83152e60}
+
+
+Definition at line 169 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Set\+Interrupt@{G\+P\+I\+O\+Set\+Interrupt}}
+\index{G\+P\+I\+O\+Set\+Interrupt@{G\+P\+I\+O\+Set\+Interrupt}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Set\+Interrupt(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t sense, uint32\+\_\+t single, uint32\+\_\+t event)}{GPIOSetInterrupt(uint32_t portNum, uint32_t bitPosi, uint32_t sense, uint32_t single, uint32_t event)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Set\+Interrupt (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi, }
+\item[{uint32\+\_\+t}]{sense, }
+\item[{uint32\+\_\+t}]{single, }
+\item[{uint32\+\_\+t}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a3a32c210c15bc18c66b21d1dc954cc0f}{}\label{gpio_8h_a3a32c210c15bc18c66b21d1dc954cc0f}
+
+
+Definition at line 267 of file gpio.\+c.
+
+\index{gpio.\+h@{gpio.\+h}!G\+P\+I\+O\+Set\+Value@{G\+P\+I\+O\+Set\+Value}}
+\index{G\+P\+I\+O\+Set\+Value@{G\+P\+I\+O\+Set\+Value}!gpio.\+h@{gpio.\+h}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Set\+Value(uint32\+\_\+t port\+Num, uint32\+\_\+t bit\+Posi, uint32\+\_\+t bit\+Val)}{GPIOSetValue(uint32_t portNum, uint32_t bitPosi, uint32_t bitVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+Set\+Value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{port\+Num, }
+\item[{uint32\+\_\+t}]{bit\+Posi, }
+\item[{uint32\+\_\+t}]{bit\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{}\label{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}
+
+
+Definition at line 218 of file gpio.\+c.
+

@@ -1,0 +1,121 @@
+\hypertarget{tinoc__lpclink_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/hardware/tinoc\+\_\+lpclink.c File Reference}
+\label{tinoc__lpclink_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/hardware/tinoc\+\_\+lpclink.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/hardware/tinoc\+\_\+lpclink.\+c}}
+
+
+Funciones de inicialización del hardware específicas para la placa T\+I\+N\+O\+C\+\_\+\+L\+P\+C\+L\+I\+NK.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$L\+P\+C11xx.\+h$>$}\\*
+{\ttfamily \#include $<$L\+P\+C1102\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\\*
+{\ttfamily \#include $<$hardware/tinoc\+\_\+lpclink.\+h$>$}\\*
+{\ttfamily \#include $<$flash/flash.\+h$>$}\\*
+Include dependency graph for tinoc\+\_\+lpclink.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tinoc__lpclink_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{tinoc__lpclink_8c_ac40260ebcf1d565a565444e9a840576a}{Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO} (void)
+\begin{DoxyCompactList}\small\item\em Inicialización de pines destinados a G\+P\+IO utilizando las macros de L\+P\+C1102\+\_\+\+I\+O\+C\+O\+N.\+h. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{tinoc__lpclink_8c_a7819866e4dcb697e4fa587b78dd2b3d3}{Activar\+\_\+\+Pin\+\_\+\+I\+SP} (void)
+\item 
+void \hyperlink{tinoc__lpclink_8c_a5502a32bb4e217559d2752e66e294e8e}{Reinvoke\+I\+SP} (void)
+\begin{DoxyCompactList}\small\item\em Envia comando I\+AP para inicializar el modo I\+SP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___i_a_p_ga2874bcf0af02828d8bf944fd740ac986}{I\+AP} \hyperlink{tinoc__lpclink_8c_a89b99c9ba99432ff3cae1433cd81ee80}{iap\+\_\+entry}
+\begin{DoxyCompactList}\small\item\em variable para acceso a flash \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Funciones de inicialización del hardware específicas para la placa T\+I\+N\+O\+C\+\_\+\+L\+P\+C\+L\+I\+NK. 
+
+\begin{DoxyDate}{Date}
+1 de set. de 2017 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Roux, Federico G. (\href{mailto:froux@citedef.gob.ar}{\tt froux@citedef.\+gob.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}!Activar\+\_\+\+Pin\+\_\+\+I\+SP@{Activar\+\_\+\+Pin\+\_\+\+I\+SP}}
+\index{Activar\+\_\+\+Pin\+\_\+\+I\+SP@{Activar\+\_\+\+Pin\+\_\+\+I\+SP}!tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}}
+\subsubsection[{\texorpdfstring{Activar\+\_\+\+Pin\+\_\+\+I\+S\+P(void)}{Activar_Pin_ISP(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Activar\+\_\+\+Pin\+\_\+\+I\+SP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tinoc__lpclink_8c_a7819866e4dcb697e4fa587b78dd2b3d3}{}\label{tinoc__lpclink_8c_a7819866e4dcb697e4fa587b78dd2b3d3}
+
+
+Definition at line 89 of file tinoc\+\_\+lpclink.\+c.
+
+\index{tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}!Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO@{Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO}}
+\index{Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO@{Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO}!tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}}
+\subsubsection[{\texorpdfstring{Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+I\+O(void)}{Inicializar_Pines_GPIO(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Inicializar\+\_\+\+Pines\+\_\+\+G\+P\+IO (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tinoc__lpclink_8c_ac40260ebcf1d565a565444e9a840576a}{}\label{tinoc__lpclink_8c_ac40260ebcf1d565a565444e9a840576a}
+
+
+Inicialización de pines destinados a G\+P\+IO utilizando las macros de L\+P\+C1102\+\_\+\+I\+O\+C\+O\+N.\+h. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK\\
+\hline
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file tinoc\+\_\+lpclink.\+c.
+
+\index{tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}!Reinvoke\+I\+SP@{Reinvoke\+I\+SP}}
+\index{Reinvoke\+I\+SP@{Reinvoke\+I\+SP}!tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}}
+\subsubsection[{\texorpdfstring{Reinvoke\+I\+S\+P(void)}{ReinvokeISP(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Reinvoke\+I\+SP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tinoc__lpclink_8c_a5502a32bb4e217559d2752e66e294e8e}{}\label{tinoc__lpclink_8c_a5502a32bb4e217559d2752e66e294e8e}
+
+
+Envia comando I\+AP para inicializar el modo I\+SP. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em nada} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file tinoc\+\_\+lpclink.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}!iap\+\_\+entry@{iap\+\_\+entry}}
+\index{iap\+\_\+entry@{iap\+\_\+entry}!tinoc\+\_\+lpclink.\+c@{tinoc\+\_\+lpclink.\+c}}
+\subsubsection[{\texorpdfstring{iap\+\_\+entry}{iap_entry}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+AP} iap\+\_\+entry}\hypertarget{tinoc__lpclink_8c_a89b99c9ba99432ff3cae1433cd81ee80}{}\label{tinoc__lpclink_8c_a89b99c9ba99432ff3cae1433cd81ee80}
+
+
+variable para acceso a flash 
+
+
+
+Definition at line 42 of file tinoc\+\_\+lpclink.\+c.
+

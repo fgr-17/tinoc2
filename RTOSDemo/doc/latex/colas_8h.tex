@@ -1,0 +1,217 @@
+\hypertarget{colas_8h}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/colas.h File Reference}
+\label{colas_8h}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/colas.\+h@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/colas.\+h}}
+
+
+Header del archivo \char`\"{}colas.\+c\char`\"{}.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colas_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__cola}{t\+\_\+cola}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{colas_8h_ac71c7234de240e3781fe2467040fb3b0}{B\+U\+F\+F\+E\+R\+\_\+N}~8
+\begin{DoxyCompactList}\small\item\em tamaño del buffer de software \end{DoxyCompactList}\item 
+\#define \hyperlink{colas_8h_a4cd680b1a64ebbb754c0b60b7194d63f}{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA}~-\/1
+\begin{DoxyCompactList}\small\item\em No entran mas datos. \end{DoxyCompactList}\item 
+\#define \hyperlink{colas_8h_afb72df94cb012dfd567c8f6075a7dd5b}{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}~0
+\begin{DoxyCompactList}\small\item\em Se pudo escribir el dato sin problemas. \end{DoxyCompactList}\item 
+\#define \hyperlink{colas_8h_a2b6abf663a7d5e93cf236852935254d1}{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA}~-\/1
+\begin{DoxyCompactList}\small\item\em Quise leer un dato pero no hay nada. \end{DoxyCompactList}\item 
+\#define \hyperlink{colas_8h_a74c98bc8d2e816ce13f37c1ba3834d41}{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}~0
+\begin{DoxyCompactList}\small\item\em Pude leer correctamente un dato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{colas_8h_adcf7b87b5431386461b2c790e786729a}{t\+\_\+estado\+\_\+buffer} \{ \hyperlink{colas_8h_adcf7b87b5431386461b2c790e786729aa683cafd579fc8977c131e54d3a9c912d}{B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO}, 
+\hyperlink{colas_8h_adcf7b87b5431386461b2c790e786729aa440bf29cb50d9457b659160607f7b3eb}{B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO}, 
+\hyperlink{colas_8h_adcf7b87b5431386461b2c790e786729aae2bff6721da582482a2d465fbb64ffd5}{B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO}, 
+\hyperlink{colas_8h_adcf7b87b5431386461b2c790e786729aa892d732ba4891db2052b696570cb8e3e}{B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{colas_8h_ad6fc2caf93c48018175e7a9aa0c39692}{Inicializar\+\_\+\+Cola} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$cola)
+\begin{DoxyCompactList}\small\item\em Inicializo la estructura del tipo cola. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{colas_8h_a0477ec0dbf1a60fa8dbf8feff7ebb4a1}{Escribir\+\_\+\+Cola} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$cola, uint8\+\_\+t dato\+\_\+a\+\_\+escribir)
+\begin{DoxyCompactList}\small\item\em Escribo un dato en el buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{colas_8h_a0b72838b0fb76760dbe42a2a9757d6f1}{Leer\+\_\+\+Cola} (\hyperlink{structt__cola}{t\+\_\+cola} $\ast$cola, uint8\+\_\+t $\ast$dato\+\_\+leido)
+\begin{DoxyCompactList}\small\item\em Leo y extraigo un dato de la cola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header del archivo \char`\"{}colas.\+c\char`\"{}. 
+
+\begin{DoxyAuthor}{Author}
+Roux, Federico G. (\href{mailto:froux@favaloro.edu.ar}{\tt froux@favaloro.\+edu.\+ar}) 
+
+Laboratorio de uP -\/ U\+N\+I\+V\+E\+R\+S\+I\+D\+AD F\+A\+V\+A\+L\+O\+RO 2014 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{colas.\+h@{colas.\+h}!B\+U\+F\+F\+E\+R\+\_\+N@{B\+U\+F\+F\+E\+R\+\_\+N}}
+\index{B\+U\+F\+F\+E\+R\+\_\+N@{B\+U\+F\+F\+E\+R\+\_\+N}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+N}{BUFFER_N}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+F\+F\+E\+R\+\_\+N~8}\hypertarget{colas_8h_ac71c7234de240e3781fe2467040fb3b0}{}\label{colas_8h_ac71c7234de240e3781fe2467040fb3b0}
+
+
+tamaño del buffer de software 
+
+
+
+Definition at line 22 of file colas.\+h.
+
+\index{colas.\+h@{colas.\+h}!E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA@{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA}}
+\index{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA@{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA}{ESCRIBIR_COLA_COLA_LLENA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA~-\/1}\hypertarget{colas_8h_a4cd680b1a64ebbb754c0b60b7194d63f}{}\label{colas_8h_a4cd680b1a64ebbb754c0b60b7194d63f}
+
+
+No entran mas datos. 
+
+
+
+Definition at line 25 of file colas.\+h.
+
+\index{colas.\+h@{colas.\+h}!E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO@{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}}
+\index{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO@{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}{ESCRIBIR_COLA_EXITO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO~0}\hypertarget{colas_8h_afb72df94cb012dfd567c8f6075a7dd5b}{}\label{colas_8h_afb72df94cb012dfd567c8f6075a7dd5b}
+
+
+Se pudo escribir el dato sin problemas. 
+
+
+
+Definition at line 27 of file colas.\+h.
+
+\index{colas.\+h@{colas.\+h}!L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA@{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA}}
+\index{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA@{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA}{LEER_COLA_COLA_VACIA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+V\+A\+C\+IA~-\/1}\hypertarget{colas_8h_a2b6abf663a7d5e93cf236852935254d1}{}\label{colas_8h_a2b6abf663a7d5e93cf236852935254d1}
+
+
+Quise leer un dato pero no hay nada. 
+
+
+
+Definition at line 29 of file colas.\+h.
+
+\index{colas.\+h@{colas.\+h}!L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO@{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}}
+\index{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO@{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO}{LEER_COLA_EXITO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+E\+R\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO~0}\hypertarget{colas_8h_a74c98bc8d2e816ce13f37c1ba3834d41}{}\label{colas_8h_a74c98bc8d2e816ce13f37c1ba3834d41}
+
+
+Pude leer correctamente un dato. 
+
+
+
+Definition at line 31 of file colas.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{colas.\+h@{colas.\+h}!t\+\_\+estado\+\_\+buffer@{t\+\_\+estado\+\_\+buffer}}
+\index{t\+\_\+estado\+\_\+buffer@{t\+\_\+estado\+\_\+buffer}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+estado\+\_\+buffer}{t_estado_buffer}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\+\_\+estado\+\_\+buffer}}\hypertarget{colas_8h_adcf7b87b5431386461b2c790e786729a}{}\label{colas_8h_adcf7b87b5431386461b2c790e786729a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO@{B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO}!colas.\+h@{colas.\+h}}\index{colas.\+h@{colas.\+h}!B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO@{B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO}}\item[{\em 
+B\+U\+F\+F\+E\+R\+\_\+\+L\+L\+E\+NO\hypertarget{colas_8h_adcf7b87b5431386461b2c790e786729aa683cafd579fc8977c131e54d3a9c912d}{}\label{colas_8h_adcf7b87b5431386461b2c790e786729aa683cafd579fc8977c131e54d3a9c912d}
+}]\index{B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO@{B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO}!colas.\+h@{colas.\+h}}\index{colas.\+h@{colas.\+h}!B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO@{B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO}}\item[{\em 
+B\+U\+F\+F\+E\+R\+\_\+\+C\+A\+R\+G\+A\+N\+DO\hypertarget{colas_8h_adcf7b87b5431386461b2c790e786729aa440bf29cb50d9457b659160607f7b3eb}{}\label{colas_8h_adcf7b87b5431386461b2c790e786729aa440bf29cb50d9457b659160607f7b3eb}
+}]\index{B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO@{B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO}!colas.\+h@{colas.\+h}}\index{colas.\+h@{colas.\+h}!B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO@{B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO}}\item[{\em 
+B\+U\+F\+F\+E\+R\+\_\+\+V\+A\+C\+IO\hypertarget{colas_8h_adcf7b87b5431386461b2c790e786729aae2bff6721da582482a2d465fbb64ffd5}{}\label{colas_8h_adcf7b87b5431386461b2c790e786729aae2bff6721da582482a2d465fbb64ffd5}
+}]\index{B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT}!colas.\+h@{colas.\+h}}\index{colas.\+h@{colas.\+h}!B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT}}\item[{\em 
+B\+U\+F\+F\+E\+R\+\_\+\+T\+I\+M\+E\+O\+UT\hypertarget{colas_8h_adcf7b87b5431386461b2c790e786729aa892d732ba4891db2052b696570cb8e3e}{}\label{colas_8h_adcf7b87b5431386461b2c790e786729aa892d732ba4891db2052b696570cb8e3e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 38 of file colas.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{colas.\+h@{colas.\+h}!Escribir\+\_\+\+Cola@{Escribir\+\_\+\+Cola}}
+\index{Escribir\+\_\+\+Cola@{Escribir\+\_\+\+Cola}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{Escribir\+\_\+\+Cola(t\+\_\+cola $\ast$cola, uint8\+\_\+t dato\+\_\+a\+\_\+escribir)}{Escribir_Cola(t_cola *cola, uint8_t dato_a_escribir)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Escribir\+\_\+\+Cola (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+cola} $\ast$}]{cola, }
+\item[{uint8\+\_\+t}]{dato\+\_\+a\+\_\+escribir}
+\end{DoxyParamCaption}
+)}\hypertarget{colas_8h_a0477ec0dbf1a60fa8dbf8feff7ebb4a1}{}\label{colas_8h_a0477ec0dbf1a60fa8dbf8feff7ebb4a1}
+
+
+Escribo un dato en el buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t\+\_\+cola$\ast$} & canal Canal a escribir \\
+\hline
+\mbox{\tt in}  & {\em uint8\+\_\+t} & dato\+\_\+a\+\_\+escribir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+D\+A\+T\+O\+\_\+\+C\+O\+L\+A\+\_\+\+E\+X\+I\+TO\+: Escribió el dato en la cola 
+
+E\+S\+C\+R\+I\+B\+I\+R\+\_\+\+D\+A\+T\+O\+\_\+\+C\+O\+L\+A\+\_\+\+C\+O\+L\+A\+\_\+\+L\+L\+E\+NA\+: No entran más datos 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file colas.\+c.
+
+\index{colas.\+h@{colas.\+h}!Inicializar\+\_\+\+Cola@{Inicializar\+\_\+\+Cola}}
+\index{Inicializar\+\_\+\+Cola@{Inicializar\+\_\+\+Cola}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{Inicializar\+\_\+\+Cola(t\+\_\+cola $\ast$cola)}{Inicializar_Cola(t_cola *cola)}}]{\setlength{\rightskip}{0pt plus 5cm}void Inicializar\+\_\+\+Cola (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+cola} $\ast$}]{cola}
+\end{DoxyParamCaption}
+)}\hypertarget{colas_8h_ad6fc2caf93c48018175e7a9aa0c39692}{}\label{colas_8h_ad6fc2caf93c48018175e7a9aa0c39692}
+
+
+Inicializo la estructura del tipo cola. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cola} & estructura a inicializar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 50 of file colas.\+c.
+
+\index{colas.\+h@{colas.\+h}!Leer\+\_\+\+Cola@{Leer\+\_\+\+Cola}}
+\index{Leer\+\_\+\+Cola@{Leer\+\_\+\+Cola}!colas.\+h@{colas.\+h}}
+\subsubsection[{\texorpdfstring{Leer\+\_\+\+Cola(t\+\_\+cola $\ast$cola, uint8\+\_\+t $\ast$dato\+\_\+leido)}{Leer_Cola(t_cola *cola, uint8_t *dato_leido)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Leer\+\_\+\+Cola (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+cola} $\ast$}]{cola, }
+\item[{uint8\+\_\+t $\ast$}]{dato\+\_\+leido}
+\end{DoxyParamCaption}
+)}\hypertarget{colas_8h_a0b72838b0fb76760dbe42a2a9757d6f1}{}\label{colas_8h_a0b72838b0fb76760dbe42a2a9757d6f1}
+
+
+Leo y extraigo un dato de la cola. 
+
+cola \+: Cola a leer  dato\+\_\+leido \+: puntero a la variable donde escribo
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file colas.\+c.
+

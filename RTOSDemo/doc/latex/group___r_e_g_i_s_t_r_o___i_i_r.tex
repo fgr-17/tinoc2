@@ -1,0 +1,52 @@
+\hypertarget{group___r_e_g_i_s_t_r_o___i_i_r}{}\section{Registro I\+IR}
+\label{group___r_e_g_i_s_t_r_o___i_i_r}\index{Registro I\+IR@{Registro I\+IR}}
+
+
+Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 203.  
+
+
+Collaboration diagram for Registro I\+IR\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___r_e_g_i_s_t_r_o___i_i_r}
+\end{center}
+\end{figure}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___i_n_t_i_d}{Bits I\+N\+T\+ID}
+\begin{DoxyCompactList}\small\item\em Interrupt identification.~\newline
+ {\bfseries  U0\+I\+ER\mbox{[}3\+:1\mbox{]} } identifies an interrupt 0 corresponding to the U\+A\+RT Rx F\+I\+FO. All other combinations of U0\+I\+ER\mbox{[}3\+:1\mbox{]} not listed below are reserved (100,101,111). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_i_r_gaceec69c2af58ca0d5bc80828b2a58964}{I\+I\+R\+\_\+\+P\+E\+ND}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Interrupt status. Note that U0\+I\+IR\mbox{[}0\mbox{]} is active low. The pending interrupt can be determined by evaluating U0\+I\+IR\mbox{[}3\+:1\mbox{]}.~\newline
+ 0 At least one interrupt is pending. ~\newline
+ 1 No interrupt is pending. ~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 203. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Registro I\+IR@{Registro I\+IR}!I\+I\+R\+\_\+\+P\+E\+ND@{I\+I\+R\+\_\+\+P\+E\+ND}}
+\index{I\+I\+R\+\_\+\+P\+E\+ND@{I\+I\+R\+\_\+\+P\+E\+ND}!Registro I\+IR@{Registro I\+IR}}
+\subsubsection[{\texorpdfstring{I\+I\+R\+\_\+\+P\+E\+ND}{IIR_PEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+I\+R\+\_\+\+P\+E\+ND~(0x01 $<$$<$ 0)}\hypertarget{group___r_e_g_i_s_t_r_o___i_i_r_gaceec69c2af58ca0d5bc80828b2a58964}{}\label{group___r_e_g_i_s_t_r_o___i_i_r_gaceec69c2af58ca0d5bc80828b2a58964}
+
+
+Interrupt status. Note that U0\+I\+IR\mbox{[}0\mbox{]} is active low. The pending interrupt can be determined by evaluating U0\+I\+IR\mbox{[}3\+:1\mbox{]}.~\newline
+ 0 At least one interrupt is pending. ~\newline
+ 1 No interrupt is pending. ~\newline
+. 
+
+
+
+Definition at line 107 of file uart.\+h.
+

@@ -1,0 +1,331 @@
+\hypertarget{uart_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.c File Reference}
+\label{uart_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+U\+A\+R\+T/uart.\+c}}
+
+
+U\+A\+RT A\+PI file for N\+XP L\+P\+C11xx Family Microprocessors~\newline
+ Archivo modificado para trabajar como driver dentro del~\newline
+ protocolo de comunicacion P\+C\+P1~\newline
+~\newline
+ {\bfseries History}  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}L\+P\+C11xx.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gpio/gpio.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}U\+A\+R\+T/colas.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\\*
+Include dependency graph for uart.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uart_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uart_8c_a097a608f0367d1d0e4dc4e5c7f2e1729}{\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8c_a2c5666cefb57f0a48b6f8bb25c069230}{U\+A\+R\+T\+Init} (uint32\+\_\+t baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize U\+A\+R\+T0 port, setup pin select, clock, parity, stop bits, F\+I\+FO, etc. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8c_a7686b0c57ef5143e73bbd2c5ab7337ba}{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485} (void)
+\begin{DoxyCompactList}\small\item\em Inicializo la U\+A\+RT para funcionar en R\+S485. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8c_a828208cc190700acef481db1322708d2}{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion} (void)
+\begin{DoxyCompactList}\small\item\em Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. \end{DoxyCompactList}\item 
+int \hyperlink{uart_8c_a0775667e8ffc02f9941f4ce203aeadc7}{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion} (void)
+\begin{DoxyCompactList}\small\item\em Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8c_a9be566fcf448801cd4a610e4da85c58c}{U\+A\+R\+T\+\_\+\+Reset} (int baudrate)
+\begin{DoxyCompactList}\small\item\em Reinicio el periférico. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8c_a0114082a550d6f5055c7bdd6bcbd3e94}{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT interrupt handler. \end{DoxyCompactList}\item 
+void \hyperlink{uart_8c_ae8554b16d7597ea89092ecf98071508e}{U\+A\+R\+T\+Send} (uint8\+\_\+t $\ast$Buffer\+Ptr, uint32\+\_\+t Length)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \hyperlink{uart_8c_a2e8c65870049e6177dee39a15a1fa4ae}{U\+A\+R\+T\+Status}
+\begin{DoxyCompactList}\small\item\em variable temporal para sacar algunos datos de la fifo \end{DoxyCompactList}\item 
+volatile bool \hyperlink{uart_8c_ac24bf5b2973823dc1797338493cbe9dd}{tx\+\_\+libre} = 1
+\begin{DoxyCompactList}\small\item\em flag de señalizacion de buffer de tx libre \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \hyperlink{uart_8c_aed8b6b138039a3639bbc9a0dda8d7b98}{U\+A\+R\+T\+Buffer} \mbox{[}\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer de software la U\+A\+RT \end{DoxyCompactList}\item 
+volatile uint32\+\_\+t \hyperlink{uart_8c_ad123655eceb71e037c3a4d270ce8414a}{U\+A\+R\+T\+Count} = 0
+\begin{DoxyCompactList}\small\item\em indice del contador del buffer \end{DoxyCompactList}\item 
+\hyperlink{structt__cola}{t\+\_\+cola} \hyperlink{uart_8c_ad6ed3b4f35471cc2359d857bbf9df0eb}{cola\+\_\+rx}
+\begin{DoxyCompactList}\small\item\em Cola de recepcion de la U\+A\+RT. \end{DoxyCompactList}\item 
+\hyperlink{structt__cola}{t\+\_\+cola} \hyperlink{uart_8c_ac0be419d5c54969f96853a791f4d5aa8}{cola\+\_\+tx}
+\begin{DoxyCompactList}\small\item\em Cola de transmision de la U\+A\+RT. \end{DoxyCompactList}\item 
+bool \hyperlink{uart_8c_ab57a0719f31264dcf797c3401fe057e8}{timeout\+\_\+pendiente}
+\begin{DoxyCompactList}\small\item\em flag para indicar que ocurrió un timeout para procesar afuera \end{DoxyCompactList}\item 
+volatile \hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{uart_8c_a81227bb53755e91999231c436f28a5d2}{x\+Queue\+Received} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em Handler de la queue utilizada para la recepcion de mensajes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+A\+RT A\+PI file for N\+XP L\+P\+C11xx Family Microprocessors~\newline
+ Archivo modificado para trabajar como driver dentro del~\newline
+ protocolo de comunicacion P\+C\+P1~\newline
+~\newline
+ {\bfseries History} 
+
+\begin{DoxyItemize}
+\item 2008.\+08.\+21 ver 1.\+00 -\/ Preliminary version, first Release \item 2014-\/2015 \+: modificacions para S\+A\+T\+F\+IG \item 02/2018 \+: documentacion\end{DoxyItemize}
+\begin{DoxyAuthor}{Author}
+Copyright(\+C) 2008, N\+XP Semiconductor 
+
+Modificado por Roux, Federico G. (\href{mailto:froux@citedef.gob.ar}{\tt froux@citedef.\+gob.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{uart.\+c@{uart.\+c}!\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE@{\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE}}
+\index{\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE@{\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE}{_USAR_COLAS_INLINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+U\+S\+A\+R\+\_\+\+C\+O\+L\+A\+S\+\_\+\+I\+N\+L\+I\+NE}\hypertarget{uart_8c_a097a608f0367d1d0e4dc4e5c7f2e1729}{}\label{uart_8c_a097a608f0367d1d0e4dc4e5c7f2e1729}
+
+
+Definition at line 27 of file uart.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{uart.\+c@{uart.\+c}!Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485@{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485}}
+\index{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485@{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485(void)}{Inic_UART_RS485(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int Inic\+\_\+\+U\+A\+R\+T\+\_\+\+R\+S485 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a7686b0c57ef5143e73bbd2c5ab7337ba}{}\label{uart_8c_a7686b0c57ef5143e73bbd2c5ab7337ba}
+
+
+Inicializo la U\+A\+RT para funcionar en R\+S485. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 337 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler(void)}{UART_IRQHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a0114082a550d6f5055c7bdd6bcbd3e94}{}\label{uart_8c_a0114082a550d6f5055c7bdd6bcbd3e94}
+
+
+U\+A\+RT interrupt handler. 
+
+===============================================================================
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+\_\+\+Reset@{U\+A\+R\+T\+\_\+\+Reset}}
+\index{U\+A\+R\+T\+\_\+\+Reset@{U\+A\+R\+T\+\_\+\+Reset}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+Reset(int baudrate)}{UART_Reset(int baudrate)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+\_\+\+Reset (
+\begin{DoxyParamCaption}
+\item[{int}]{baudrate}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a9be566fcf448801cd4a610e4da85c58c}{}\label{uart_8c_a9be566fcf448801cd4a610e4da85c58c}
+
+
+Reinicio el periférico. 
+
+===============================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em baudrate} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 179 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion}}
+\index{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion(void)}{UART_RS485_Deshabilitar_Recepcion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Deshabilitar\+\_\+\+Recepcion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a0775667e8ffc02f9941f4ce203aeadc7}{}\label{uart_8c_a0775667e8ffc02f9941f4ce203aeadc7}
+
+
+Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 388 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion}}
+\index{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion@{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion(void)}{UART_RS485_Habilitar_Recepcion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int U\+A\+R\+T\+\_\+\+R\+S485\+\_\+\+Habilitar\+\_\+\+Recepcion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a828208cc190700acef481db1322708d2}{}\label{uart_8c_a828208cc190700acef481db1322708d2}
+
+
+Habilito la recepcion para la norma R\+S485 poniendo en alto el pin definido por R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT y R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN. 
+
+==========================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \subsection*{None $\ast$ }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 371 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+Init@{U\+A\+R\+T\+Init}}
+\index{U\+A\+R\+T\+Init@{U\+A\+R\+T\+Init}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Init(uint32\+\_\+t baudrate)}{UARTInit(uint32_t baudrate)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+Init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{baudrate}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_a2c5666cefb57f0a48b6f8bb25c069230}{}\label{uart_8c_a2c5666cefb57f0a48b6f8bb25c069230}
+
+
+Initialize U\+A\+R\+T0 port, setup pin select, clock, parity, stop bits, F\+I\+FO, etc. 
+
+===============================================================================
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uint32\+\_\+t} & baudrate \subsection*{None }\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 258 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+Send@{U\+A\+R\+T\+Send}}
+\index{U\+A\+R\+T\+Send@{U\+A\+R\+T\+Send}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Send(uint8\+\_\+t $\ast$\+Buffer\+Ptr, uint32\+\_\+t Length)}{UARTSend(uint8_t *BufferPtr, uint32_t Length)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T\+Send (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{Buffer\+Ptr, }
+\item[{uint32\+\_\+t}]{Length}
+\end{DoxyParamCaption}
+)}\hypertarget{uart_8c_ae8554b16d7597ea89092ecf98071508e}{}\label{uart_8c_ae8554b16d7597ea89092ecf98071508e}
+
+
+Definition at line 408 of file uart.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{uart.\+c@{uart.\+c}!cola\+\_\+rx@{cola\+\_\+rx}}
+\index{cola\+\_\+rx@{cola\+\_\+rx}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{cola\+\_\+rx}{cola_rx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+cola} cola\+\_\+rx}\hypertarget{uart_8c_ad6ed3b4f35471cc2359d857bbf9df0eb}{}\label{uart_8c_ad6ed3b4f35471cc2359d857bbf9df0eb}
+
+
+Cola de recepcion de la U\+A\+RT. 
+
+
+
+Definition at line 64 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!cola\+\_\+tx@{cola\+\_\+tx}}
+\index{cola\+\_\+tx@{cola\+\_\+tx}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{cola\+\_\+tx}{cola_tx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+cola} cola\+\_\+tx}\hypertarget{uart_8c_ac0be419d5c54969f96853a791f4d5aa8}{}\label{uart_8c_ac0be419d5c54969f96853a791f4d5aa8}
+
+
+Cola de transmision de la U\+A\+RT. 
+
+
+
+Definition at line 66 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!timeout\+\_\+pendiente@{timeout\+\_\+pendiente}}
+\index{timeout\+\_\+pendiente@{timeout\+\_\+pendiente}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{timeout\+\_\+pendiente}{timeout_pendiente}}]{\setlength{\rightskip}{0pt plus 5cm}bool timeout\+\_\+pendiente}\hypertarget{uart_8c_ab57a0719f31264dcf797c3401fe057e8}{}\label{uart_8c_ab57a0719f31264dcf797c3401fe057e8}
+
+
+flag para indicar que ocurrió un timeout para procesar afuera 
+
+
+
+Definition at line 69 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!tx\+\_\+libre@{tx\+\_\+libre}}
+\index{tx\+\_\+libre@{tx\+\_\+libre}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{tx\+\_\+libre}{tx_libre}}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool tx\+\_\+libre = 1}\hypertarget{uart_8c_ac24bf5b2973823dc1797338493cbe9dd}{}\label{uart_8c_ac24bf5b2973823dc1797338493cbe9dd}
+
+
+flag de señalizacion de buffer de tx libre 
+
+
+
+Definition at line 54 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+Buffer@{U\+A\+R\+T\+Buffer}}
+\index{U\+A\+R\+T\+Buffer@{U\+A\+R\+T\+Buffer}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Buffer}{UARTBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t U\+A\+R\+T\+Buffer\mbox{[}{\bf B\+U\+F\+S\+I\+ZE}\mbox{]}}\hypertarget{uart_8c_aed8b6b138039a3639bbc9a0dda8d7b98}{}\label{uart_8c_aed8b6b138039a3639bbc9a0dda8d7b98}
+
+
+buffer de software la U\+A\+RT 
+
+
+
+Definition at line 56 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+Count@{U\+A\+R\+T\+Count}}
+\index{U\+A\+R\+T\+Count@{U\+A\+R\+T\+Count}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Count}{UARTCount}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t U\+A\+R\+T\+Count = 0}\hypertarget{uart_8c_ad123655eceb71e037c3a4d270ce8414a}{}\label{uart_8c_ad123655eceb71e037c3a4d270ce8414a}
+
+
+indice del contador del buffer 
+
+
+
+Definition at line 58 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!U\+A\+R\+T\+Status@{U\+A\+R\+T\+Status}}
+\index{U\+A\+R\+T\+Status@{U\+A\+R\+T\+Status}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{U\+A\+R\+T\+Status}{UARTStatus}}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t U\+A\+R\+T\+Status}\hypertarget{uart_8c_a2e8c65870049e6177dee39a15a1fa4ae}{}\label{uart_8c_a2e8c65870049e6177dee39a15a1fa4ae}
+
+
+variable temporal para sacar algunos datos de la fifo 
+
+
+
+Definition at line 52 of file uart.\+c.
+
+\index{uart.\+c@{uart.\+c}!x\+Queue\+Received@{x\+Queue\+Received}}
+\index{x\+Queue\+Received@{x\+Queue\+Received}!uart.\+c@{uart.\+c}}
+\subsubsection[{\texorpdfstring{x\+Queue\+Received}{xQueueReceived}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Queue\+Handle\+\_\+t} x\+Queue\+Received = N\+U\+LL}\hypertarget{uart_8c_a81227bb53755e91999231c436f28a5d2}{}\label{uart_8c_a81227bb53755e91999231c436f28a5d2}
+
+
+Handler de la queue utilizada para la recepcion de mensajes. 
+
+
+
+Definition at line 72 of file uart.\+c.
+

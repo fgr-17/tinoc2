@@ -1,0 +1,135 @@
+\hypertarget{main-full_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main-\/full.c File Reference}
+\label{main-full_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main-\/full.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main-\/full.\+c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timers.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}blocktim.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}countsem.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}recmutex.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Int\+Queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}L\+P\+C11xx.\+h\char`\"{}}\\*
+Include dependency graph for main-\/full.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main-full_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main-full_8c_afa612487486b4303046802549315dbb7}{main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}~( 3000\+U\+L / port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+M\+S )
+\item 
+\#define \hyperlink{main-full_8c_a4c0b5798e5d44e143dda2bdb409320cf}{main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}~( 200\+U\+L / port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+M\+S )
+\item 
+\#define \hyperlink{main-full_8c_a3f3e783c201b1a805260b70df9dc6c68}{main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}~( 0\+U\+L )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main-full_8c_ac74fa6a6daa601cc0e19aa005741098f}{v\+Reg\+Test1\+Task} (void $\ast$pv\+Parameters)
+\item 
+void \hyperlink{main-full_8c_a67651971ac887379bee86df2f1ae2d0f}{v\+Reg\+Test2\+Task} (void $\ast$pv\+Parameters)
+\item 
+void \hyperlink{main-full_8c_a3243ee39821b6327d3f48c1eefd36e17}{v\+Main\+Toggle\+L\+ED} (void)
+\item 
+static void \hyperlink{main-full_8c_a70746c26983138c45fef3c7c1454b436}{prv\+Check\+Timer\+Callback} (\hyperlink{timers_8h_aae4bf1dce696ab615d5fd073606fd3cb}{Timer\+Handle\+\_\+t} x\+Timer)
+\item 
+void \hyperlink{main-full_8c_a6fd46262e1bf48ba9cc32c008057a2c1}{main\+\_\+full} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile unsigned long \hyperlink{main-full_8c_a13c57287e1961b7a14e4a5372d0b92cf}{ul\+Reg\+Test1\+Loop\+Counter} = 0\+UL
+\item 
+volatile unsigned long \hyperlink{main-full_8c_a7193501ad9ce12809d8d16225985792d}{ul\+Reg\+Test2\+Loop\+Counter} = 0\+UL
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{main-\/full.\+c@{main-\/full.\+c}!main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}}
+\index{main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}{mainCHECK_TIMER_PERIOD_MS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS~( 3000\+U\+L / port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+M\+S )}\hypertarget{main-full_8c_afa612487486b4303046802549315dbb7}{}\label{main-full_8c_afa612487486b4303046802549315dbb7}
+
+
+Definition at line 136 of file main-\/full.\+c.
+
+\index{main-\/full.\+c@{main-\/full.\+c}!main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}}
+\index{main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}{mainDONT_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK~( 0\+U\+L )}\hypertarget{main-full_8c_a3f3e783c201b1a805260b70df9dc6c68}{}\label{main-full_8c_a3f3e783c201b1a805260b70df9dc6c68}
+
+
+Definition at line 144 of file main-\/full.\+c.
+
+\index{main-\/full.\+c@{main-\/full.\+c}!main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}}
+\index{main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}{mainERROR_CHECK_TIMER_PERIOD_MS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS~( 200\+U\+L / port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+M\+S )}\hypertarget{main-full_8c_a4c0b5798e5d44e143dda2bdb409320cf}{}\label{main-full_8c_a4c0b5798e5d44e143dda2bdb409320cf}
+
+
+Definition at line 141 of file main-\/full.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{main-\/full.\+c@{main-\/full.\+c}!main\+\_\+full@{main\+\_\+full}}
+\index{main\+\_\+full@{main\+\_\+full}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{main\+\_\+full(void)}{main_full(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void main\+\_\+full (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main-full_8c_a6fd46262e1bf48ba9cc32c008057a2c1}{}\label{main-full_8c_a6fd46262e1bf48ba9cc32c008057a2c1}
+
+
+Definition at line 181 of file main-\/full.\+c.
+
+\index{main-\/full.\+c@{main-\/full.\+c}!prv\+Check\+Timer\+Callback@{prv\+Check\+Timer\+Callback}}
+\index{prv\+Check\+Timer\+Callback@{prv\+Check\+Timer\+Callback}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Check\+Timer\+Callback(\+Timer\+Handle\+\_\+t x\+Timer)}{prvCheckTimerCallback(TimerHandle_t xTimer)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Check\+Timer\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Timer\+Handle\+\_\+t}}]{x\+Timer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{main-full_8c_a70746c26983138c45fef3c7c1454b436}{}\label{main-full_8c_a70746c26983138c45fef3c7c1454b436}
+
+
+Definition at line 245 of file main-\/full.\+c.
+
+\index{main-\/full.\+c@{main-\/full.\+c}!v\+Main\+Toggle\+L\+ED@{v\+Main\+Toggle\+L\+ED}}
+\index{v\+Main\+Toggle\+L\+ED@{v\+Main\+Toggle\+L\+ED}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{v\+Main\+Toggle\+L\+E\+D(void)}{vMainToggleLED(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Main\+Toggle\+L\+ED (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main-full_8c_a3243ee39821b6327d3f48c1eefd36e17}{}\label{main-full_8c_a3243ee39821b6327d3f48c1eefd36e17}
+\index{main-\/full.\+c@{main-\/full.\+c}!v\+Reg\+Test1\+Task@{v\+Reg\+Test1\+Task}}
+\index{v\+Reg\+Test1\+Task@{v\+Reg\+Test1\+Task}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{v\+Reg\+Test1\+Task(void $\ast$pv\+Parameters)}{vRegTest1Task(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Reg\+Test1\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{main-full_8c_ac74fa6a6daa601cc0e19aa005741098f}{}\label{main-full_8c_ac74fa6a6daa601cc0e19aa005741098f}
+\index{main-\/full.\+c@{main-\/full.\+c}!v\+Reg\+Test2\+Task@{v\+Reg\+Test2\+Task}}
+\index{v\+Reg\+Test2\+Task@{v\+Reg\+Test2\+Task}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{v\+Reg\+Test2\+Task(void $\ast$pv\+Parameters)}{vRegTest2Task(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Reg\+Test2\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{main-full_8c_a67651971ac887379bee86df2f1ae2d0f}{}\label{main-full_8c_a67651971ac887379bee86df2f1ae2d0f}
+
+
+\subsection{Variable Documentation}
+\index{main-\/full.\+c@{main-\/full.\+c}!ul\+Reg\+Test1\+Loop\+Counter@{ul\+Reg\+Test1\+Loop\+Counter}}
+\index{ul\+Reg\+Test1\+Loop\+Counter@{ul\+Reg\+Test1\+Loop\+Counter}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{ul\+Reg\+Test1\+Loop\+Counter}{ulRegTest1LoopCounter}}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned long ul\+Reg\+Test1\+Loop\+Counter = 0\+UL}\hypertarget{main-full_8c_a13c57287e1961b7a14e4a5372d0b92cf}{}\label{main-full_8c_a13c57287e1961b7a14e4a5372d0b92cf}
+
+
+Definition at line 177 of file main-\/full.\+c.
+
+\index{main-\/full.\+c@{main-\/full.\+c}!ul\+Reg\+Test2\+Loop\+Counter@{ul\+Reg\+Test2\+Loop\+Counter}}
+\index{ul\+Reg\+Test2\+Loop\+Counter@{ul\+Reg\+Test2\+Loop\+Counter}!main-\/full.\+c@{main-\/full.\+c}}
+\subsubsection[{\texorpdfstring{ul\+Reg\+Test2\+Loop\+Counter}{ulRegTest2LoopCounter}}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned long ul\+Reg\+Test2\+Loop\+Counter = 0\+UL}\hypertarget{main-full_8c_a7193501ad9ce12809d8d16225985792d}{}\label{main-full_8c_a7193501ad9ce12809d8d16225985792d}
+
+
+Definition at line 177 of file main-\/full.\+c.
+

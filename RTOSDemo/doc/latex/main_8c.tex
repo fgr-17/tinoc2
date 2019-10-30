@@ -1,0 +1,183 @@
+\hypertarget{main_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main.c File Reference}
+\label{main_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/main.\+c}}
+
+
+Archivo principal del proyecto.  
+
+
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}L\+P\+C11xx.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$U\+A\+R\+T/uart.\+h$>$}\\*
+{\ttfamily \#include $<$U\+A\+R\+T/colas.\+h$>$}\\*
+{\ttfamily \#include $<$leds/leds.\+h$>$}\\*
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a324485e1d56fab248d874300f1756c2e}{main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{main_8c_a464ac1a014942c092b752b720c4ff294}{prv\+Setup\+Hardware} (void)
+\begin{DoxyCompactList}\small\item\em Perform any application specific hardware configuration. The clocks,. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em Programa ppal. \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook()} will only be called if \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook()} will only be called if config\+U\+S\+E\+\_\+\+I\+D\+L\+E\+\_\+\+H\+O\+OK is set \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga306672a74bdd13ce210c05fca3385c59}{v\+Application\+Stack\+Overflow\+Hook} (\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} px\+Task, char $\ast$pc\+Task\+Name)
+\begin{DoxyCompactList}\small\item\em Run time stack overflow checking is performed if. \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga9ca051aa77e17583aa5a85d5de5c199a}{v\+Application\+Tick\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em This function will be called by each tick interrupt if config\+U\+S\+E\+\_\+\+T\+I\+C\+K\+\_\+\+H\+O\+OK is set to 1 in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}. User code can be added here, but the tick hook is called from an interrupt context, so code must not attempt to block, and only the interrupt safe Free\+R\+T\+OS A\+PI functions can be used (those that end in From\+I\+S\+R()). Manually check the last few bytes of the interrupt stack to check they have not been overwritten. Note -\/ the task stacks are automatically checked for overflow if config\+C\+H\+E\+C\+K\+\_\+\+F\+O\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW is set to 1 or 2 in Free\+R\+T\+O\+S\+Conifg.\+h, but the interrupt stack is not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned char \hyperlink{main_8c_ae62a253a3c58d4edb33edb2e9eca8ae1}{uc\+Expected\+Interrupt\+Stack\+Values} \mbox{[}$\,$\mbox{]} = \{ 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo principal del proyecto. 
+
+\begin{DoxyVersion}{Version}
+V0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2016
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+Free\+R\+T\+OS V9.\+0.\+0 -\/ Copyright (C) 2016 Real Time Engineers Ltd.
+\end{DoxyNote}
+\begin{DoxyParagraph}{}
+A\+RM Limited (A\+RM) is supplying this software for use with Cortex-\/M processor based microcontrollers. This file can be freely distributed within development tools that are supporting such A\+RM based processors.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}. NO W\+A\+R\+R\+A\+N\+T\+I\+ES, W\+H\+E\+T\+H\+ER E\+X\+P\+R\+E\+SS, I\+M\+P\+L\+I\+ED OR S\+T\+A\+T\+U\+T\+O\+RY, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+P\+P\+LY TO T\+H\+IS S\+O\+F\+T\+W\+A\+RE. A\+RM S\+H\+A\+LL N\+OT, IN A\+NY C\+I\+R\+C\+U\+M\+S\+T\+A\+N\+C\+ES, BE L\+I\+A\+B\+LE F\+OR S\+P\+E\+C\+I\+AL, I\+N\+C\+I\+D\+E\+N\+T\+AL, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES, F\+OR A\+NY R\+E\+A\+S\+ON W\+H\+A\+T\+S\+O\+E\+V\+ER.
+\end{DoxyParagraph}
+This project provides two demo applications. A simple blinky style project, and a more comprehensive test and demo application. The main\+C\+R\+E\+A\+T\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+B\+L\+I\+N\+K\+Y\+\_\+\+D\+E\+M\+O\+\_\+\+O\+N\+LY setting (defined in this file) is used to select between the two. The simply blinky demo is implemented and described in main\+\_\+blinky.\+c. The more comprehensive test and demo application is implemented and described in main\+\_\+full.\+c.
+
+This file implements the code that is not demo specific, including the hardware setup and Free\+R\+T\+OS hook functions. It also contains a dummy interrupt service routine called Dummy\+\_\+\+I\+R\+Q\+Handler() that is provided as an example of how to use interrupt safe Free\+R\+T\+OS A\+PI functions (those that end in \char`\"{}\+From\+I\+S\+R\char`\"{}). \begin{DoxyVerb}VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+\end{DoxyVerb}
+
+
+This file is part of the Free\+R\+T\+OS distribution.
+
+Free\+R\+T\+OS is free software; you can redistribute it and/or modify it under the terms of the G\+NU General Public License (version 2) as published by the Free Software Foundation $>$$>$$>$$>$ A\+ND M\+O\+D\+I\+F\+I\+ED BY $<$$<$$<$$<$ the Free\+R\+T\+OS exception.
+
+$>$$>$! N\+O\+TE\+: The modification to the G\+PL is included to allow you to !$<$$<$ $>$$>$! distribute a combined work that includes Free\+R\+T\+OS without being !$<$$<$ $>$$>$! obliged to provide the source code for proprietary components !$<$$<$ $>$$>$! outside of the Free\+R\+T\+OS kernel. !$<$$<$
+
+Free\+R\+T\+OS is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. Full license text is available on the following link\+: \href{http://www.freertos.org/a00114.html}{\tt http\+://www.\+freertos.\+org/a00114.\+html}
+
+\begin{DoxyVerb}                                                                     *
+  FreeRTOS provides completely free yet professionally developed,    *
+  robust, strictly quality controlled, supported, and cross          *
+  platform software that is more than just the market leader, it     *
+  is the industry's de facto standard.                               *
+                                                                     *
+  Help yourself get started quickly while simultaneously helping     *
+  to support the FreeRTOS project by purchasing a FreeRTOS           *
+  tutorial book, reference manual, or both:                          *
+  http://www.FreeRTOS.org/Documentation                              *
+                                                                     *
+
+
+http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading
+the FAQ page "My application does not run, what could be wrong?".  Have you
+defined configASSERT()?
+
+http://www.FreeRTOS.org/support - In return for receiving this top quality
+embedded software for free we request you assist our global community by
+participating in the support forum.
+
+http://www.FreeRTOS.org/training - Investing in training allows your team to
+be as productive as possible as early as possible.  Now you can receive
+FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers
+Ltd, and the world's leading authority on the world's leading RTOS.
+
+http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+including FreeRTOS+Trace - an indispensable productivity tool, a DOS
+compatible FAT file system, and our tiny thread aware UDP/IP stack.
+
+http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.
+Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.
+
+http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High
+Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS
+licenses offer ticketed support, indemnification and commercial middleware.
+
+http://www.SafeRTOS.com - High Integrity Systems also provide a safety
+engineered and independently SIL3 certified version for use in safety and
+mission critical applications that require provable dependability.
+
+1 tab == 4 spaces!\end{DoxyVerb}
+
+
+\subsection{Macro Definition Documentation}
+\index{main.\+c@{main.\+c}!main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK@{main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK}}
+\index{main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK@{main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK}{mainCHECK_INTERRUPT_STACK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+C\+H\+E\+C\+K\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+A\+CK~1}\hypertarget{main_8c_a324485e1d56fab248d874300f1756c2e}{}\label{main_8c_a324485e1d56fab248d874300f1756c2e}
+
+
+Definition at line 148 of file main.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Programa ppal. 
+
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main( void )} \begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 173 of file main.\+c.
+
+\index{main.\+c@{main.\+c}!prv\+Setup\+Hardware@{prv\+Setup\+Hardware}}
+\index{prv\+Setup\+Hardware@{prv\+Setup\+Hardware}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Setup\+Hardware(void)}{prvSetupHardware(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Setup\+Hardware (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{main_8c_a464ac1a014942c092b752b720c4ff294}{}\label{main_8c_a464ac1a014942c092b752b720c4ff294}
+
+
+Perform any application specific hardware configuration. The clocks,. 
+
+static void \hyperlink{main_8c_a464ac1a014942c092b752b720c4ff294}{prv\+Setup\+Hardware( void )} memory, etc. are configured before \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} is called. \begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 230 of file main.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{main.\+c@{main.\+c}!uc\+Expected\+Interrupt\+Stack\+Values@{uc\+Expected\+Interrupt\+Stack\+Values}}
+\index{uc\+Expected\+Interrupt\+Stack\+Values@{uc\+Expected\+Interrupt\+Stack\+Values}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{uc\+Expected\+Interrupt\+Stack\+Values}{ucExpectedInterruptStackValues}}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char uc\+Expected\+Interrupt\+Stack\+Values\mbox{[}$\,$\mbox{]} = \{ 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C, 0x\+C\+C \}}\hypertarget{main_8c_ae62a253a3c58d4edb33edb2e9eca8ae1}{}\label{main_8c_ae62a253a3c58d4edb33edb2e9eca8ae1}
+
+
+Definition at line 150 of file main.\+c.
+

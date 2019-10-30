@@ -1,0 +1,219 @@
+\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t}{}\section{Definiciones asociadas al manejo de la U\+A\+RT}
+\label{group___d_e_f_i_n_e_s_u_a_r_t}\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+
+
+Definiciones de constantes de registros y funciones de la U\+A\+RT.  
+
+
+Collaboration diagram for Definiciones asociadas al manejo de la U\+A\+RT\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___d_e_f_i_n_e_s_u_a_r_t}
+\end{center}
+\end{figure}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___r_e_g_i_s_t_r_o___i_e_r}{Registro I\+ER}
+\begin{DoxyCompactList}\small\item\em Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 202. \end{DoxyCompactList}\item 
+\hyperlink{group___r_e_g_i_s_t_r_o___i_i_r}{Registro I\+IR}
+\begin{DoxyCompactList}\small\item\em Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 203. \end{DoxyCompactList}\item 
+\hyperlink{group___r_e_g_i_s_t_r_o___l_s_r}{Registro L\+SR}
+\begin{DoxyCompactList}\small\item\em Definiciones asociadas al registro Line Status Register (U0\+L\+SR)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 210~\newline
+ The U0\+L\+SR is a Read Only register that provides status information on the U\+A\+RT TX and RX blocks.~\newline
+. \end{DoxyCompactList}\item 
+\hyperlink{group___r_s485_m_o_d_e}{R\+S485 mode definition.}
+\begin{DoxyCompactList}\small\item\em The U0\+R\+S485\+C\+T\+RL register controls the configuration of the U\+A\+RT in R\+S-\/485/\+E\+I\+A-\/485 mode. \end{DoxyCompactList}\item 
+\hyperlink{group___l_c_r_b_i_t_s}{B\+I\+T\+S D\+E\+L R\+E\+G\+I\+S\+T\+R\+O L\+C\+R -\/ U\+M10398 pág. 105/106}
+\begin{DoxyCompactList}\small\item\em The U0\+L\+CR determines the format of the data character that is to be transmitted or received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga8557658113e8a497db405dac37ca0c71}{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}~1
+\begin{DoxyCompactList}\small\item\em 0 if TX uses polling, 1 interrupt driven. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}~0x40
+\begin{DoxyCompactList}\small\item\em Tamaño del buffer de almacenamiento intermedio. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}~9600
+\begin{DoxyCompactList}\small\item\em D\+E\+F\+I\+N\+I\+C\+I\+O\+N\+ES P\+OR D\+E\+F\+A\+U\+LT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad4455691936f92fdd6c37566fc58ba1f}{B\+A\+U\+D\+\_\+\+R\+A\+TE}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}
+\begin{DoxyCompactList}\small\item\em Velocidad de transmisión U\+A\+RT. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga15fcd73e7add5fb7be07914dcf174eda}{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}
+\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}{R\+T\+S\+\_\+\+P\+O\+RT}~1
+\begin{DoxyCompactList}\small\item\em P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}{R\+T\+S\+\_\+\+P\+IN}~5
+\begin{DoxyCompactList}\small\item\em P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}{R\+T\+S\+\_\+\+P\+O\+RT}
+\begin{DoxyCompactList}\small\item\em puerto utilizado para manejo de dirección del puerto R\+S485 \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}~\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}{R\+T\+S\+\_\+\+P\+IN}
+\begin{DoxyCompactList}\small\item\em pin utilizado para manejo de dirección del puerto R\+S485 \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga6a815f4456be0ae15fd74ff2172d2d4e}{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN}()~\hyperlink{gpio_8h_a376642dd36001cc5eb409f9c83152e60}{G\+P\+I\+O\+Set\+Dir}( \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1 )
+\begin{DoxyCompactList}\small\item\em Inicializo pin de salida para direccionar R\+S485. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad21e8ee2f3bf01827e41e73325765c8a}{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX}()~\hyperlink{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{G\+P\+I\+O\+Set\+Value}(\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1)
+\begin{DoxyCompactList}\small\item\em Seteo el pin en bajo para habilitar la recepción. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga32978f6a50d8f84d883b95c39df21da2}{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX}()~\hyperlink{gpio_8h_a6e2440fb6429a69f1338b51a4cab2921}{G\+P\+I\+O\+Set\+Value}(\hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 0)
+\begin{DoxyCompactList}\small\item\em Seteo el pin en bajo para habilitar la recepción. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_u_a_r_t_gad3c62ebbc4b69ec10a8e68be7f85fb1e}{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}~( 10 )
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definiciones de constantes de registros y funciones de la U\+A\+RT. 
+
+\begin{DoxyAuthor}{Author}
+Ing. Roux, Federico G. (\href{mailto:froux@citedef.gob.ar}{\tt froux@citedef.\+gob.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR@{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}}
+\index{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR@{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}{_RS485_USAR_RTS_DIR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+R\+S485\+\_\+\+U\+S\+A\+R\+\_\+\+R\+T\+S\+\_\+\+D\+IR}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga15fcd73e7add5fb7be07914dcf174eda}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga15fcd73e7add5fb7be07914dcf174eda}
+
+
+Definition at line 352 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!B\+A\+U\+D\+\_\+\+R\+A\+TE@{B\+A\+U\+D\+\_\+\+R\+A\+TE}}
+\index{B\+A\+U\+D\+\_\+\+R\+A\+TE@{B\+A\+U\+D\+\_\+\+R\+A\+TE}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{B\+A\+U\+D\+\_\+\+R\+A\+TE}{BAUD_RATE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+U\+D\+\_\+\+R\+A\+TE~{\bf B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_gad4455691936f92fdd6c37566fc58ba1f}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_gad4455691936f92fdd6c37566fc58ba1f}
+
+
+Velocidad de transmisión U\+A\+RT. 
+
+
+
+Definition at line 348 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT@{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT@{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT}{BAUD_RATE_DEFAULT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+D\+E\+F\+A\+U\+LT~9600}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga3ba6411298b98763494970e394042bed}
+
+
+D\+E\+F\+I\+N\+I\+C\+I\+O\+N\+ES P\+OR D\+E\+F\+A\+U\+LT. 
+
+
+
+Definition at line 344 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}}
+\index{B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{B\+U\+F\+S\+I\+ZE}{BUFSIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+F\+S\+I\+ZE~0x40}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_gaeca034f67218340ecb2261a22c2f3dcd}
+
+
+Tamaño del buffer de almacenamiento intermedio. 
+
+
+
+Definition at line 244 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}}
+\index{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}{receiveQUEUE_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define receive\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH~( 10 )}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_gad3c62ebbc4b69ec10a8e68be7f85fb1e}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_gad3c62ebbc4b69ec10a8e68be7f85fb1e}
+
+
+Definition at line 380 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN@{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN}}
+\index{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN@{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN}{RS485_DEFINIR_PIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+D\+E\+F\+I\+N\+I\+R\+\_\+\+P\+IN(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf G\+P\+I\+O\+Set\+Dir}( {\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, {\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1 )}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga6a815f4456be0ae15fd74ff2172d2d4e}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga6a815f4456be0ae15fd74ff2172d2d4e}
+
+
+Inicializo pin de salida para direccionar R\+S485. 
+
+
+
+Definition at line 374 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN@{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}}
+\index{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN@{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}{RS485_DIR_PIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN~{\bf R\+T\+S\+\_\+\+P\+IN}}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga0c3dd11efc19d493e0776ae590a342fd}
+
+
+pin utilizado para manejo de dirección del puerto R\+S485 
+
+
+
+Definition at line 371 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT@{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}}
+\index{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT@{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}{RS485_DIR_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT~{\bf R\+T\+S\+\_\+\+P\+O\+RT}}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_gac83cc62ddf027024055e8b2ddbfb14d8}
+
+
+puerto utilizado para manejo de dirección del puerto R\+S485 
+
+
+
+Definition at line 369 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX@{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX}}
+\index{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX@{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX}{RS485_HABILITAR_RX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+RX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf G\+P\+I\+O\+Set\+Value}({\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, {\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 0)}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga32978f6a50d8f84d883b95c39df21da2}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga32978f6a50d8f84d883b95c39df21da2}
+
+
+Seteo el pin en bajo para habilitar la recepción. 
+
+
+
+Definition at line 378 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX@{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX}}
+\index{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX@{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX}{RS485_HABILITAR_TX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S485\+\_\+\+H\+A\+B\+I\+L\+I\+T\+A\+R\+\_\+\+TX(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf G\+P\+I\+O\+Set\+Value}({\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+O\+RT}, {\bf R\+S485\+\_\+\+D\+I\+R\+\_\+\+P\+IN}, 1)}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_gad21e8ee2f3bf01827e41e73325765c8a}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_gad21e8ee2f3bf01827e41e73325765c8a}
+
+
+Seteo el pin en bajo para habilitar la recepción. 
+
+
+
+Definition at line 376 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+T\+S\+\_\+\+P\+IN@{R\+T\+S\+\_\+\+P\+IN}}
+\index{R\+T\+S\+\_\+\+P\+IN@{R\+T\+S\+\_\+\+P\+IN}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+T\+S\+\_\+\+P\+IN}{RTS_PIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+\_\+\+P\+IN~5}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga4a2c9474c826c040eb2f4d36fdf98509}
+
+
+P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. 
+
+
+
+Definition at line 357 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!R\+T\+S\+\_\+\+P\+O\+RT@{R\+T\+S\+\_\+\+P\+O\+RT}}
+\index{R\+T\+S\+\_\+\+P\+O\+RT@{R\+T\+S\+\_\+\+P\+O\+RT}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{R\+T\+S\+\_\+\+P\+O\+RT}{RTS_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+\_\+\+P\+O\+RT~1}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga7d503384123e41cba57ad7b306df19d8}
+
+
+P1.\+5/neg(R\+TS)/\+C\+T32\+B0\+\_\+\+C\+A\+P0 U\+M10398 pág. 79. 
+
+
+
+Definition at line 355 of file uart.\+h.
+
+\index{Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}!T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}
+\index{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}!Definiciones asociadas al manejo de la U\+A\+RT@{Definiciones asociadas al manejo de la U\+A\+RT}}
+\subsubsection[{\texorpdfstring{T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}{TX_INTERRUPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT~1}\hypertarget{group___d_e_f_i_n_e_s_u_a_r_t_ga8557658113e8a497db405dac37ca0c71}{}\label{group___d_e_f_i_n_e_s_u_a_r_t_ga8557658113e8a497db405dac37ca0c71}
+
+
+0 if TX uses polling, 1 interrupt driven. 
+
+
+
+Definition at line 32 of file uart.\+h.
+

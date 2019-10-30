@@ -1,0 +1,21 @@
+<map id="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/FreeRTOS_Source/include/list.h" name="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/FreeRTOS_Source/include/list.h">
+<area shape="rect" id="node2" href="$croutine_8h.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/include/croutine.h" alt="" coords="1027,124,1270,195"/>
+<area shape="rect" id="node3" href="$task_8h.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/include/task.h" alt="" coords="1295,124,1517,195"/>
+<area shape="rect" id="node20" href="$list_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/list.c" alt="" coords="1542,124,1737,195"/>
+<area shape="rect" id="node4" href="$blocktim_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/Common_Demo_Tasks/blocktim.c" alt="" coords="5,250,233,321"/>
+<area shape="rect" id="node5" href="$countsem_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/Common_Demo_Tasks/countsem.c" alt="" coords="257,250,493,321"/>
+<area shape="rect" id="node6" href="$_int_queue_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/Common_Demo_Tasks/IntQueue.c" alt="" coords="518,250,750,321"/>
+<area shape="rect" id="node7" href="$recmutex_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/Common_Demo_Tasks/recmutex.c" alt="" coords="775,250,1008,321"/>
+<area shape="rect" id="node8" href="$timers_8h.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/include/timers.h" alt="" coords="1084,250,1317,321"/>
+<area shape="rect" id="node10" href="$tasks_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/tasks.c" alt="" coords="797,383,991,454"/>
+<area shape="rect" id="node11" href="$timers_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/timers.c" alt="" coords="1258,383,1453,454"/>
+<area shape="rect" id="node12" href="$main-full_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/main&#45;full.c" alt="" coords="1477,383,1671,454"/>
+<area shape="rect" id="node13" href="$port_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/portable\l/GCC/ARM_CM0/port.c" alt="" coords="1443,243,1638,328"/>
+<area shape="rect" id="node14" href="$heap__1_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/portable\l/MemMang/heap_1.c" alt="" coords="1662,243,1857,328"/>
+<area shape="rect" id="node15" href="$queue_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/queue.c" alt="" coords="1881,250,2075,321"/>
+<area shape="rect" id="node16" href="$_int_queue_timer_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/IntQueueTimer.c" alt="" coords="2099,250,2294,321"/>
+<area shape="rect" id="node17" href="$leds_8c.html" title="Funciones de manejo de leds específicas para la aplicacion. " alt="" coords="2318,250,2513,321"/>
+<area shape="rect" id="node18" href="$main-blinky_8c.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/main&#45;blinky.c" alt="" coords="2537,250,2731,321"/>
+<area shape="rect" id="node19" href="$main_8c.html" title="Archivo principal del proyecto. " alt="" coords="2755,257,2993,313"/>
+<area shape="rect" id="node9" href="$event__groups_8h.html" title="/home/telemetria/git\l/workspaces/tinoc2_firmware\l_freertos/RTOSDemo/Source\l/FreeRTOS_Source/include/event\l_groups.h" alt="" coords="1015,376,1234,461"/>
+</map>

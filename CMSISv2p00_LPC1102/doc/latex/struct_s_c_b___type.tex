@@ -1,0 +1,101 @@
+\hypertarget{struct_s_c_b___type}{}\section{S\+C\+B\+\_\+\+Type Struct Reference}
+\label{struct_s_c_b___type}\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+
+
+Structure type to access the System Control Block (S\+CB).  
+
+
+
+
+{\ttfamily \#include $<$core\+\_\+cm0.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3}{\+\_\+\+\_\+I} uint32\+\_\+t \hyperlink{struct_s_c_b___type_afa7a9ee34dfa1da0b60b4525da285032}{C\+P\+U\+ID}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO} uint32\+\_\+t \hyperlink{struct_s_c_b___type_a3e66570ab689d28aebefa7e84e85dc4a}{I\+C\+SR}
+\item 
+uint32\+\_\+t \hyperlink{struct_s_c_b___type_a10960cdc703f661c83a237d9c69db23c}{R\+E\+S\+E\+R\+V\+E\+D0}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO} uint32\+\_\+t \hyperlink{struct_s_c_b___type_a6ed3c9064013343ea9fd0a73a734f29d}{A\+I\+R\+CR}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO} uint32\+\_\+t \hyperlink{struct_s_c_b___type_abfad14e7b4534d73d329819625d77a16}{S\+CR}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO} uint32\+\_\+t \hyperlink{struct_s_c_b___type_a6d273c6b90bad15c91dfbbad0f6e92d8}{C\+CR}
+\item 
+uint32\+\_\+t \hyperlink{struct_s_c_b___type_adddd65958c1c4c0301f62ede0a9bf12e}{R\+E\+S\+E\+R\+V\+E\+D1}
+\item 
+\hyperlink{group___c_m_s_i_s__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO} uint32\+\_\+t \hyperlink{struct_s_c_b___type_a2eeb91c03a8ec3a4c50737bac62d4fc9}{S\+HP} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure type to access the System Control Block (S\+CB). 
+
+Definition at line 259 of file core\+\_\+cm0.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!A\+I\+R\+CR@{A\+I\+R\+CR}}
+\index{A\+I\+R\+CR@{A\+I\+R\+CR}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{A\+I\+R\+CR}{AIRCR}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+\+IO} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+A\+I\+R\+CR}\hypertarget{struct_s_c_b___type_a6ed3c9064013343ea9fd0a73a734f29d}{}\label{struct_s_c_b___type_a6ed3c9064013343ea9fd0a73a734f29d}
+Offset\+: 0x00C (R/W) Application Interrupt / Reset Control Register 
+
+Definition at line 264 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!C\+CR@{C\+CR}}
+\index{C\+CR@{C\+CR}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{C\+CR}{CCR}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+\+IO} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+C\+CR}\hypertarget{struct_s_c_b___type_a6d273c6b90bad15c91dfbbad0f6e92d8}{}\label{struct_s_c_b___type_a6d273c6b90bad15c91dfbbad0f6e92d8}
+Offset\+: 0x014 (R/W) Configuration Control Register 
+
+Definition at line 266 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!C\+P\+U\+ID@{C\+P\+U\+ID}}
+\index{C\+P\+U\+ID@{C\+P\+U\+ID}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{C\+P\+U\+ID}{CPUID}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+I} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+C\+P\+U\+ID}\hypertarget{struct_s_c_b___type_afa7a9ee34dfa1da0b60b4525da285032}{}\label{struct_s_c_b___type_afa7a9ee34dfa1da0b60b4525da285032}
+Offset\+: 0x000 (R/ ) C\+PU ID Base Register 
+
+Definition at line 261 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!I\+C\+SR@{I\+C\+SR}}
+\index{I\+C\+SR@{I\+C\+SR}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{I\+C\+SR}{ICSR}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+\+IO} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+I\+C\+SR}\hypertarget{struct_s_c_b___type_a3e66570ab689d28aebefa7e84e85dc4a}{}\label{struct_s_c_b___type_a3e66570ab689d28aebefa7e84e85dc4a}
+Offset\+: 0x004 (R/W) Interrupt Control State Register 
+
+Definition at line 262 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!R\+E\+S\+E\+R\+V\+E\+D0@{R\+E\+S\+E\+R\+V\+E\+D0}}
+\index{R\+E\+S\+E\+R\+V\+E\+D0@{R\+E\+S\+E\+R\+V\+E\+D0}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{R\+E\+S\+E\+R\+V\+E\+D0}{RESERVED0}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+R\+E\+S\+E\+R\+V\+E\+D0}\hypertarget{struct_s_c_b___type_a10960cdc703f661c83a237d9c69db23c}{}\label{struct_s_c_b___type_a10960cdc703f661c83a237d9c69db23c}
+
+
+Definition at line 263 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!R\+E\+S\+E\+R\+V\+E\+D1@{R\+E\+S\+E\+R\+V\+E\+D1}}
+\index{R\+E\+S\+E\+R\+V\+E\+D1@{R\+E\+S\+E\+R\+V\+E\+D1}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{R\+E\+S\+E\+R\+V\+E\+D1}{RESERVED1}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+R\+E\+S\+E\+R\+V\+E\+D1}\hypertarget{struct_s_c_b___type_adddd65958c1c4c0301f62ede0a9bf12e}{}\label{struct_s_c_b___type_adddd65958c1c4c0301f62ede0a9bf12e}
+
+
+Definition at line 267 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!S\+CR@{S\+CR}}
+\index{S\+CR@{S\+CR}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{S\+CR}{SCR}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+\+IO} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+S\+CR}\hypertarget{struct_s_c_b___type_abfad14e7b4534d73d329819625d77a16}{}\label{struct_s_c_b___type_abfad14e7b4534d73d329819625d77a16}
+Offset\+: 0x010 (R/W) System Control Register 
+
+Definition at line 265 of file core\+\_\+cm0.\+h.
+
+\index{S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}!S\+HP@{S\+HP}}
+\index{S\+HP@{S\+HP}!S\+C\+B\+\_\+\+Type@{S\+C\+B\+\_\+\+Type}}
+\subsubsection[{\texorpdfstring{S\+HP}{SHP}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+\_\+\+IO} uint32\+\_\+t S\+C\+B\+\_\+\+Type\+::\+S\+HP\mbox{[}2\mbox{]}}\hypertarget{struct_s_c_b___type_a2eeb91c03a8ec3a4c50737bac62d4fc9}{}\label{struct_s_c_b___type_a2eeb91c03a8ec3a4c50737bac62d4fc9}
+Offset\+: 0x01C (R/W) System Handlers Priority Registers. \mbox{[}0\mbox{]} is R\+E\+S\+E\+R\+V\+ED 
+
+Definition at line 268 of file core\+\_\+cm0.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/piro8/\+Documentos/\+T\+I\+N\+O\+C2/\+T\+I\+N\+O\+C2\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S/\+C\+M\+S\+I\+Sv2p00\+\_\+\+L\+P\+C1102/inc/\hyperlink{core__cm0_8h}{core\+\_\+cm0.\+h}\end{DoxyCompactItemize}

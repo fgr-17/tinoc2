@@ -1,0 +1,226 @@
+\hypertarget{leds_8h}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.h File Reference}
+\label{leds_8h}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.\+h@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.\+h}}
+
+
+Header del archivo \hyperlink{leds_8c}{leds.\+c}.  
+
+
+{\ttfamily \#include $<$L\+P\+C1102\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\\*
+Include dependency graph for leds.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{leds_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{leds_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_gaa57bd810e922011351ef20f129cc5411}{L\+E\+D1\+\_\+\+I\+O\+C\+ON}~L\+P\+C\+\_\+\+I\+O\+C\+O\+N\+\_\+\+B4
+\begin{DoxyCompactList}\small\item\em Registro I\+O\+C\+ON asociado al L\+E\+D1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_ga1787581366e41db5124ae46f50f6dd3b}{L\+E\+D1\+\_\+\+I\+O\+C\+O\+N\+\_\+\+F\+U\+NC}~L\+P\+C\+\_\+\+I\+O\+C\+O\+N\+\_\+\+B4\+\_\+\+F\+U\+N\+C\+\_\+\+P\+I\+O0\+\_\+11
+\begin{DoxyCompactList}\small\item\em Función asociada al registro I\+O\+C\+ON. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_gae2a3615be3480b85cf17a93fdbfb7b7a}{L\+E\+D1\+\_\+\+D\+I\+R\+\_\+\+B\+IT}~( 11\+U\+L )
+\begin{DoxyCompactList}\small\item\em Bit asociado al L\+E\+D1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_gadac6e35960c534a36409c952d014cb37}{L\+E\+D1\+\_\+\+D\+I\+R\+\_\+\+M\+AS}~( 0x01 $<$$<$ L\+E\+D1\+\_\+\+D\+I\+R\+\_\+\+B\+I\+T )
+\begin{DoxyCompactList}\small\item\em Dirección del bit L\+E\+D1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_ga365ced0f8a8418c3c8fba173644c7c30}{L\+E\+D1\+\_\+\+D\+I\+R\+\_\+\+R\+EG}~L\+P\+C\+\_\+\+G\+P\+I\+O0-\/$>$D\+IR
+\begin{DoxyCompactList}\small\item\em Registro de dirección. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___d_e_f_i_n_e_s_l_e_d_ga767d451fb47c4bbbcfbeff51b3d51a7b}{L\+E\+D1\+\_\+\+M\+A\+S\+\_\+\+R\+EG}~L\+P\+C\+\_\+\+G\+P\+I\+O0-\/$>$M\+A\+S\+K\+E\+D\+\_\+\+A\+C\+C\+E\+SS
+\begin{DoxyCompactList}\small\item\em Registro I\+O\+C\+ON asociado al L\+E\+D1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___p_r_i_o_r_i_d_a_d_t_a_r_e_a_s_gaeb7652a6bef59d6b2b760ed0258a13b3}{P\+R\+I\+O\+R\+I\+D\+A\+D\+\_\+\+T\+A\+R\+E\+A\+\_\+\+D\+E\+L\+AY}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 2 )
+\item 
+\#define \hyperlink{group___p_r_i_o_r_i_d_a_d_t_a_r_e_a_s_gad37dbb83921f102e5d414ee65e79c4fe}{P\+R\+I\+O\+R\+I\+D\+A\+D\+\_\+\+T\+A\+R\+E\+A\+\_\+\+P\+A\+R\+P\+A\+D\+E\+AR}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 1 )
+\item 
+\#define \hyperlink{leds_8h_aabb8d5a8ab4547d6be725bd98daf2d2f}{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~( 0x1111\+U\+L )
+\begin{DoxyCompactList}\small\item\em Values passed to the two tasks just to check the task parameter functionality. \end{DoxyCompactList}\item 
+\#define \hyperlink{leds_8h_a287d15cce89fa6e48c803ee3c0ac8897}{main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}~( 0x22\+U\+L )
+\item 
+\#define \hyperlink{leds_8h_a67fa5b72ea6fb8ae9eef6f50c98136fc}{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS}~( 200 / \hyperlink{portmacro_8h_a554d9322ce7f698a86a22b21234bd8cd}{port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS} )
+\begin{DoxyCompactList}\small\item\em The rate at which data is sent to the queue. The 200ms value is converted to ticks using the port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS constant. \end{DoxyCompactList}\item 
+\#define \hyperlink{leds_8h_a03553411c0f5c7ce298291348aed1489}{main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}~( 1 )
+\begin{DoxyCompactList}\small\item\em The number of items the queue can hold. This is 1 as the receive task will remove items as they are added, meaning the send task should always find the queue empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{leds_8h_a7d021980924fc6f218f3d6968851203a}{Inicializar\+\_\+\+Leds} (void)
+\begin{DoxyCompactList}\small\item\em Inicialización de pines destinados a leds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{leds_8h_aef730f8b25937ddc0ae42d96510bb744}{Parpadear\+\_\+\+Led} (void)
+\begin{DoxyCompactList}\small\item\em Cambio el estado del pin seteado como led. \end{DoxyCompactList}\item 
+void \hyperlink{leds_8h_a513ec54f09ae394a638787c4dbdc09f2}{Tarea\+\_\+\+Delay} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. \end{DoxyCompactList}\item 
+void \hyperlink{leds_8h_ab9e25e93df77ab0cb9296f333d664756}{Tarea\+\_\+\+Parpadear} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{leds_8h_aa78b6121b7586233293fb6cba5e19206}{x\+Queue}
+\begin{DoxyCompactList}\small\item\em The queue used by both tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header del archivo \hyperlink{leds_8c}{leds.\+c}. 
+
+\begin{DoxyDate}{Date}
+Feb 22, 2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Roux, Federico G. (\href{mailto:froux@citedef.gob.ar}{\tt froux@citedef.\+gob.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{leds.\+h@{leds.\+h}!main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}}
+\index{main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}{mainQUEUE_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH~( 1 )}\hypertarget{leds_8h_a03553411c0f5c7ce298291348aed1489}{}\label{leds_8h_a03553411c0f5c7ce298291348aed1489}
+
+
+The number of items the queue can hold. This is 1 as the receive task will remove items as they are added, meaning the send task should always find the queue empty. 
+
+
+
+Definition at line 75 of file leds.\+h.
+
+\index{leds.\+h@{leds.\+h}!main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{mainQUEUE_RECEIVE_PARAMETER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+Q\+U\+E\+U\+E\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~( 0x22\+U\+L )}\hypertarget{leds_8h_a287d15cce89fa6e48c803ee3c0ac8897}{}\label{leds_8h_a287d15cce89fa6e48c803ee3c0ac8897}
+
+
+Definition at line 66 of file leds.\+h.
+
+\index{leds.\+h@{leds.\+h}!main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS@{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS}}
+\index{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS@{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS}{mainQUEUE_SEND_FREQUENCY_MS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+MS~( 200 / {\bf port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS} )}\hypertarget{leds_8h_a67fa5b72ea6fb8ae9eef6f50c98136fc}{}\label{leds_8h_a67fa5b72ea6fb8ae9eef6f50c98136fc}
+
+
+The rate at which data is sent to the queue. The 200ms value is converted to ticks using the port\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS constant. 
+
+
+
+Definition at line 69 of file leds.\+h.
+
+\index{leds.\+h@{leds.\+h}!main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{mainQUEUE_SEND_PARAMETER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define main\+Q\+U\+E\+U\+E\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER~( 0x1111\+U\+L )}\hypertarget{leds_8h_aabb8d5a8ab4547d6be725bd98daf2d2f}{}\label{leds_8h_aabb8d5a8ab4547d6be725bd98daf2d2f}
+
+
+Values passed to the two tasks just to check the task parameter functionality. 
+
+
+
+Definition at line 65 of file leds.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{leds.\+h@{leds.\+h}!Inicializar\+\_\+\+Leds@{Inicializar\+\_\+\+Leds}}
+\index{Inicializar\+\_\+\+Leds@{Inicializar\+\_\+\+Leds}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{Inicializar\+\_\+\+Leds(void)}{Inicializar_Leds(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Inicializar\+\_\+\+Leds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8h_a7d021980924fc6f218f3d6968851203a}{}\label{leds_8h_a7d021980924fc6f218f3d6968851203a}
+
+
+Inicialización de pines destinados a leds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file leds.\+c.
+
+\index{leds.\+h@{leds.\+h}!Parpadear\+\_\+\+Led@{Parpadear\+\_\+\+Led}}
+\index{Parpadear\+\_\+\+Led@{Parpadear\+\_\+\+Led}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{Parpadear\+\_\+\+Led(void)}{Parpadear_Led(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Parpadear\+\_\+\+Led (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8h_aef730f8b25937ddc0ae42d96510bb744}{}\label{leds_8h_aef730f8b25937ddc0ae42d96510bb744}
+
+
+Cambio el estado del pin seteado como led. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file leds.\+c.
+
+\index{leds.\+h@{leds.\+h}!Tarea\+\_\+\+Delay@{Tarea\+\_\+\+Delay}}
+\index{Tarea\+\_\+\+Delay@{Tarea\+\_\+\+Delay}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{Tarea\+\_\+\+Delay(void $\ast$pv\+Parameters)}{Tarea_Delay(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tarea\+\_\+\+Delay (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8h_a513ec54f09ae394a638787c4dbdc09f2}{}\label{leds_8h_a513ec54f09ae394a638787c4dbdc09f2}
+
+
+Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file leds.\+c.
+
+\index{leds.\+h@{leds.\+h}!Tarea\+\_\+\+Parpadear@{Tarea\+\_\+\+Parpadear}}
+\index{Tarea\+\_\+\+Parpadear@{Tarea\+\_\+\+Parpadear}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{Tarea\+\_\+\+Parpadear(void $\ast$pv\+Parameters)}{Tarea_Parpadear(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tarea\+\_\+\+Parpadear (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8h_ab9e25e93df77ab0cb9296f333d664756}{}\label{leds_8h_ab9e25e93df77ab0cb9296f333d664756}
+
+
+Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file leds.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{leds.\+h@{leds.\+h}!x\+Queue@{x\+Queue}}
+\index{x\+Queue@{x\+Queue}!leds.\+h@{leds.\+h}}
+\subsubsection[{\texorpdfstring{x\+Queue}{xQueue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Queue\+Handle\+\_\+t} x\+Queue}\hypertarget{leds_8h_aa78b6121b7586233293fb6cba5e19206}{}\label{leds_8h_aa78b6121b7586233293fb6cba5e19206}
+
+
+The queue used by both tasks. 
+
+
+
+Definition at line 50 of file leds.\+c.
+

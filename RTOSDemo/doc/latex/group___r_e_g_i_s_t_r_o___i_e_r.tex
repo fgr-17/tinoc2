@@ -1,0 +1,89 @@
+\hypertarget{group___r_e_g_i_s_t_r_o___i_e_r}{}\section{Registro I\+ER}
+\label{group___r_e_g_i_s_t_r_o___i_e_r}\index{Registro I\+ER@{Registro I\+ER}}
+
+
+Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 202.  
+
+
+Collaboration diagram for Registro I\+ER\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{group___r_e_g_i_s_t_r_o___i_e_r}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_ga6f8e43123ccd9f9be70e2e4e761fd8bf}{I\+E\+R\+\_\+\+R\+BR}~(0x01 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em R\+BR Interrupt Enable. Enables the Receive Data Available interrupt for U\+A\+RT. It also controls the Character Receive Time-\/out inturrupt. Reset Value \+: 0~\newline
+ 0 \+: Disable the R\+DA interrupt~\newline
+ 1 \+: Enable the R\+DA interrupt~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_ga22682c3d4571d7a79ed0ca2bc88a15a6}{I\+E\+R\+\_\+\+T\+H\+RE}~(0x01 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em T\+H\+RE Interrupt Enable. Enables the T\+H\+RE interrupt for U\+A\+RT. The status of this interrupt can be read from U0\+L\+SR\mbox{[}5\mbox{]}.~\newline
+ 0 Disable the T\+H\+RE interrupt.~\newline
+ 1 Enable the T\+H\+RE interrupt.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___i_e_r_gaec947c63128590c8f615862ee9c2c953}{I\+E\+R\+\_\+\+R\+LS}~(0x01 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em RX Line Interrupt Enable. Enables the U\+A\+RT RX line status interrupts. The status of this interrupt can be read from U0\+L\+SR\mbox{[}4\+:1\mbox{]}.~\newline
+ 0 Disable the RX line status interrupts.~\newline
+ 1 Enable the RX line status interrupts.~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definiciones asociadas al registro Interrupt Enable Register (U0\+I\+ER)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 202. 
+
+U\+A\+RT R\+LS interrupt (U0\+I\+IR\mbox{[}3\+:1\mbox{]} = 011) is the highest priority interrupt and is set whenever any one of four error conditions occur on the U\+A\+RT RX input\+: overrun error (OE), parity error (PE), framing error (FE) and break interrupt (BI). The U\+A\+RT Rx error condition that set the interrupt can be observed via U0\+L\+SR\mbox{[}4\+:1\mbox{]}. The interrupt is cleared upon a U0\+L\+SR read.~\newline
+ U\+A\+RT R\+DA interrupt (U0\+I\+IR\mbox{[}3\+:1\mbox{]} = 010) shares the second level priority with the C\+TI interrupt (U0\+I\+IR\mbox{[}3\+:1\mbox{]} = 110). The R\+DA is activated when the U\+A\+RT Rx F\+I\+FO reaches the trigger level defined in U0\+F\+C\+R7\+:6 and is reset when the U\+A\+RT Rx F\+I\+FO depth falls below the trigger level. When the R\+DA interrupt goes active, the C\+PU can read a block of data defined by the trigger level.~\newline
+ C\+TI interrupt (U0\+I\+IR\mbox{[}3\+:1\mbox{]} = 110) is a second level interrupt and is set when the U\+A\+RT Rx F\+I\+FO contains at least one character and no U\+A\+RT Rx F\+I\+FO activity has occurred in 3.\+5 to 4.\+5 character times. Any U\+A\+RT Rx F\+I\+FO activity (read or write of U\+A\+RT R\+SR) will clear the interrupt. This interrupt is intended to flush the U\+A\+RT R\+BR after a message has been received that is not a multiple of the trigger level size. For example, if a peripheral wished to send a 105 character message and the trigger level was 10 characters, the C\+PU would receive 10 R\+DA interrupts resulting in the transfer of 100 characters and 1 to 5 C\+TI interrupts (depending on the service routine) resulting in the transfer of the remaining 5 characters. ~\newline
+~\newline
+~\newline
+ V\+ER T\+A\+B\+LA DE P\+R\+I\+O\+R\+I\+D\+A\+D\+ES P\+A\+G\+I\+NA 204 U\+M10398 
+
+\subsection{Macro Definition Documentation}
+\index{Registro I\+ER@{Registro I\+ER}!I\+E\+R\+\_\+\+R\+BR@{I\+E\+R\+\_\+\+R\+BR}}
+\index{I\+E\+R\+\_\+\+R\+BR@{I\+E\+R\+\_\+\+R\+BR}!Registro I\+ER@{Registro I\+ER}}
+\subsubsection[{\texorpdfstring{I\+E\+R\+\_\+\+R\+BR}{IER_RBR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+E\+R\+\_\+\+R\+BR~(0x01 $<$$<$ 0)}\hypertarget{group___r_e_g_i_s_t_r_o___i_e_r_ga6f8e43123ccd9f9be70e2e4e761fd8bf}{}\label{group___r_e_g_i_s_t_r_o___i_e_r_ga6f8e43123ccd9f9be70e2e4e761fd8bf}
+
+
+R\+BR Interrupt Enable. Enables the Receive Data Available interrupt for U\+A\+RT. It also controls the Character Receive Time-\/out inturrupt. Reset Value \+: 0~\newline
+ 0 \+: Disable the R\+DA interrupt~\newline
+ 1 \+: Enable the R\+DA interrupt~\newline
+. 
+
+
+
+Definition at line 70 of file uart.\+h.
+
+\index{Registro I\+ER@{Registro I\+ER}!I\+E\+R\+\_\+\+R\+LS@{I\+E\+R\+\_\+\+R\+LS}}
+\index{I\+E\+R\+\_\+\+R\+LS@{I\+E\+R\+\_\+\+R\+LS}!Registro I\+ER@{Registro I\+ER}}
+\subsubsection[{\texorpdfstring{I\+E\+R\+\_\+\+R\+LS}{IER_RLS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+E\+R\+\_\+\+R\+LS~(0x01 $<$$<$ 2)}\hypertarget{group___r_e_g_i_s_t_r_o___i_e_r_gaec947c63128590c8f615862ee9c2c953}{}\label{group___r_e_g_i_s_t_r_o___i_e_r_gaec947c63128590c8f615862ee9c2c953}
+
+
+RX Line Interrupt Enable. Enables the U\+A\+RT RX line status interrupts. The status of this interrupt can be read from U0\+L\+SR\mbox{[}4\+:1\mbox{]}.~\newline
+ 0 Disable the RX line status interrupts.~\newline
+ 1 Enable the RX line status interrupts.~\newline
+. 
+
+
+
+Definition at line 86 of file uart.\+h.
+
+\index{Registro I\+ER@{Registro I\+ER}!I\+E\+R\+\_\+\+T\+H\+RE@{I\+E\+R\+\_\+\+T\+H\+RE}}
+\index{I\+E\+R\+\_\+\+T\+H\+RE@{I\+E\+R\+\_\+\+T\+H\+RE}!Registro I\+ER@{Registro I\+ER}}
+\subsubsection[{\texorpdfstring{I\+E\+R\+\_\+\+T\+H\+RE}{IER_THRE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+E\+R\+\_\+\+T\+H\+RE~(0x01 $<$$<$ 1)}\hypertarget{group___r_e_g_i_s_t_r_o___i_e_r_ga22682c3d4571d7a79ed0ca2bc88a15a6}{}\label{group___r_e_g_i_s_t_r_o___i_e_r_ga22682c3d4571d7a79ed0ca2bc88a15a6}
+
+
+T\+H\+RE Interrupt Enable. Enables the T\+H\+RE interrupt for U\+A\+RT. The status of this interrupt can be read from U0\+L\+SR\mbox{[}5\mbox{]}.~\newline
+ 0 Disable the T\+H\+RE interrupt.~\newline
+ 1 Enable the T\+H\+RE interrupt.~\newline
+. 
+
+
+
+Definition at line 78 of file uart.\+h.
+

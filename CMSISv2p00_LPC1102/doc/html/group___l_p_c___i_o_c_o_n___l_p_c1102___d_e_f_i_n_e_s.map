@@ -1,0 +1,9 @@
+<map id="Defines IOCON LPC1102" name="Defines IOCON LPC1102">
+<area shape="rect" id="node1" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___m_o_d_e.html" title="Modos del registro IOCON comunes a todos los pines. " alt="" coords="259,5,465,32"/>
+<area shape="rect" id="node2" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___s_c_k___l_o_c.html" title="Registro que define en qué pin se asocia la función SCK. " alt="" coords="247,56,477,83"/>
+<area shape="rect" id="node3" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___b_i_t_s.html" title="Bits del registro IOCON LPC1102. " alt="" coords="263,107,461,133"/>
+<area shape="rect" id="node4" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___a_s_o_c_i_a_c_i_o_n_e_s.html" title="Asociacion del nombre del registro en la estructura LPC_IOCON con los nombres del manual de &lt;letra&gt;&lt;n..." alt="" coords="227,157,497,184"/>
+<area shape="rect" id="node5" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___m_a_s_c_a_r_a_s.html" title="Mascaras del registro IOCON LPC1102. " alt="" coords="241,208,483,235"/>
+<area shape="rect" id="node6" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___h_y_s___o_d.html" title="Bits de histéresis y OpenDrain. " alt="" coords="251,259,473,285"/>
+<area shape="rect" id="node7" href="$group___l_p_c___i_o_c_o_n___l_p_c1102___p_i_n_e_s.html" title="Funciones de cada pin asociados a los registros IOCON. " alt="" coords="258,309,466,336"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="Declaraciones de la placa TINOC_LPCLINK" name="Declaraciones de la placa TINOC_LPCLINK">
+<area shape="rect" id="node1" href="$group___p_i_n_a2.html" title="Pin A2" alt="" coords="221,5,282,32"/>
+<area shape="rect" id="node2" href="$group___p_i_n_a3.html" title="Pin A3" alt="" coords="221,56,282,83"/>
+<area shape="rect" id="node3" href="$group___p_i_n_a4.html" title="Pin A4" alt="" coords="221,107,282,133"/>
+<area shape="rect" id="node4" href="$group___p_i_n_b3.html" title="Pin B3" alt="" coords="221,157,282,184"/>
+<area shape="rect" id="node5" href="$group___p_i_n_b4.html" title="Pin B4" alt="" coords="221,208,282,235"/>
+<area shape="rect" id="node6" href="$group___p_i_n_c1.html" title="Pin C1" alt="" coords="220,259,283,285"/>
+<area shape="rect" id="node7" href="$group___p_i_n_c2.html" title="Pin C2" alt="" coords="220,309,283,336"/>
+<area shape="rect" id="node8" href="$group___p_i_n_c3.html" title="Pin C3" alt="" coords="220,360,283,387"/>
+<area shape="rect" id="node9" href="$group___p_i_n_c4.html" title="Pin C4" alt="" coords="220,411,283,437"/>
+<area shape="rect" id="node10" href="$group___p_i_n_d1.html" title="Pin D1" alt="" coords="220,461,283,488"/>
+<area shape="rect" id="node11" href="$group___p_i_n_d4.html" title="Pin D4" alt="" coords="220,512,283,539"/>
+</map>

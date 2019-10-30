@@ -1,0 +1,175 @@
+\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r}{}\section{Registro L\+SR}
+\label{group___r_e_g_i_s_t_r_o___l_s_r}\index{Registro L\+SR@{Registro L\+SR}}
+
+
+Definiciones asociadas al registro Line Status Register (U0\+L\+SR)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 210~\newline
+ The U0\+L\+SR is a Read Only register that provides status information on the U\+A\+RT TX and RX blocks.~\newline
+.  
+
+
+Collaboration diagram for Registro L\+SR\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{group___r_e_g_i_s_t_r_o___l_s_r}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga9e3adac29ef2f5d2cf60c4cebe971de9}{L\+S\+R\+\_\+\+R\+DR}~0x01
+\begin{DoxyCompactList}\small\item\em Receiver Data Ready. U0\+L\+SR\mbox{[}0\mbox{]} is set when the U0\+R\+BR holds 0 an unread character and is cleared when the U\+A\+RT R\+BR F\+I\+FO is empty.~\newline
+ 0 U0\+R\+BR is empty.~\newline
+ 1 U0\+R\+BR contains valid data.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gae844dd49bb0e0770bcf46ad5bfe20973}{L\+S\+R\+\_\+\+OE}~0x02
+\begin{DoxyCompactList}\small\item\em Overrun Error. The overrun error condition is set as soon as it 0 occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}1\mbox{]}. U0\+L\+SR\mbox{[}1\mbox{]} is set when U\+A\+RT R\+SR has a new character assembled and the U\+A\+RT R\+BR F\+I\+FO is full. In this case, the U\+A\+RT R\+BR F\+I\+FO will not be overwritten and the character in the U\+A\+RT R\+SR will be lost.~\newline
+ 0 Overrun error status is inactive.~\newline
+ 1 Overrun error status is active.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga0ee28cdbc0917173f06cc39527452a8f}{L\+S\+R\+\_\+\+PE}~0x04
+\begin{DoxyCompactList}\small\item\em Parity Error. When the parity bit of a received character is in the wrong state, a parity error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}2\mbox{]}. Time of parity error detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Parity error status is inactive.~\newline
+ 1 Parity error status is active.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gae3f9ccc88c615d1257ad400cf27af7eb}{L\+S\+R\+\_\+\+FE}~0x08
+\begin{DoxyCompactList}\small\item\em Framing Error. When the stop bit of a received character is a 0 logic 0, a framing error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}3\mbox{]}. The time of the framing error detection is dependent on U0\+F\+C\+R0. Upon detection of a framing error, the RX will attempt to re-\/synchronize to the data and assume that the bad stop bit is actually an early start bit. However, it cannot be assumed that the next received byte will be correct even if there is no Framing Error. Note\+: A framing error is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga0fa2f414cac085b768774f2881321b60}{L\+S\+R\+\_\+\+BI}~0x10
+\begin{DoxyCompactList}\small\item\em Break Interrupt. When R\+X\+D1 is held in the spacing state (all zeros) for one full character transmission (start, data, parity, stop), a break interrupt occurs. Once the break condition has been detected, the receiver goes idle until R\+X\+D1 goes to marking state (all ones). A U0\+L\+SR read clears this status bit. The time of break detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Note\+: The break interrupt is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga8c1a828f5fe296a9c1668cf3e72c00c1}{L\+S\+R\+\_\+\+T\+H\+RE}~0x20
+\begin{DoxyCompactList}\small\item\em Transmitter Holding Register Empty. T\+H\+RE is set immediately 1 upon detection of an empty U\+A\+RT T\+HR and is cleared on a U0\+T\+HR write.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_ga7dfceb10f5c20011b9410e2efb39163d}{L\+S\+R\+\_\+\+T\+E\+MT}~0x40
+\begin{DoxyCompactList}\small\item\em Transmitter Empty. T\+E\+MT is set when both U0\+T\+HR and U0\+T\+SR are empty; T\+E\+MT is cleared when either the U0\+T\+SR or the U0\+T\+HR contain valid data. This bit is updated as soon as 50 \% of the first stop bit has been transmitted or a byte has been written into the T\+HR.~\newline
+. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_e_g_i_s_t_r_o___l_s_r_gad481ff8993ac05c71d4ca3b611833df0}{L\+S\+R\+\_\+\+R\+X\+FE}~0x80
+\begin{DoxyCompactList}\small\item\em Error in RX F\+I\+FO. U0\+L\+SR\mbox{[}7\mbox{]} is set when a character with a RX 0 error such as framing error, parity error or break interrupt, is loaded into the U0\+R\+BR. This bit is cleared when the U0\+L\+SR register is read and there are no subsequent errors in the U\+A\+RT F\+I\+FO.~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definiciones asociadas al registro Line Status Register (U0\+L\+SR)~\newline
+ Descripciones copiada directamente del manual U\+M10398 pag. 210~\newline
+ The U0\+L\+SR is a Read Only register that provides status information on the U\+A\+RT TX and RX blocks.~\newline
+. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+BI@{L\+S\+R\+\_\+\+BI}}
+\index{L\+S\+R\+\_\+\+BI@{L\+S\+R\+\_\+\+BI}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+BI}{LSR_BI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+BI~0x10}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_ga0fa2f414cac085b768774f2881321b60}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_ga0fa2f414cac085b768774f2881321b60}
+
+
+Break Interrupt. When R\+X\+D1 is held in the spacing state (all zeros) for one full character transmission (start, data, parity, stop), a break interrupt occurs. Once the break condition has been detected, the receiver goes idle until R\+X\+D1 goes to marking state (all ones). A U0\+L\+SR read clears this status bit. The time of break detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Note\+: The break interrupt is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. 
+
+0 Break interrupt status is inactive.~\newline
+ 1 Break interrupt status is active.~\newline
+
+
+Definition at line 204 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+FE@{L\+S\+R\+\_\+\+FE}}
+\index{L\+S\+R\+\_\+\+FE@{L\+S\+R\+\_\+\+FE}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+FE}{LSR_FE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+FE~0x08}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_gae3f9ccc88c615d1257ad400cf27af7eb}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_gae3f9ccc88c615d1257ad400cf27af7eb}
+
+
+Framing Error. When the stop bit of a received character is a 0 logic 0, a framing error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}3\mbox{]}. The time of the framing error detection is dependent on U0\+F\+C\+R0. Upon detection of a framing error, the RX will attempt to re-\/synchronize to the data and assume that the bad stop bit is actually an early start bit. However, it cannot be assumed that the next received byte will be correct even if there is no Framing Error. Note\+: A framing error is associated with the character at the top of the U\+A\+RT R\+BR F\+I\+FO.~\newline
+. 
+
+0 Framing error status is inactive.~\newline
+ 1 Framing error status is active.~\newline
+
+
+Definition at line 188 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+OE@{L\+S\+R\+\_\+\+OE}}
+\index{L\+S\+R\+\_\+\+OE@{L\+S\+R\+\_\+\+OE}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+OE}{LSR_OE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+OE~0x02}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_gae844dd49bb0e0770bcf46ad5bfe20973}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_gae844dd49bb0e0770bcf46ad5bfe20973}
+
+
+Overrun Error. The overrun error condition is set as soon as it 0 occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}1\mbox{]}. U0\+L\+SR\mbox{[}1\mbox{]} is set when U\+A\+RT R\+SR has a new character assembled and the U\+A\+RT R\+BR F\+I\+FO is full. In this case, the U\+A\+RT R\+BR F\+I\+FO will not be overwritten and the character in the U\+A\+RT R\+SR will be lost.~\newline
+ 0 Overrun error status is inactive.~\newline
+ 1 Overrun error status is active.~\newline
+. 
+
+
+
+Definition at line 162 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+PE@{L\+S\+R\+\_\+\+PE}}
+\index{L\+S\+R\+\_\+\+PE@{L\+S\+R\+\_\+\+PE}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+PE}{LSR_PE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+PE~0x04}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_ga0ee28cdbc0917173f06cc39527452a8f}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_ga0ee28cdbc0917173f06cc39527452a8f}
+
+
+Parity Error. When the parity bit of a received character is in the wrong state, a parity error occurs. A U0\+L\+SR read clears U0\+L\+SR\mbox{[}2\mbox{]}. Time of parity error detection is dependent on U0\+F\+CR\mbox{[}0\mbox{]}.~\newline
+ 0 Parity error status is inactive.~\newline
+ 1 Parity error status is active.~\newline
+. 
+
+
+
+Definition at line 171 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+R\+DR@{L\+S\+R\+\_\+\+R\+DR}}
+\index{L\+S\+R\+\_\+\+R\+DR@{L\+S\+R\+\_\+\+R\+DR}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+R\+DR}{LSR_RDR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+R\+DR~0x01}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_ga9e3adac29ef2f5d2cf60c4cebe971de9}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_ga9e3adac29ef2f5d2cf60c4cebe971de9}
+
+
+Receiver Data Ready. U0\+L\+SR\mbox{[}0\mbox{]} is set when the U0\+R\+BR holds 0 an unread character and is cleared when the U\+A\+RT R\+BR F\+I\+FO is empty.~\newline
+ 0 U0\+R\+BR is empty.~\newline
+ 1 U0\+R\+BR contains valid data.~\newline
+. 
+
+
+
+Definition at line 152 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+R\+X\+FE@{L\+S\+R\+\_\+\+R\+X\+FE}}
+\index{L\+S\+R\+\_\+\+R\+X\+FE@{L\+S\+R\+\_\+\+R\+X\+FE}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+R\+X\+FE}{LSR_RXFE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+R\+X\+FE~0x80}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_gad481ff8993ac05c71d4ca3b611833df0}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_gad481ff8993ac05c71d4ca3b611833df0}
+
+
+Error in RX F\+I\+FO. U0\+L\+SR\mbox{[}7\mbox{]} is set when a character with a RX 0 error such as framing error, parity error or break interrupt, is loaded into the U0\+R\+BR. This bit is cleared when the U0\+L\+SR register is read and there are no subsequent errors in the U\+A\+RT F\+I\+FO.~\newline
+. 
+
+0 U0\+R\+BR contains no U\+A\+RT RX errors or U0\+F\+CR\mbox{[}0\mbox{]}=0.~\newline
+ 1 U\+A\+RT R\+BR contains at least one U\+A\+RT RX error.~\newline
+
+
+Definition at line 237 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+T\+E\+MT@{L\+S\+R\+\_\+\+T\+E\+MT}}
+\index{L\+S\+R\+\_\+\+T\+E\+MT@{L\+S\+R\+\_\+\+T\+E\+MT}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+T\+E\+MT}{LSR_TEMT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+T\+E\+MT~0x40}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_ga7dfceb10f5c20011b9410e2efb39163d}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_ga7dfceb10f5c20011b9410e2efb39163d}
+
+
+Transmitter Empty. T\+E\+MT is set when both U0\+T\+HR and U0\+T\+SR are empty; T\+E\+MT is cleared when either the U0\+T\+SR or the U0\+T\+HR contain valid data. This bit is updated as soon as 50 \% of the first stop bit has been transmitted or a byte has been written into the T\+HR.~\newline
+. 
+
+0 U0\+T\+HR and/or the U0\+T\+SR contains valid data.~\newline
+ 1 U0\+T\+HR and the U0\+T\+SR are empty.~\newline
+
+
+Definition at line 225 of file uart.\+h.
+
+\index{Registro L\+SR@{Registro L\+SR}!L\+S\+R\+\_\+\+T\+H\+RE@{L\+S\+R\+\_\+\+T\+H\+RE}}
+\index{L\+S\+R\+\_\+\+T\+H\+RE@{L\+S\+R\+\_\+\+T\+H\+RE}!Registro L\+SR@{Registro L\+SR}}
+\subsubsection[{\texorpdfstring{L\+S\+R\+\_\+\+T\+H\+RE}{LSR_THRE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+R\+\_\+\+T\+H\+RE~0x20}\hypertarget{group___r_e_g_i_s_t_r_o___l_s_r_ga8c1a828f5fe296a9c1668cf3e72c00c1}{}\label{group___r_e_g_i_s_t_r_o___l_s_r_ga8c1a828f5fe296a9c1668cf3e72c00c1}
+
+
+Transmitter Holding Register Empty. T\+H\+RE is set immediately 1 upon detection of an empty U\+A\+RT T\+HR and is cleared on a U0\+T\+HR write.~\newline
+. 
+
+0 U0\+T\+HR contains valid data.~\newline
+ 1 U0\+T\+HR is empty.~\newline
+
+
+Definition at line 213 of file uart.\+h.
+

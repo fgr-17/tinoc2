@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['c',['C',['../union_a_p_s_r___type.html#a86e2c5b891ecef1ab55b1edac0da79a6',1,'APSR_Type::C()'],['../unionx_p_s_r___type.html#a40213a6b5620410cac83b0d89564609d',1,'xPSR_Type::C()']]],
+  ['calib',['CALIB',['../struct_sys_tick___type.html#a9c9eda0ea6f6a7c904d2d75a6963e238',1,'SysTick_Type']]],
+  ['ccr',['CCR',['../struct_s_c_b___type.html#a6d273c6b90bad15c91dfbbad0f6e92d8',1,'SCB_Type::CCR()'],['../group___l_p_c11xx___definitions.html#ga097d57fef779a73f06690de0b0710753',1,'LPC_TMR_TypeDef::CCR()']]],
+  ['clkdiv',['CLKDIV',['../group___l_p_c11xx___definitions.html#ga4a89a19bd8d6a91479a7d60830850bbd',1,'LPC_CAN_TypeDef']]],
+  ['clkoutclksel',['CLKOUTCLKSEL',['../group___l_p_c11xx___definitions.html#gac29fe890ede735895af857345a6d6cb2',1,'LPC_SYSCON_TypeDef']]],
+  ['clkoutdiv',['CLKOUTDIV',['../group___l_p_c11xx___definitions.html#ga88ef5401531552a52e072c288d2e0900',1,'LPC_SYSCON_TypeDef']]],
+  ['clkoutuen',['CLKOUTUEN',['../group___l_p_c11xx___definitions.html#ga6e2e61850e73ee4ba00145e337568cdf',1,'LPC_SYSCON_TypeDef']]],
+  ['cntl',['CNTL',['../group___l_p_c11xx___definitions.html#ga8add56ab65690f15125719eb9eda4470',1,'LPC_CAN_TypeDef']]],
+  ['conclr',['CONCLR',['../group___l_p_c11xx___definitions.html#ga8dcac209a164a265abcbfe49c1b80355',1,'LPC_I2C_TypeDef']]],
+  ['conset',['CONSET',['../group___l_p_c11xx___definitions.html#ga50ba10a49a23a16fc3ff26d0ec702a1d',1,'LPC_I2C_TypeDef']]],
+  ['cpsr',['CPSR',['../group___l_p_c11xx___definitions.html#ga454a4d1a09ccb43c3f3a8965a8b30087',1,'LPC_SSP_TypeDef']]],
+  ['cpuid',['CPUID',['../struct_s_c_b___type.html#afa7a9ee34dfa1da0b60b4525da285032',1,'SCB_Type']]],
+  ['cr',['CR',['../group___l_p_c11xx___definitions.html#ga5d9525fbad55b4d561ec1f4c8e1a6c75',1,'LPC_ADC_TypeDef']]],
+  ['cr0',['CR0',['../group___l_p_c11xx___definitions.html#ga62fb131eb523de2ee3bf8c7882d7ee61',1,'LPC_TMR_TypeDef::CR0()'],['../group___l_p_c11xx___definitions.html#ga32a68722d4e2c1b7dfc787c779a380a3',1,'LPC_SSP_TypeDef::CR0()']]],
+  ['cr1',['CR1',['../group___l_p_c11xx___definitions.html#ga38ad1e04b125d455b3881f652cfe14c3',1,'LPC_TMR_TypeDef::CR1()'],['../group___l_p_c11xx___definitions.html#ga016ea63a8c118f5b75a64a6e5f81c984',1,'LPC_SSP_TypeDef::CR1()']]],
+  ['ct16b0_5fcap0_5floc',['CT16B0_CAP0_LOC',['../group___l_p_c11xx___definitions.html#ga665596a8d6cc6bd6f61485aba90d62c5',1,'LPC_IOCON_TypeDef']]],
+  ['ct32b0_5fcap0_5floc',['CT32B0_CAP0_LOC',['../group___l_p_c11xx___definitions.html#gaaeedcd139dfd63880543f3498602fe58',1,'LPC_IOCON_TypeDef']]],
+  ['ctcr',['CTCR',['../group___l_p_c11xx___definitions.html#ga9f161dc0d6e4dd663a2053058141bc55',1,'LPC_TMR_TypeDef']]],
+  ['ctrl',['CTRL',['../struct_sys_tick___type.html#af2ad94ac83e5d40fc6e34884bc1bec5f',1,'SysTick_Type']]]
+];

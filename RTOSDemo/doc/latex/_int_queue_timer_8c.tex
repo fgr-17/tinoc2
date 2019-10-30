@@ -1,0 +1,102 @@
+\hypertarget{_int_queue_timer_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Int\+Queue\+Timer.c File Reference}
+\label{_int_queue_timer_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Int\+Queue\+Timer.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Int\+Queue\+Timer.\+c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Int\+Queue\+Timer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Int\+Queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}L\+P\+C11xx.\+h\char`\"{}}\\*
+Include dependency graph for Int\+Queue\+Timer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_int_queue_timer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_int_queue_timer_8c_a044ee651ba3908e13515f0d3d1b67349}{tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}~( 2000\+U\+L )
+\item 
+\#define \hyperlink{_int_queue_timer_8c_a382d9137d8355ad8e7626f1e97b81760}{tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}~( 2001\+U\+L )
+\item 
+\#define \hyperlink{_int_queue_timer_8c_a43cb8904306508a66624ddbec91d47b1}{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( 0\+U\+L )
+\item 
+\#define \hyperlink{_int_queue_timer_8c_a1872afc8b565d1b37c2d56019664e1f2}{trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{_int_queue_timer_8c_a43cb8904306508a66624ddbec91d47b1}{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 1 )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_int_queue_timer_8c_abab610d9bed1fcf161f5d88360644436}{v\+Initialise\+Timer\+For\+Int\+Queue\+Test} (void)
+\item 
+void \hyperlink{_int_queue_timer_8c_a03ceb1fa173383d816d3273bc4ecbf37}{T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{_int_queue_timer_8c_afe62c3ce958597e6a4eb5b716e8221ab}{T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{tmrMAX_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( 0\+U\+L )}\hypertarget{_int_queue_timer_8c_a43cb8904306508a66624ddbec91d47b1}{}\label{_int_queue_timer_8c_a43cb8904306508a66624ddbec91d47b1}
+
+
+Definition at line 87 of file Int\+Queue\+Timer.\+c.
+
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}}
+\index{tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}{tmrTIMER_2_FREQUENCY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define tmr\+T\+I\+M\+E\+R\+\_\+2\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY~( 2000\+U\+L )}\hypertarget{_int_queue_timer_8c_a044ee651ba3908e13515f0d3d1b67349}{}\label{_int_queue_timer_8c_a044ee651ba3908e13515f0d3d1b67349}
+
+
+Definition at line 82 of file Int\+Queue\+Timer.\+c.
+
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}}
+\index{tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY@{tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}{tmrTIMER_3_FREQUENCY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define tmr\+T\+I\+M\+E\+R\+\_\+3\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY~( 2001\+U\+L )}\hypertarget{_int_queue_timer_8c_a382d9137d8355ad8e7626f1e97b81760}{}\label{_int_queue_timer_8c_a382d9137d8355ad8e7626f1e97b81760}
+
+
+Definition at line 83 of file Int\+Queue\+Timer.\+c.
+
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{trmSECOND_HIGHEST_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define trm\+S\+E\+C\+O\+N\+D\+\_\+\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf tmr\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 1 )}\hypertarget{_int_queue_timer_8c_a1872afc8b565d1b37c2d56019664e1f2}{}\label{_int_queue_timer_8c_a1872afc8b565d1b37c2d56019664e1f2}
+
+
+Definition at line 88 of file Int\+Queue\+Timer.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler}}
+\index{T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler(void)}{TIMER16_0_IRQHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+E\+R16\+\_\+0\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_timer_8c_a03ceb1fa173383d816d3273bc4ecbf37}{}\label{_int_queue_timer_8c_a03ceb1fa173383d816d3273bc4ecbf37}
+
+
+Definition at line 123 of file Int\+Queue\+Timer.\+c.
+
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler}}
+\index{T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler(void)}{TIMER16_1_IRQHandler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+E\+R16\+\_\+1\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_timer_8c_afe62c3ce958597e6a4eb5b716e8221ab}{}\label{_int_queue_timer_8c_afe62c3ce958597e6a4eb5b716e8221ab}
+
+
+Definition at line 133 of file Int\+Queue\+Timer.\+c.
+
+\index{Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}!v\+Initialise\+Timer\+For\+Int\+Queue\+Test@{v\+Initialise\+Timer\+For\+Int\+Queue\+Test}}
+\index{v\+Initialise\+Timer\+For\+Int\+Queue\+Test@{v\+Initialise\+Timer\+For\+Int\+Queue\+Test}!Int\+Queue\+Timer.\+c@{Int\+Queue\+Timer.\+c}}
+\subsubsection[{\texorpdfstring{v\+Initialise\+Timer\+For\+Int\+Queue\+Test(void)}{vInitialiseTimerForIntQueueTest(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Initialise\+Timer\+For\+Int\+Queue\+Test (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_int_queue_timer_8c_abab610d9bed1fcf161f5d88360644436}{}\label{_int_queue_timer_8c_abab610d9bed1fcf161f5d88360644436}
+
+
+Definition at line 90 of file Int\+Queue\+Timer.\+c.
+

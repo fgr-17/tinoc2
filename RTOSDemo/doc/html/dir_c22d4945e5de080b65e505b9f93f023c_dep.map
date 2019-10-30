@@ -1,0 +1,11 @@
+<map id="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/leds" name="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/leds">
+<area shape="rect" id="node1" href="dir_c22d4945e5de080b65e505b9f93f023c.html" title="leds" alt="" coords="81,52,153,100"/>
+<area shape="rect" id="node2" href="dir_7fc948234d115aca9f042e1da5f485e3.html" title="hardware" alt="" coords="5,148,80,196"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000012_000011.html" title="1" alt="" coords="75,132,83,146"/>
+<area shape="rect" id="node3" href="dir_b8d8080156116d0b60af7424e457521b.html" title="FreeRTOS_Source" alt="" coords="87,244,220,292"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000012_000004.html" title="3" alt="" coords="150,217,158,232"/>
+<area shape="rect" id="node4" href="dir_019ec925d9efc07aa1c283298be328f1.html" title="UART" alt="" coords="155,148,227,196"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000012_000013.html" title="2" alt="" coords="164,121,172,136"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000013_000004.html" title="2" alt="" coords="173,223,181,238"/>
+<area shape="rect" id="clust1" href="dir_74389ed8173ad57b461b9d623a1f3867.html" title="Source" alt="" coords="71,16,164,111"/>
+</map>

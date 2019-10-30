@@ -1,0 +1,178 @@
+\hypertarget{countsem_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/countsem.c File Reference}
+\label{countsem_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/countsem.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/countsem.\+c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}countsem.\+h\char`\"{}}\\*
+Include dependency graph for countsem.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{countsem_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_o_u_n_t___s_e_m___s_t_r_u_c_t}{C\+O\+U\+N\+T\+\_\+\+S\+E\+M\+\_\+\+S\+T\+R\+U\+CT}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{countsem_8c_adb434b09fb08107d0d33eddc954354f2}{count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE}~( 200 )
+\item 
+\#define \hyperlink{countsem_8c_a65ac95e3d4f738fe0c979f264b8f2619}{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT}~( 0xaa )
+\item 
+\#define \hyperlink{countsem_8c_a7ea24e7d87fb8b296c3a2dd56c9c0012}{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO}~( 0x55 )
+\item 
+\#define \hyperlink{countsem_8c_ab9bfa6a43c8e9294c9d32ebcdf61cd2e}{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}~( 2 )
+\item 
+\#define \hyperlink{countsem_8c_ae08a06fbabdb17bbd8c6d233e3f62fed}{count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}~( 0 )
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_c_o_u_n_t___s_e_m___s_t_r_u_c_t}{C\+O\+U\+N\+T\+\_\+\+S\+E\+M\+\_\+\+S\+T\+R\+U\+CT} \hyperlink{countsem_8c_a7f65577ed4e66933d30c25feabc67cad}{x\+Count\+Sem\+Struct}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{countsem_8c_a3da2754eaeb8a4fe4945205f5ffde1b0}{prv\+Counting\+Semaphore\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{countsem_8c_a3d2925e545128b333176abfab2f89f42}{prv\+Increment\+Semaphore\+Count} (\hyperlink{semphr_8h_ad88c6df4a04beedeac782918c8a332f5}{Semaphore\+Handle\+\_\+t} x\+Semaphore, \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} $\ast$pux\+Loop\+Counter)
+\item 
+static void \hyperlink{countsem_8c_a645f6f7dc2d20ef236aa2424d452da12}{prv\+Decrement\+Semaphore\+Count} (\hyperlink{semphr_8h_ad88c6df4a04beedeac782918c8a332f5}{Semaphore\+Handle\+\_\+t} x\+Semaphore, \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} $\ast$pux\+Loop\+Counter)
+\item 
+void \hyperlink{countsem_8c_adb60a296dc9bf8a446919c81c1e1464d}{v\+Start\+Counting\+Semaphore\+Tasks} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{countsem_8c_acae097664a39290ace0006daa491c90d}{x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{countsem_8c_ad88ee9dbbe7072eb80ec2240b542ad4b}{x\+Error\+Detected} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{countsem_8c_a7f65577ed4e66933d30c25feabc67cad}{x\+Count\+Sem\+Struct} \hyperlink{countsem_8c_a02646df01bbe5d073526ab4ed0174fa7}{x\+Parameters} \mbox{[}\hyperlink{countsem_8c_ab9bfa6a43c8e9294c9d32ebcdf61cd2e}{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{countsem.\+c@{countsem.\+c}!count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}}
+\index{count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}{countDONT_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define count\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK~( 0 )}\hypertarget{countsem_8c_ae08a06fbabdb17bbd8c6d233e3f62fed}{}\label{countsem_8c_ae08a06fbabdb17bbd8c6d233e3f62fed}
+
+
+Definition at line 96 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE@{count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE}}
+\index{count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE@{count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE}{countMAX_COUNT_VALUE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define count\+M\+A\+X\+\_\+\+C\+O\+U\+N\+T\+\_\+\+V\+A\+L\+UE~( 200 )}\hypertarget{countsem_8c_adb434b09fb08107d0d33eddc954354f2}{}\label{countsem_8c_adb434b09fb08107d0d33eddc954354f2}
+
+
+Definition at line 84 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS@{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}}
+\index{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS@{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}{countNUM_TEST_TASKS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS~( 2 )}\hypertarget{countsem_8c_ab9bfa6a43c8e9294c9d32ebcdf61cd2e}{}\label{countsem_8c_ab9bfa6a43c8e9294c9d32ebcdf61cd2e}
+
+
+Definition at line 95 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT@{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT}}
+\index{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT@{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT}{countSTART_AT_MAX_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+U\+NT~( 0xaa )}\hypertarget{countsem_8c_a65ac95e3d4f738fe0c979f264b8f2619}{}\label{countsem_8c_a65ac95e3d4f738fe0c979f264b8f2619}
+
+
+Definition at line 90 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO@{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO}}
+\index{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO@{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO}{countSTART_AT_ZERO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define count\+S\+T\+A\+R\+T\+\_\+\+A\+T\+\_\+\+Z\+E\+RO~( 0x55 )}\hypertarget{countsem_8c_a7ea24e7d87fb8b296c3a2dd56c9c0012}{}\label{countsem_8c_a7ea24e7d87fb8b296c3a2dd56c9c0012}
+
+
+Definition at line 91 of file countsem.\+c.
+
+
+
+\subsection{Typedef Documentation}
+\index{countsem.\+c@{countsem.\+c}!x\+Count\+Sem\+Struct@{x\+Count\+Sem\+Struct}}
+\index{x\+Count\+Sem\+Struct@{x\+Count\+Sem\+Struct}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{x\+Count\+Sem\+Struct}{xCountSemStruct}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf C\+O\+U\+N\+T\+\_\+\+S\+E\+M\+\_\+\+S\+T\+R\+U\+CT}  {\bf x\+Count\+Sem\+Struct}}\hypertarget{countsem_8c_a7f65577ed4e66933d30c25feabc67cad}{}\label{countsem_8c_a7f65577ed4e66933d30c25feabc67cad}
+
+
+\subsection{Function Documentation}
+\index{countsem.\+c@{countsem.\+c}!prv\+Counting\+Semaphore\+Task@{prv\+Counting\+Semaphore\+Task}}
+\index{prv\+Counting\+Semaphore\+Task@{prv\+Counting\+Semaphore\+Task}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Counting\+Semaphore\+Task(void $\ast$pv\+Parameters)}{prvCountingSemaphoreTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Counting\+Semaphore\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{countsem_8c_a3da2754eaeb8a4fe4945205f5ffde1b0}{}\label{countsem_8c_a3da2754eaeb8a4fe4945205f5ffde1b0}
+
+
+Definition at line 258 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!prv\+Decrement\+Semaphore\+Count@{prv\+Decrement\+Semaphore\+Count}}
+\index{prv\+Decrement\+Semaphore\+Count@{prv\+Decrement\+Semaphore\+Count}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Decrement\+Semaphore\+Count(\+Semaphore\+Handle\+\_\+t x\+Semaphore, U\+Base\+Type\+\_\+t $\ast$pux\+Loop\+Counter)}{prvDecrementSemaphoreCount(SemaphoreHandle_t xSemaphore, UBaseType_t *puxLoopCounter)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Decrement\+Semaphore\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf Semaphore\+Handle\+\_\+t}}]{x\+Semaphore, }
+\item[{{\bf U\+Base\+Type\+\_\+t} $\ast$}]{pux\+Loop\+Counter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{countsem_8c_a645f6f7dc2d20ef236aa2424d452da12}{}\label{countsem_8c_a645f6f7dc2d20ef236aa2424d452da12}
+
+
+Definition at line 181 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!prv\+Increment\+Semaphore\+Count@{prv\+Increment\+Semaphore\+Count}}
+\index{prv\+Increment\+Semaphore\+Count@{prv\+Increment\+Semaphore\+Count}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Increment\+Semaphore\+Count(\+Semaphore\+Handle\+\_\+t x\+Semaphore, U\+Base\+Type\+\_\+t $\ast$pux\+Loop\+Counter)}{prvIncrementSemaphoreCount(SemaphoreHandle_t xSemaphore, UBaseType_t *puxLoopCounter)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Increment\+Semaphore\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf Semaphore\+Handle\+\_\+t}}]{x\+Semaphore, }
+\item[{{\bf U\+Base\+Type\+\_\+t} $\ast$}]{pux\+Loop\+Counter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{countsem_8c_a3d2925e545128b333176abfab2f89f42}{}\label{countsem_8c_a3d2925e545128b333176abfab2f89f42}
+
+
+Definition at line 220 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!v\+Start\+Counting\+Semaphore\+Tasks@{v\+Start\+Counting\+Semaphore\+Tasks}}
+\index{v\+Start\+Counting\+Semaphore\+Tasks@{v\+Start\+Counting\+Semaphore\+Tasks}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{v\+Start\+Counting\+Semaphore\+Tasks(void)}{vStartCountingSemaphoreTasks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Start\+Counting\+Semaphore\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{countsem_8c_adb60a296dc9bf8a446919c81c1e1464d}{}\label{countsem_8c_adb60a296dc9bf8a446919c81c1e1464d}
+
+
+Definition at line 149 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running@{x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running}}
+\index{x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running@{x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running(void)}{xAreCountingSemaphoreTasksStillRunning(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Are\+Counting\+Semaphore\+Tasks\+Still\+Running (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{countsem_8c_acae097664a39290ace0006daa491c90d}{}\label{countsem_8c_acae097664a39290ace0006daa491c90d}
+
+
+Definition at line 296 of file countsem.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{countsem.\+c@{countsem.\+c}!x\+Error\+Detected@{x\+Error\+Detected}}
+\index{x\+Error\+Detected@{x\+Error\+Detected}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{x\+Error\+Detected}{xErrorDetected}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Error\+Detected = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{countsem_8c_ad88ee9dbbe7072eb80ec2240b542ad4b}{}\label{countsem_8c_ad88ee9dbbe7072eb80ec2240b542ad4b}
+
+
+Definition at line 102 of file countsem.\+c.
+
+\index{countsem.\+c@{countsem.\+c}!x\+Parameters@{x\+Parameters}}
+\index{x\+Parameters@{x\+Parameters}!countsem.\+c@{countsem.\+c}}
+\subsubsection[{\texorpdfstring{x\+Parameters}{xParameters}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf x\+Count\+Sem\+Struct} x\+Parameters\mbox{[}{\bf count\+N\+U\+M\+\_\+\+T\+E\+S\+T\+\_\+\+T\+A\+S\+KS}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{countsem_8c_a02646df01bbe5d073526ab4ed0174fa7}{}\label{countsem_8c_a02646df01bbe5d073526ab4ed0174fa7}
+
+
+Definition at line 145 of file countsem.\+c.
+

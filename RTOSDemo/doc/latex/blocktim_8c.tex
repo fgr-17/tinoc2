@@ -1,0 +1,241 @@
+\hypertarget{blocktim_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/blocktim.c File Reference}
+\label{blocktim_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/blocktim.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/blocktim.\+c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}blocktim.\+h\char`\"{}}\\*
+Include dependency graph for blocktim.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{blocktim_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{blocktim_8c_a141b4eabe1bc4e302efbc0747aaeefb3}{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{_free_r_t_o_s_config_8h_a9a78f5ac61e6cb172dadf2a51f11db38}{config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 3 )
+\item 
+\#define \hyperlink{blocktim_8c_a6620b6ba905c9de0a51b79672f4ea2ca}{bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{_free_r_t_o_s_config_8h_a9a78f5ac61e6cb172dadf2a51f11db38}{config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 4 )
+\item 
+\#define \hyperlink{blocktim_8c_a3274df45a8be2cf211aea1d48025f071}{bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}~( 5 )
+\item 
+\#define \hyperlink{blocktim_8c_aef5793343e5bba1e8055d61cdd255285}{bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT}~\hyperlink{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}{pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( ( \hyperlink{portmacro_8h_aa69c48c6e902ce54f70886e6573c92a9}{Tick\+Type\+\_\+t} ) 20 )
+\item 
+\#define \hyperlink{blocktim_8c_a31c09013f5ddf5a0667559a024d14a31}{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME}~( 10 )
+\item 
+\#define \hyperlink{blocktim_8c_a58ac1b1446b077d8bbb50531519e8808}{bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN}~( 15 )
+\item 
+\#define \hyperlink{blocktim_8c_ac335943ddd482d15914cda41a4134ba1}{bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK}~( 175 )
+\item 
+\#define \hyperlink{blocktim_8c_a5c6fdccf6ea138c2a09d200ea1431233}{bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}~( ( \hyperlink{portmacro_8h_aa69c48c6e902ce54f70886e6573c92a9}{Tick\+Type\+\_\+t} ) 0 )
+\item 
+\#define \hyperlink{blocktim_8c_ab8d6ee6a31954d35f5065538040f22be}{bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR}~( ( \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} ) 0x55 )
+\item 
+\#define \hyperlink{blocktim_8c_a05c75ff9029ba3f0ab5bde9196f1e873}{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{_free_r_t_o_s_config_8h_a9a78f5ac61e6cb172dadf2a51f11db38}{config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 1 )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{blocktim_8c_a2d16e8ca11170673dbcb90fd222d2b68}{v\+Primary\+Block\+Time\+Test\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{blocktim_8c_a4d6fcd2ddb4ec8a0aec94e8d7ebad08f}{v\+Secondary\+Block\+Time\+Test\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{blocktim_8c_aeeb5eca5aa3a749ab69b6426a78369fb}{prv\+Basic\+Delay\+Tests} (void)
+\item 
+void \hyperlink{blocktim_8c_a7e292a5580d071b0ed41ffa6c72a3918}{v\+Create\+Block\+Time\+Tasks} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{blocktim_8c_a224728c508501d2868005b78fb7dd0fc}{x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{blocktim_8c_ab50f695ae5f879d1ad7fff65e5dc2e7e}{x\+Test\+Queue}
+\item 
+static \hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{blocktim_8c_ad86b70779c856daf9b5616511311b162}{x\+Secondary}
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{blocktim_8c_a87c82db51c7380bf462ae0fbd5612895}{x\+Primary\+Cycles} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{blocktim_8c_a0a7b8b4fcbe7aaea7f90272d1da0c92b}{x\+Secondary\+Cycles} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{blocktim_8c_a7d608f051774754fa525a0b7481cec3a}{x\+Error\+Occurred} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{blocktim_8c_ab463c5e1f292e47cd689b9f153fcb068}{x\+Run\+Indicator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN@{bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN}}
+\index{bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN@{bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN}{bktALLOWABLE_MARGIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+A\+L\+L\+O\+W\+A\+B\+L\+E\+\_\+\+M\+A\+R\+G\+IN~( 15 )}\hypertarget{blocktim_8c_a58ac1b1446b077d8bbb50531519e8808}{}\label{blocktim_8c_a58ac1b1446b077d8bbb50531519e8808}
+
+
+Definition at line 97 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}}
+\index{bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK@{bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK}{bktDONT_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+D\+O\+N\+T\+\_\+\+B\+L\+O\+CK~( ( {\bf Tick\+Type\+\_\+t} ) 0 )}\hypertarget{blocktim_8c_a5c6fdccf6ea138c2a09d200ea1431233}{}\label{blocktim_8c_a5c6fdccf6ea138c2a09d200ea1431233}
+
+
+Definition at line 99 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME@{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME}}
+\index{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME@{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME}{bktPRIMARY_BLOCK_TIME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+B\+L\+O\+C\+K\+\_\+\+T\+I\+ME~( 10 )}\hypertarget{blocktim_8c_a31c09013f5ddf5a0667559a024d14a31}{}\label{blocktim_8c_a31c09013f5ddf5a0667559a024d14a31}
+
+
+Definition at line 96 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{bktPRIMARY_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 3 )}\hypertarget{blocktim_8c_a141b4eabe1bc4e302efbc0747aaeefb3}{}\label{blocktim_8c_a141b4eabe1bc4e302efbc0747aaeefb3}
+
+
+Definition at line 86 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}}
+\index{bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH@{bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}{bktQUEUE_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH~( 5 )}\hypertarget{blocktim_8c_a3274df45a8be2cf211aea1d48025f071}{}\label{blocktim_8c_a3274df45a8be2cf211aea1d48025f071}
+
+
+Definition at line 94 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR@{bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR}}
+\index{bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR@{bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR}{bktRUN_INDICATOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+R\+U\+N\+\_\+\+I\+N\+D\+I\+C\+A\+T\+OR~( ( {\bf U\+Base\+Type\+\_\+t} ) 0x55 )}\hypertarget{blocktim_8c_ab8d6ee6a31954d35f5065538040f22be}{}\label{blocktim_8c_ab8d6ee6a31954d35f5065538040f22be}
+
+
+Definition at line 100 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{bktSECONDARY_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 4 )}\hypertarget{blocktim_8c_a6620b6ba905c9de0a51b79672f4ea2ca}{}\label{blocktim_8c_a6620b6ba905c9de0a51b79672f4ea2ca}
+
+
+Definition at line 90 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT@{bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT}}
+\index{bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT@{bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT}{bktSHORT_WAIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+S\+H\+O\+R\+T\+\_\+\+W\+A\+IT~{\bf pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( ( {\bf Tick\+Type\+\_\+t} ) 20 )}\hypertarget{blocktim_8c_aef5793343e5bba1e8055d61cdd255285}{}\label{blocktim_8c_aef5793343e5bba1e8055d61cdd255285}
+
+
+Definition at line 95 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK@{bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK}}
+\index{bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK@{bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK}{bktTIME_TO_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define bkt\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+B\+L\+O\+CK~( 175 )}\hypertarget{blocktim_8c_ac335943ddd482d15914cda41a4134ba1}{}\label{blocktim_8c_ac335943ddd482d15914cda41a4134ba1}
+
+
+Definition at line 98 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{configTIMER_TASK_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf config\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+ES} -\/ 1 )}\hypertarget{blocktim_8c_a05c75ff9029ba3f0ab5bde9196f1e873}{}\label{blocktim_8c_a05c75ff9029ba3f0ab5bde9196f1e873}
+
+
+Definition at line 105 of file blocktim.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{blocktim.\+c@{blocktim.\+c}!prv\+Basic\+Delay\+Tests@{prv\+Basic\+Delay\+Tests}}
+\index{prv\+Basic\+Delay\+Tests@{prv\+Basic\+Delay\+Tests}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Basic\+Delay\+Tests(void)}{prvBasicDelayTests(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Basic\+Delay\+Tests (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_aeeb5eca5aa3a749ab69b6426a78369fb}{}\label{blocktim_8c_aeeb5eca5aa3a749ab69b6426a78369fb}
+
+
+Definition at line 510 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!v\+Create\+Block\+Time\+Tasks@{v\+Create\+Block\+Time\+Tasks}}
+\index{v\+Create\+Block\+Time\+Tasks@{v\+Create\+Block\+Time\+Tasks}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{v\+Create\+Block\+Time\+Tasks(void)}{vCreateBlockTimeTasks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Create\+Block\+Time\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{blocktim_8c_a7e292a5580d071b0ed41ffa6c72a3918}{}\label{blocktim_8c_a7e292a5580d071b0ed41ffa6c72a3918}
+
+
+Definition at line 140 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!v\+Primary\+Block\+Time\+Test\+Task@{v\+Primary\+Block\+Time\+Test\+Task}}
+\index{v\+Primary\+Block\+Time\+Test\+Task@{v\+Primary\+Block\+Time\+Test\+Task}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{v\+Primary\+Block\+Time\+Test\+Task(void $\ast$pv\+Parameters)}{vPrimaryBlockTimeTestTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void v\+Primary\+Block\+Time\+Test\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_a2d16e8ca11170673dbcb90fd222d2b68}{}\label{blocktim_8c_a2d16e8ca11170673dbcb90fd222d2b68}
+
+
+Definition at line 162 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!v\+Secondary\+Block\+Time\+Test\+Task@{v\+Secondary\+Block\+Time\+Test\+Task}}
+\index{v\+Secondary\+Block\+Time\+Test\+Task@{v\+Secondary\+Block\+Time\+Test\+Task}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{v\+Secondary\+Block\+Time\+Test\+Task(void $\ast$pv\+Parameters)}{vSecondaryBlockTimeTestTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void v\+Secondary\+Block\+Time\+Test\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_a4d6fcd2ddb4ec8a0aec94e8d7ebad08f}{}\label{blocktim_8c_a4d6fcd2ddb4ec8a0aec94e8d7ebad08f}
+
+
+Definition at line 420 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running@{x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running}}
+\index{x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running@{x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running(void)}{xAreBlockTimeTestTasksStillRunning(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Are\+Block\+Time\+Test\+Tasks\+Still\+Running (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{blocktim_8c_a224728c508501d2868005b78fb7dd0fc}{}\label{blocktim_8c_a224728c508501d2868005b78fb7dd0fc}
+
+
+Definition at line 556 of file blocktim.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{blocktim.\+c@{blocktim.\+c}!x\+Error\+Occurred@{x\+Error\+Occurred}}
+\index{x\+Error\+Occurred@{x\+Error\+Occurred}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Error\+Occurred}{xErrorOccurred}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Error\+Occurred = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_a7d608f051774754fa525a0b7481cec3a}{}\label{blocktim_8c_a7d608f051774754fa525a0b7481cec3a}
+
+
+Definition at line 132 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Primary\+Cycles@{x\+Primary\+Cycles}}
+\index{x\+Primary\+Cycles@{x\+Primary\+Cycles}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Primary\+Cycles}{xPrimaryCycles}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Primary\+Cycles = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_a87c82db51c7380bf462ae0fbd5612895}{}\label{blocktim_8c_a87c82db51c7380bf462ae0fbd5612895}
+
+
+Definition at line 131 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Run\+Indicator@{x\+Run\+Indicator}}
+\index{x\+Run\+Indicator@{x\+Run\+Indicator}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Run\+Indicator}{xRunIndicator}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} x\+Run\+Indicator\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_ab463c5e1f292e47cd689b9f153fcb068}{}\label{blocktim_8c_ab463c5e1f292e47cd689b9f153fcb068}
+
+
+Definition at line 136 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Secondary@{x\+Secondary}}
+\index{x\+Secondary@{x\+Secondary}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Secondary}{xSecondary}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+Secondary\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_ad86b70779c856daf9b5616511311b162}{}\label{blocktim_8c_ad86b70779c856daf9b5616511311b162}
+
+
+Definition at line 128 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Secondary\+Cycles@{x\+Secondary\+Cycles}}
+\index{x\+Secondary\+Cycles@{x\+Secondary\+Cycles}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Secondary\+Cycles}{xSecondaryCycles}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Secondary\+Cycles = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_a0a7b8b4fcbe7aaea7f90272d1da0c92b}{}\label{blocktim_8c_a0a7b8b4fcbe7aaea7f90272d1da0c92b}
+
+
+Definition at line 131 of file blocktim.\+c.
+
+\index{blocktim.\+c@{blocktim.\+c}!x\+Test\+Queue@{x\+Test\+Queue}}
+\index{x\+Test\+Queue@{x\+Test\+Queue}!blocktim.\+c@{blocktim.\+c}}
+\subsubsection[{\texorpdfstring{x\+Test\+Queue}{xTestQueue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Queue\+Handle\+\_\+t} x\+Test\+Queue\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{blocktim_8c_ab50f695ae5f879d1ad7fff65e5dc2e7e}{}\label{blocktim_8c_ab50f695ae5f879d1ad7fff65e5dc2e7e}
+
+
+Definition at line 124 of file blocktim.\+c.
+

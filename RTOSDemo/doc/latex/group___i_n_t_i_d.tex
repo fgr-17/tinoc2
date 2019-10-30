@@ -1,0 +1,79 @@
+\hypertarget{group___i_n_t_i_d}{}\section{Bits I\+N\+T\+ID}
+\label{group___i_n_t_i_d}\index{Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}}
+
+
+Interrupt identification.~\newline
+ {\bfseries  U0\+I\+ER\mbox{[}3\+:1\mbox{]} } identifies an interrupt 0 corresponding to the U\+A\+RT Rx F\+I\+FO. All other combinations of U0\+I\+ER\mbox{[}3\+:1\mbox{]} not listed below are reserved (100,101,111).  
+
+
+Collaboration diagram for Bits I\+N\+T\+ID\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{group___i_n_t_i_d}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___i_n_t_i_d_ga03db7def835d2e60f1cc7470bdf35b08}{I\+I\+R\+\_\+\+R\+LS}~0x03
+\begin{DoxyCompactList}\small\item\em 1 -\/ Receive Line Status (R\+LS). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_ga80925dd3aa4708e148a9d63088b4758d}{I\+I\+R\+\_\+\+R\+DA}~0x02
+\begin{DoxyCompactList}\small\item\em 2a -\/ Receive Data Available (R\+DA). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_ga4842d23857b5599cf59365f23a46722f}{I\+I\+R\+\_\+\+C\+TI}~0x06
+\begin{DoxyCompactList}\small\item\em 2b -\/ Character Time-\/out Indicator (C\+TI). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___i_n_t_i_d_gafbff8bd626a8fce1f6082d355000c2b2}{I\+I\+R\+\_\+\+T\+H\+RE}~0x01
+\begin{DoxyCompactList}\small\item\em 3 -\/ T\+H\+RE Interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interrupt identification.~\newline
+ {\bfseries  U0\+I\+ER\mbox{[}3\+:1\mbox{]} } identifies an interrupt 0 corresponding to the U\+A\+RT Rx F\+I\+FO. All other combinations of U0\+I\+ER\mbox{[}3\+:1\mbox{]} not listed below are reserved (100,101,111). 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}!I\+I\+R\+\_\+\+C\+TI@{I\+I\+R\+\_\+\+C\+TI}}
+\index{I\+I\+R\+\_\+\+C\+TI@{I\+I\+R\+\_\+\+C\+TI}!Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}}
+\subsubsection[{\texorpdfstring{I\+I\+R\+\_\+\+C\+TI}{IIR_CTI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+I\+R\+\_\+\+C\+TI~0x06}\hypertarget{group___i_n_t_i_d_ga4842d23857b5599cf59365f23a46722f}{}\label{group___i_n_t_i_d_ga4842d23857b5599cf59365f23a46722f}
+
+
+2b -\/ Character Time-\/out Indicator (C\+TI). 
+
+
+
+Definition at line 122 of file uart.\+h.
+
+\index{Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}!I\+I\+R\+\_\+\+R\+DA@{I\+I\+R\+\_\+\+R\+DA}}
+\index{I\+I\+R\+\_\+\+R\+DA@{I\+I\+R\+\_\+\+R\+DA}!Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}}
+\subsubsection[{\texorpdfstring{I\+I\+R\+\_\+\+R\+DA}{IIR_RDA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+I\+R\+\_\+\+R\+DA~0x02}\hypertarget{group___i_n_t_i_d_ga80925dd3aa4708e148a9d63088b4758d}{}\label{group___i_n_t_i_d_ga80925dd3aa4708e148a9d63088b4758d}
+
+
+2a -\/ Receive Data Available (R\+DA). 
+
+
+
+Definition at line 120 of file uart.\+h.
+
+\index{Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}!I\+I\+R\+\_\+\+R\+LS@{I\+I\+R\+\_\+\+R\+LS}}
+\index{I\+I\+R\+\_\+\+R\+LS@{I\+I\+R\+\_\+\+R\+LS}!Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}}
+\subsubsection[{\texorpdfstring{I\+I\+R\+\_\+\+R\+LS}{IIR_RLS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+I\+R\+\_\+\+R\+LS~0x03}\hypertarget{group___i_n_t_i_d_ga03db7def835d2e60f1cc7470bdf35b08}{}\label{group___i_n_t_i_d_ga03db7def835d2e60f1cc7470bdf35b08}
+
+
+1 -\/ Receive Line Status (R\+LS). 
+
+
+
+Definition at line 118 of file uart.\+h.
+
+\index{Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}!I\+I\+R\+\_\+\+T\+H\+RE@{I\+I\+R\+\_\+\+T\+H\+RE}}
+\index{I\+I\+R\+\_\+\+T\+H\+RE@{I\+I\+R\+\_\+\+T\+H\+RE}!Bits I\+N\+T\+ID@{Bits I\+N\+T\+ID}}
+\subsubsection[{\texorpdfstring{I\+I\+R\+\_\+\+T\+H\+RE}{IIR_THRE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+I\+R\+\_\+\+T\+H\+RE~0x01}\hypertarget{group___i_n_t_i_d_gafbff8bd626a8fce1f6082d355000c2b2}{}\label{group___i_n_t_i_d_gafbff8bd626a8fce1f6082d355000c2b2}
+
+
+3 -\/ T\+H\+RE Interrupt. 
+
+
+
+Definition at line 124 of file uart.\+h.
+

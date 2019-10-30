@@ -1,0 +1,13 @@
+<map id="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/UART/uart.c" name="/home/telemetria/git/workspaces/tinoc2_firmware_freertos/RTOSDemo/Source/UART/uart.c">
+<area shape="rect" id="node4" href="$gpio_8h.html" title="gpio/gpio.h" alt="" coords="216,124,301,151"/>
+<area shape="rect" id="node5" href="$_free_r_t_o_s_8h.html" title="FreeRTOS.h" alt="" coords="325,124,421,151"/>
+<area shape="rect" id="node14" href="$queue_8h.html" title="queue.h" alt="" coords="446,124,514,151"/>
+<area shape="rect" id="node15" href="$colas_8h.html" title="Header del archivo &quot;colas.c&quot;. " alt="" coords="538,124,643,151"/>
+<area shape="rect" id="node16" href="$uart_8h.html" title="Header del archivo uart.c. " alt="" coords="667,124,722,151"/>
+<area shape="rect" id="node8" href="$_free_r_t_o_s_config_8h.html" title="FreeRTOSConfig.h" alt="" coords="306,199,441,225"/>
+<area shape="rect" id="node9" href="$projdefs_8h.html" title="projdefs.h" alt="" coords="465,199,543,225"/>
+<area shape="rect" id="node10" href="$portable_8h.html" title="portable.h" alt="" coords="567,199,646,225"/>
+<area shape="rect" id="node11" href="$deprecated__definitions_8h.html" title="deprecated_definitions.h" alt="" coords="375,273,537,300"/>
+<area shape="rect" id="node12" href="$portmacro_8h.html" title="portmacro.h" alt="" coords="561,273,652,300"/>
+<area shape="rect" id="node13" href="$mpu__wrappers_8h.html" title="mpu_wrappers.h" alt="" coords="677,273,795,300"/>
+</map>

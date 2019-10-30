@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['basetype_5ft',['BaseType_t',['../portmacro_8h.html#a46fb21e00ae0729d7515c0fbf2269796',1,'portmacro.h']]],
+  ['baud_5frate',['BAUD_RATE',['../group___d_e_f_i_n_e_s_u_a_r_t.html#gad4455691936f92fdd6c37566fc58ba1f',1,'uart.h']]],
+  ['baud_5frate_5fdefault',['BAUD_RATE_DEFAULT',['../group___d_e_f_i_n_e_s_u_a_r_t.html#ga3ba6411298b98763494970e394042bed',1,'uart.h']]],
+  ['bktallowable_5fmargin',['bktALLOWABLE_MARGIN',['../blocktim_8c.html#a58ac1b1446b077d8bbb50531519e8808',1,'blocktim.c']]],
+  ['bktdont_5fblock',['bktDONT_BLOCK',['../blocktim_8c.html#a5c6fdccf6ea138c2a09d200ea1431233',1,'blocktim.c']]],
+  ['bktprimary_5fblock_5ftime',['bktPRIMARY_BLOCK_TIME',['../blocktim_8c.html#a31c09013f5ddf5a0667559a024d14a31',1,'blocktim.c']]],
+  ['bktprimary_5fpriority',['bktPRIMARY_PRIORITY',['../blocktim_8c.html#a141b4eabe1bc4e302efbc0747aaeefb3',1,'blocktim.c']]],
+  ['bktqueue_5flength',['bktQUEUE_LENGTH',['../blocktim_8c.html#a3274df45a8be2cf211aea1d48025f071',1,'blocktim.c']]],
+  ['bktrun_5findicator',['bktRUN_INDICATOR',['../blocktim_8c.html#ab8d6ee6a31954d35f5065538040f22be',1,'blocktim.c']]],
+  ['bktsecondary_5fpriority',['bktSECONDARY_PRIORITY',['../blocktim_8c.html#a6620b6ba905c9de0a51b79672f4ea2ca',1,'blocktim.c']]],
+  ['bktshort_5fwait',['bktSHORT_WAIT',['../blocktim_8c.html#aef5793343e5bba1e8055d61cdd255285',1,'blocktim.c']]],
+  ['bkttime_5fto_5fblock',['bktTIME_TO_BLOCK',['../blocktim_8c.html#ac335943ddd482d15914cda41a4134ba1',1,'blocktim.c']]],
+  ['blocktim_2ec',['blocktim.c',['../blocktim_8c.html',1,'']]],
+  ['blocktim_2eh',['blocktim.h',['../blocktim_8h.html',1,'']]],
+  ['buffer',['buffer',['../structt__cola.html#a036c41abaec1f17327ac2c8c797e131b',1,'t_cola']]],
+  ['buffer_5fcargando',['BUFFER_CARGANDO',['../colas_8h.html#adcf7b87b5431386461b2c790e786729aa440bf29cb50d9457b659160607f7b3eb',1,'colas.h']]],
+  ['buffer_5flleno',['BUFFER_LLENO',['../colas_8h.html#adcf7b87b5431386461b2c790e786729aa683cafd579fc8977c131e54d3a9c912d',1,'colas.h']]],
+  ['buffer_5fn',['BUFFER_N',['../colas_8h.html#ac71c7234de240e3781fe2467040fb3b0',1,'colas.h']]],
+  ['buffer_5ftimeout',['BUFFER_TIMEOUT',['../colas_8h.html#adcf7b87b5431386461b2c790e786729aa892d732ba4891db2052b696570cb8e3e',1,'colas.h']]],
+  ['buffer_5fvacio',['BUFFER_VACIO',['../colas_8h.html#adcf7b87b5431386461b2c790e786729aae2bff6721da582482a2d465fbb64ffd5',1,'colas.h']]],
+  ['bufsize',['BUFSIZE',['../group___d_e_f_i_n_e_s_u_a_r_t.html#gaeca034f67218340ecb2261a22c2f3dcd',1,'uart.h']]],
+  ['bits_20intid',['Bits INTID',['../group___i_n_t_i_d.html',1,'']]],
+  ['bits_20del_20registro_20lcr_20_2d_20um10398_20pág_2e_20105_2f106',['BITS DEL REGISTRO LCR - UM10398 pág. 105/106',['../group___l_c_r_b_i_t_s.html',1,'']]]
+];

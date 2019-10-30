@@ -1,0 +1,241 @@
+\hypertarget{recmutex_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/recmutex.c File Reference}
+\label{recmutex_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/recmutex.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/\+Common\+\_\+\+Demo\+\_\+\+Tasks/recmutex.\+c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}semphr.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}recmutex.\+h\char`\"{}}\\*
+Include dependency graph for recmutex.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{recmutex_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{recmutex_8c_af99c9e3e4f49c0121d23c72349d56200}{recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 2 )
+\item 
+\#define \hyperlink{recmutex_8c_a5c8ccbdda8a0fc4dffd41d9c98000910}{recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 1 )
+\item 
+\#define \hyperlink{recmutex_8c_ac752203198c53014c6bfc5cf121e9b80}{recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}~( \hyperlink{task_8h_a94ed0b9b3b4e8ccc859c322f18583e67}{tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 0 )
+\item 
+\#define \hyperlink{recmutex_8c_a70a15f418f3caa45e043a6227164472c}{recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT}~( 10 )
+\item 
+\#define \hyperlink{recmutex_8c_ac0ec9d55855d6fc85e51e4583480e6be}{recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}~( \hyperlink{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}{pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( 20 ) )
+\item 
+\#define \hyperlink{recmutex_8c_ab8c55eaefbd120c8ca836224e4544d9c}{recmu\+N\+O\+\_\+\+D\+E\+L\+AY}~( ( \hyperlink{portmacro_8h_aa69c48c6e902ce54f70886e6573c92a9}{Tick\+Type\+\_\+t} ) 0 )
+\item 
+\#define \hyperlink{recmutex_8c_aec3f6c1fc5f5e04e2cf114564568374b}{recmu15ms\+\_\+\+D\+E\+L\+AY}~( \hyperlink{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}{pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( 15 ) )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{recmutex_8c_a8d3ae703deb4830ad176c30c78c9b6f4}{prv\+Recursive\+Mutex\+Controlling\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{recmutex_8c_a515935526e4ef35eea800ae587ee53e2}{prv\+Recursive\+Mutex\+Blocking\+Task} (void $\ast$pv\+Parameters)
+\item 
+static void \hyperlink{recmutex_8c_a26e0ad848a0f7ae027abd41b3546192e}{prv\+Recursive\+Mutex\+Polling\+Task} (void $\ast$pv\+Parameters)
+\item 
+void \hyperlink{recmutex_8c_a082ecd71608d32fd21722f1c516ab2b1}{v\+Start\+Recursive\+Mutex\+Tasks} (void)
+\item 
+\hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a00c8dfcc41fab534ed6d5707e19083ab}{x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{semphr_8h_ad88c6df4a04beedeac782918c8a332f5}{Semaphore\+Handle\+\_\+t} \hyperlink{recmutex_8c_ae146f0f510d7944fd0e8ffd727b32f24}{x\+Mutex}
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a7d608f051774754fa525a0b7481cec3a}{x\+Error\+Occurred} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{recmutex_8c_af00926a8ca0127faa191f28926a87796}{x\+Controlling\+Is\+Suspended} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{portmacro_8h_a46fb21e00ae0729d7515c0fbf2269796}{Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a92817de7a5f431666631de5c105f42b1}{x\+Blocking\+Is\+Suspended} = \hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a4451ae53a242236c983b5be292fb9c0e}{ux\+Controlling\+Cycles} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a884b5a24a069d68d1da5ecd50f97566c}{ux\+Blocking\+Cycles} = 0
+\item 
+static volatile \hyperlink{portmacro_8h_a646f89d4298e4f5afd522202b11cb2e6}{U\+Base\+Type\+\_\+t} \hyperlink{recmutex_8c_a9b14f3833255286ab7d5d66f2a8d24ce}{ux\+Polling\+Cycles} = 0
+\item 
+static \hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{recmutex_8c_aaa9a1f8bd549a1a25578d170990e69fd}{x\+Controlling\+Task\+Handle}
+\item 
+static \hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} \hyperlink{recmutex_8c_aeccee32bae7c12e8a06a3ad3236032d6}{x\+Blocking\+Task\+Handle}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{recmutex.\+c@{recmutex.\+c}!recmu15ms\+\_\+\+D\+E\+L\+AY@{recmu15ms\+\_\+\+D\+E\+L\+AY}}
+\index{recmu15ms\+\_\+\+D\+E\+L\+AY@{recmu15ms\+\_\+\+D\+E\+L\+AY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu15ms\+\_\+\+D\+E\+L\+AY}{recmu15ms_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu15ms\+\_\+\+D\+E\+L\+AY~( {\bf pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( 15 ) )}\hypertarget{recmutex_8c_aec3f6c1fc5f5e04e2cf114564568374b}{}\label{recmutex_8c_aec3f6c1fc5f5e04e2cf114564568374b}
+
+
+Definition at line 128 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{recmuBLOCKING_TASK_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 1 )}\hypertarget{recmutex_8c_a5c8ccbdda8a0fc4dffd41d9c98000910}{}\label{recmutex_8c_a5c8ccbdda8a0fc4dffd41d9c98000910}
+
+
+Definition at line 119 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{recmuCONTROLLING_TASK_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+C\+O\+N\+T\+R\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 2 )}\hypertarget{recmutex_8c_af99c9e3e4f49c0121d23c72349d56200}{}\label{recmutex_8c_af99c9e3e4f49c0121d23c72349d56200}
+
+
+Definition at line 117 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT@{recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT}}
+\index{recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT@{recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT}{recmuMAX_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+M\+A\+X\+\_\+\+C\+O\+U\+NT~( 10 )}\hypertarget{recmutex_8c_a70a15f418f3caa45e043a6227164472c}{}\label{recmutex_8c_a70a15f418f3caa45e043a6227164472c}
+
+
+Definition at line 123 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+N\+O\+\_\+\+D\+E\+L\+AY@{recmu\+N\+O\+\_\+\+D\+E\+L\+AY}}
+\index{recmu\+N\+O\+\_\+\+D\+E\+L\+AY@{recmu\+N\+O\+\_\+\+D\+E\+L\+AY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+N\+O\+\_\+\+D\+E\+L\+AY}{recmuNO_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+N\+O\+\_\+\+D\+E\+L\+AY~( ( {\bf Tick\+Type\+\_\+t} ) 0 )}\hypertarget{recmutex_8c_ab8c55eaefbd120c8ca836224e4544d9c}{}\label{recmutex_8c_ab8c55eaefbd120c8ca836224e4544d9c}
+
+
+Definition at line 127 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{recmuPOLLING_TASK_PRIORITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+P\+O\+L\+L\+I\+N\+G\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY~( {\bf tsk\+I\+D\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY} + 0 )}\hypertarget{recmutex_8c_ac752203198c53014c6bfc5cf121e9b80}{}\label{recmutex_8c_ac752203198c53014c6bfc5cf121e9b80}
+
+
+Definition at line 120 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY@{recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}}
+\index{recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY@{recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY}{recmuSHORT_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define recmu\+S\+H\+O\+R\+T\+\_\+\+D\+E\+L\+AY~( {\bf pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}( 20 ) )}\hypertarget{recmutex_8c_ac0ec9d55855d6fc85e51e4583480e6be}{}\label{recmutex_8c_ac0ec9d55855d6fc85e51e4583480e6be}
+
+
+Definition at line 126 of file recmutex.\+c.
+
+
+
+\subsection{Function Documentation}
+\index{recmutex.\+c@{recmutex.\+c}!prv\+Recursive\+Mutex\+Blocking\+Task@{prv\+Recursive\+Mutex\+Blocking\+Task}}
+\index{prv\+Recursive\+Mutex\+Blocking\+Task@{prv\+Recursive\+Mutex\+Blocking\+Task}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Recursive\+Mutex\+Blocking\+Task(void $\ast$pv\+Parameters)}{prvRecursiveMutexBlockingTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Recursive\+Mutex\+Blocking\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a515935526e4ef35eea800ae587ee53e2}{}\label{recmutex_8c_a515935526e4ef35eea800ae587ee53e2}
+
+
+Definition at line 254 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!prv\+Recursive\+Mutex\+Controlling\+Task@{prv\+Recursive\+Mutex\+Controlling\+Task}}
+\index{prv\+Recursive\+Mutex\+Controlling\+Task@{prv\+Recursive\+Mutex\+Controlling\+Task}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Recursive\+Mutex\+Controlling\+Task(void $\ast$pv\+Parameters)}{prvRecursiveMutexControllingTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Recursive\+Mutex\+Controlling\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a8d3ae703deb4830ad176c30c78c9b6f4}{}\label{recmutex_8c_a8d3ae703deb4830ad176c30c78c9b6f4}
+
+
+Definition at line 171 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!prv\+Recursive\+Mutex\+Polling\+Task@{prv\+Recursive\+Mutex\+Polling\+Task}}
+\index{prv\+Recursive\+Mutex\+Polling\+Task@{prv\+Recursive\+Mutex\+Polling\+Task}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{prv\+Recursive\+Mutex\+Polling\+Task(void $\ast$pv\+Parameters)}{prvRecursiveMutexPollingTask(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prv\+Recursive\+Mutex\+Polling\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a26e0ad848a0f7ae027abd41b3546192e}{}\label{recmutex_8c_a26e0ad848a0f7ae027abd41b3546192e}
+
+
+Definition at line 310 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!v\+Start\+Recursive\+Mutex\+Tasks@{v\+Start\+Recursive\+Mutex\+Tasks}}
+\index{v\+Start\+Recursive\+Mutex\+Tasks@{v\+Start\+Recursive\+Mutex\+Tasks}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{v\+Start\+Recursive\+Mutex\+Tasks(void)}{vStartRecursiveMutexTasks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Start\+Recursive\+Mutex\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{recmutex_8c_a082ecd71608d32fd21722f1c516ab2b1}{}\label{recmutex_8c_a082ecd71608d32fd21722f1c516ab2b1}
+
+
+Definition at line 148 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running@{x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running}}
+\index{x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running@{x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running(void)}{xAreRecursiveMutexTasksStillRunning(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Type\+\_\+t} x\+Are\+Recursive\+Mutex\+Tasks\+Still\+Running (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{recmutex_8c_a00c8dfcc41fab534ed6d5707e19083ab}{}\label{recmutex_8c_a00c8dfcc41fab534ed6d5707e19083ab}
+
+
+Definition at line 405 of file recmutex.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{recmutex.\+c@{recmutex.\+c}!ux\+Blocking\+Cycles@{ux\+Blocking\+Cycles}}
+\index{ux\+Blocking\+Cycles@{ux\+Blocking\+Cycles}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Blocking\+Cycles}{uxBlockingCycles}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Blocking\+Cycles = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a884b5a24a069d68d1da5ecd50f97566c}{}\label{recmutex_8c_a884b5a24a069d68d1da5ecd50f97566c}
+
+
+Definition at line 140 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!ux\+Controlling\+Cycles@{ux\+Controlling\+Cycles}}
+\index{ux\+Controlling\+Cycles@{ux\+Controlling\+Cycles}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Controlling\+Cycles}{uxControllingCycles}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Controlling\+Cycles = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a4451ae53a242236c983b5be292fb9c0e}{}\label{recmutex_8c_a4451ae53a242236c983b5be292fb9c0e}
+
+
+Definition at line 140 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!ux\+Polling\+Cycles@{ux\+Polling\+Cycles}}
+\index{ux\+Polling\+Cycles@{ux\+Polling\+Cycles}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{ux\+Polling\+Cycles}{uxPollingCycles}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf U\+Base\+Type\+\_\+t} ux\+Polling\+Cycles = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a9b14f3833255286ab7d5d66f2a8d24ce}{}\label{recmutex_8c_a9b14f3833255286ab7d5d66f2a8d24ce}
+
+
+Definition at line 140 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Blocking\+Is\+Suspended@{x\+Blocking\+Is\+Suspended}}
+\index{x\+Blocking\+Is\+Suspended@{x\+Blocking\+Is\+Suspended}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Blocking\+Is\+Suspended}{xBlockingIsSuspended}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Blocking\+Is\+Suspended = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a92817de7a5f431666631de5c105f42b1}{}\label{recmutex_8c_a92817de7a5f431666631de5c105f42b1}
+
+
+Definition at line 139 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Blocking\+Task\+Handle@{x\+Blocking\+Task\+Handle}}
+\index{x\+Blocking\+Task\+Handle@{x\+Blocking\+Task\+Handle}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Blocking\+Task\+Handle}{xBlockingTaskHandle}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+Blocking\+Task\+Handle\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_aeccee32bae7c12e8a06a3ad3236032d6}{}\label{recmutex_8c_aeccee32bae7c12e8a06a3ad3236032d6}
+
+
+Definition at line 144 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Controlling\+Is\+Suspended@{x\+Controlling\+Is\+Suspended}}
+\index{x\+Controlling\+Is\+Suspended@{x\+Controlling\+Is\+Suspended}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Controlling\+Is\+Suspended}{xControllingIsSuspended}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Controlling\+Is\+Suspended = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_af00926a8ca0127faa191f28926a87796}{}\label{recmutex_8c_af00926a8ca0127faa191f28926a87796}
+
+
+Definition at line 139 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Controlling\+Task\+Handle@{x\+Controlling\+Task\+Handle}}
+\index{x\+Controlling\+Task\+Handle@{x\+Controlling\+Task\+Handle}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Controlling\+Task\+Handle}{xControllingTaskHandle}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Handle\+\_\+t} x\+Controlling\+Task\+Handle\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_aaa9a1f8bd549a1a25578d170990e69fd}{}\label{recmutex_8c_aaa9a1f8bd549a1a25578d170990e69fd}
+
+
+Definition at line 144 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Error\+Occurred@{x\+Error\+Occurred}}
+\index{x\+Error\+Occurred@{x\+Error\+Occurred}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Error\+Occurred}{xErrorOccurred}}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf Base\+Type\+\_\+t} x\+Error\+Occurred = {\bf pd\+F\+A\+L\+SE}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_a7d608f051774754fa525a0b7481cec3a}{}\label{recmutex_8c_a7d608f051774754fa525a0b7481cec3a}
+
+
+Definition at line 139 of file recmutex.\+c.
+
+\index{recmutex.\+c@{recmutex.\+c}!x\+Mutex@{x\+Mutex}}
+\index{x\+Mutex@{x\+Mutex}!recmutex.\+c@{recmutex.\+c}}
+\subsubsection[{\texorpdfstring{x\+Mutex}{xMutex}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Semaphore\+Handle\+\_\+t} x\+Mutex\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{recmutex_8c_ae146f0f510d7944fd0e8ffd727b32f24}{}\label{recmutex_8c_ae146f0f510d7944fd0e8ffd727b32f24}
+
+
+Definition at line 136 of file recmutex.\+c.
+

@@ -1,0 +1,101 @@
+\hypertarget{group___h_o_o_k_f_u_n_c_t_i_o_n_s}{}\section{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS}
+\label{group___h_o_o_k_f_u_n_c_t_i_o_n_s}\index{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}}
+
+
+Funciones handler de eventos de excepcion.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook()} will only be called if \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook()} will only be called if config\+U\+S\+E\+\_\+\+I\+D\+L\+E\+\_\+\+H\+O\+OK is set \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga306672a74bdd13ce210c05fca3385c59}{v\+Application\+Stack\+Overflow\+Hook} (\hyperlink{task_8h_ae95f44d4cfeb4a599c6cc258d241cb6b}{Task\+Handle\+\_\+t} px\+Task, char $\ast$pc\+Task\+Name)
+\begin{DoxyCompactList}\small\item\em Run time stack overflow checking is performed if. \end{DoxyCompactList}\item 
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga9ca051aa77e17583aa5a85d5de5c199a}{v\+Application\+Tick\+Hook} (void)
+\begin{DoxyCompactList}\small\item\em This function will be called by each tick interrupt if config\+U\+S\+E\+\_\+\+T\+I\+C\+K\+\_\+\+H\+O\+OK is set to 1 in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}. User code can be added here, but the tick hook is called from an interrupt context, so code must not attempt to block, and only the interrupt safe Free\+R\+T\+OS A\+PI functions can be used (those that end in From\+I\+S\+R()). Manually check the last few bytes of the interrupt stack to check they have not been overwritten. Note -\/ the task stacks are automatically checked for overflow if config\+C\+H\+E\+C\+K\+\_\+\+F\+O\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW is set to 1 or 2 in Free\+R\+T\+O\+S\+Conifg.\+h, but the interrupt stack is not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Funciones handler de eventos de excepcion. 
+
+
+
+\subsection{Function Documentation}
+\index{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}!v\+Application\+Idle\+Hook@{v\+Application\+Idle\+Hook}}
+\index{v\+Application\+Idle\+Hook@{v\+Application\+Idle\+Hook}!Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}}
+\subsubsection[{\texorpdfstring{v\+Application\+Idle\+Hook(void)}{vApplicationIdleHook(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Application\+Idle\+Hook (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{}\label{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}
+
+
+\hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook()} will only be called if config\+U\+S\+E\+\_\+\+I\+D\+L\+E\+\_\+\+H\+O\+OK is set 
+
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook( void )} to 1 in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}. It will be called on each iteration of the idle task. It is essential that code added to this hook function never attempts to block in any way (for example, call \hyperlink{queue_8h_af1549eac0e7f05694a59a0b967c80be3}{x\+Queue\+Receive()} with a block time specified, or call \hyperlink{task_8h_aa154068cecd7f31446a7a84af44ab1a3}{v\+Task\+Delay()}). If the application makes use of the \hyperlink{task_8h_a27ff4ebce26565bef136bda84201ff80}{v\+Task\+Delete()} A\+PI function (as this demo application does) then it is also important that \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook()} is permitted to return to its calling function, because it is the responsibility of the idle task to clean up memory allocated by the kernel to any task that has since been deleted. \begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 306 of file main.\+c.
+
+\index{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}!v\+Application\+Malloc\+Failed\+Hook@{v\+Application\+Malloc\+Failed\+Hook}}
+\index{v\+Application\+Malloc\+Failed\+Hook@{v\+Application\+Malloc\+Failed\+Hook}!Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}}
+\subsubsection[{\texorpdfstring{v\+Application\+Malloc\+Failed\+Hook(void)}{vApplicationMallocFailedHook(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Application\+Malloc\+Failed\+Hook (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{}\label{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}
+
+
+\hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook()} will only be called if 
+
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_gab7e5c95cf72a3f819bc4462a7fb62ca3}{v\+Application\+Malloc\+Failed\+Hook( void )} config\+U\+S\+E\+\_\+\+M\+A\+L\+L\+O\+C\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+H\+O\+OK is set to 1 in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}. It is a hook function that will get called if a call to \hyperlink{portable_8h_a237d63f90b28e0950bd86f76815cd6e3}{pv\+Port\+Malloc()} fails. \hyperlink{portable_8h_a237d63f90b28e0950bd86f76815cd6e3}{pv\+Port\+Malloc()} is called internally by the kernel whenever a task, queue, timer or semaphore is created. It is also called by various parts of the demo application. If \hyperlink{heap__1_8c}{heap\+\_\+1.\+c} or heap\+\_\+2.\+c are used, then the size of the heap available to \hyperlink{portable_8h_a237d63f90b28e0950bd86f76815cd6e3}{pv\+Port\+Malloc()} is defined by config\+T\+O\+T\+A\+L\+\_\+\+H\+E\+A\+P\+\_\+\+S\+I\+ZE in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}, and the \hyperlink{portable_8h_a8f72fbee5c25c956bda528299ce6dd02}{x\+Port\+Get\+Free\+Heap\+Size()} A\+PI function can be used to query the size of free heap space that remains (although it does not provide information on how the remaining heap might be fragmented). memory, etc. are configured before \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} is called. \begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 284 of file main.\+c.
+
+\index{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}!v\+Application\+Stack\+Overflow\+Hook@{v\+Application\+Stack\+Overflow\+Hook}}
+\index{v\+Application\+Stack\+Overflow\+Hook@{v\+Application\+Stack\+Overflow\+Hook}!Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}}
+\subsubsection[{\texorpdfstring{v\+Application\+Stack\+Overflow\+Hook(\+Task\+Handle\+\_\+t px\+Task, char $\ast$pc\+Task\+Name)}{vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Application\+Stack\+Overflow\+Hook (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Handle\+\_\+t}}]{px\+Task, }
+\item[{char $\ast$}]{pc\+Task\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga306672a74bdd13ce210c05fca3385c59}{}\label{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga306672a74bdd13ce210c05fca3385c59}
+
+
+Run time stack overflow checking is performed if. 
+
+void \hyperlink{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga306672a74bdd13ce210c05fca3385c59}{v\+Application\+Stack\+Overflow\+Hook( Task\+Handle\+\_\+t px\+Task, char $\ast$pc\+Task\+Name )} config\+C\+H\+E\+C\+K\+\_\+\+F\+O\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW is defined to 1 or 2. This hook function is called if a stack overflow is detected. \begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 321 of file main.\+c.
+
+\index{Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}!v\+Application\+Tick\+Hook@{v\+Application\+Tick\+Hook}}
+\index{v\+Application\+Tick\+Hook@{v\+Application\+Tick\+Hook}!Funciones \char`\"{}\+Hook\char`\"{} del Free\+R\+T\+OS@{Funciones ""Hook"" del Free\+R\+T\+OS}}
+\subsubsection[{\texorpdfstring{v\+Application\+Tick\+Hook(void)}{vApplicationTickHook(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+Application\+Tick\+Hook (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga9ca051aa77e17583aa5a85d5de5c199a}{}\label{group___h_o_o_k_f_u_n_c_t_i_o_n_s_ga9ca051aa77e17583aa5a85d5de5c199a}
+
+
+This function will be called by each tick interrupt if config\+U\+S\+E\+\_\+\+T\+I\+C\+K\+\_\+\+H\+O\+OK is set to 1 in \hyperlink{_free_r_t_o_s_config_8h}{Free\+R\+T\+O\+S\+Config.\+h}. User code can be added here, but the tick hook is called from an interrupt context, so code must not attempt to block, and only the interrupt safe Free\+R\+T\+OS A\+PI functions can be used (those that end in From\+I\+S\+R()). Manually check the last few bytes of the interrupt stack to check they have not been overwritten. Note -\/ the task stacks are automatically checked for overflow if config\+C\+H\+E\+C\+K\+\_\+\+F\+O\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW is set to 1 or 2 in Free\+R\+T\+O\+S\+Conifg.\+h, but the interrupt stack is not. 
+
+v\+Application\+Tick\+Hook
+
+\begin{DoxyAuthor}{Author}
+N\+XP 
+\end{DoxyAuthor}
+
+
+Definition at line 351 of file main.\+c.
+

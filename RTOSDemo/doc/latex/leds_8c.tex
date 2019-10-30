@@ -1,0 +1,158 @@
+\hypertarget{leds_8c}{}\section{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.c File Reference}
+\label{leds_8c}\index{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.\+c@{/home/telemetria/git/workspaces/tinoc2\+\_\+firmware\+\_\+freertos/\+R\+T\+O\+S\+Demo/\+Source/leds/leds.\+c}}
+
+
+Funciones de manejo de leds específicas para la aplicacion.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$U\+A\+R\+T/uart.\+h$>$}\\*
+{\ttfamily \#include $<$U\+A\+R\+T/colas.\+h$>$}\\*
+{\ttfamily \#include $<$L\+P\+C11xx.\+h$>$}\\*
+{\ttfamily \#include $<$L\+P\+C1102\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\\*
+{\ttfamily \#include $<$hardware/hardware\+\_\+aplicacion.\+h$>$}\\*
+{\ttfamily \#include $<$leds/leds.\+h$>$}\\*
+Include dependency graph for leds.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{leds_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{leds_8c_a513ec54f09ae394a638787c4dbdc09f2}{Tarea\+\_\+\+Delay} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. \end{DoxyCompactList}\item 
+void \hyperlink{leds_8c_ab9e25e93df77ab0cb9296f333d664756}{Tarea\+\_\+\+Parpadear} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{leds_8c_a7d021980924fc6f218f3d6968851203a}{Inicializar\+\_\+\+Leds} (void)
+\begin{DoxyCompactList}\small\item\em Inicialización de pines destinados a leds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{leds_8c_aef730f8b25937ddc0ae42d96510bb744}{Parpadear\+\_\+\+Led} (void)
+\begin{DoxyCompactList}\small\item\em Cambio el estado del pin seteado como led. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{queue_8h_aaf19d499892a4ce1409326ece00f5264}{Queue\+Handle\+\_\+t} \hyperlink{leds_8c_a64354a2351ea161341ba1fec46c81bdc}{x\+Queue} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em The queue used by both tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Funciones de manejo de leds específicas para la aplicacion. 
+
+\begin{DoxyDate}{Date}
+Feb 22, 2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Roux, Federico G. (\href{mailto:froux@favaloro.edu.ar}{\tt froux@favaloro.\+edu.\+ar}) 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{leds.\+c@{leds.\+c}!Inicializar\+\_\+\+Leds@{Inicializar\+\_\+\+Leds}}
+\index{Inicializar\+\_\+\+Leds@{Inicializar\+\_\+\+Leds}!leds.\+c@{leds.\+c}}
+\subsubsection[{\texorpdfstring{Inicializar\+\_\+\+Leds(void)}{Inicializar_Leds(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Inicializar\+\_\+\+Leds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8c_a7d021980924fc6f218f3d6968851203a}{}\label{leds_8c_a7d021980924fc6f218f3d6968851203a}
+
+
+Inicialización de pines destinados a leds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file leds.\+c.
+
+\index{leds.\+c@{leds.\+c}!Parpadear\+\_\+\+Led@{Parpadear\+\_\+\+Led}}
+\index{Parpadear\+\_\+\+Led@{Parpadear\+\_\+\+Led}!leds.\+c@{leds.\+c}}
+\subsubsection[{\texorpdfstring{Parpadear\+\_\+\+Led(void)}{Parpadear_Led(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Parpadear\+\_\+\+Led (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8c_aef730f8b25937ddc0ae42d96510bb744}{}\label{leds_8c_aef730f8b25937ddc0ae42d96510bb744}
+
+
+Cambio el estado del pin seteado como led. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file leds.\+c.
+
+\index{leds.\+c@{leds.\+c}!Tarea\+\_\+\+Delay@{Tarea\+\_\+\+Delay}}
+\index{Tarea\+\_\+\+Delay@{Tarea\+\_\+\+Delay}!leds.\+c@{leds.\+c}}
+\subsubsection[{\texorpdfstring{Tarea\+\_\+\+Delay(void $\ast$pv\+Parameters)}{Tarea_Delay(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tarea\+\_\+\+Delay (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8c_a513ec54f09ae394a638787c4dbdc09f2}{}\label{leds_8c_a513ec54f09ae394a638787c4dbdc09f2}
+
+
+Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file leds.\+c.
+
+\index{leds.\+c@{leds.\+c}!Tarea\+\_\+\+Parpadear@{Tarea\+\_\+\+Parpadear}}
+\index{Tarea\+\_\+\+Parpadear@{Tarea\+\_\+\+Parpadear}!leds.\+c@{leds.\+c}}
+\subsubsection[{\texorpdfstring{Tarea\+\_\+\+Parpadear(void $\ast$pv\+Parameters)}{Tarea_Parpadear(void *pvParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tarea\+\_\+\+Parpadear (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pv\+Parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{leds_8c_ab9e25e93df77ab0cb9296f333d664756}{}\label{leds_8c_ab9e25e93df77ab0cb9296f333d664756}
+
+
+Tarea que inicia la cuenta del tick y envia mensaje a través de la queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nada} & \\
+\hline
+\mbox{\tt out}  & {\em 0} & OK \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file leds.\+c.
+
+
+
+\subsection{Variable Documentation}
+\index{leds.\+c@{leds.\+c}!x\+Queue@{x\+Queue}}
+\index{x\+Queue@{x\+Queue}!leds.\+c@{leds.\+c}}
+\subsubsection[{\texorpdfstring{x\+Queue}{xQueue}}]{\setlength{\rightskip}{0pt plus 5cm}x\+Queue = N\+U\+LL}\hypertarget{leds_8c_a64354a2351ea161341ba1fec46c81bdc}{}\label{leds_8c_a64354a2351ea161341ba1fec46c81bdc}
+
+
+The queue used by both tasks. 
+
+
+
+Definition at line 50 of file leds.\+c.
+
